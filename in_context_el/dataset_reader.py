@@ -1,4 +1,11 @@
-
+import os
+import json
+import requests
+import argparse
+import collections
+import urllib
+import rdflib
+from tqdm import tqdm
 
 
 def load_tsv(file='/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv', key='', mode='char'):
@@ -557,6 +564,26 @@ def load_ttl_n3(
     # print(json.dumps(doc_name2instance, indent=4))
     print(f'num_in_kb: {num_in}; num_out_kb: {num_out};')
 
+    return doc_name2instance
+
+
+def dataset_loader(file, key='', mode='tsv'): 
+    '''
+    file: input dataset file
+    key: only used for aida, to consider train/valid/test split
+    mode: options to consider different types of input file
+    # mode to be expanded to multiple ED datasets
+    '''
+    if mode == 'tsv':
+        doc_name2instance = load_tsv(file, key=key)
+    elif mode == 'oke_2015':
+        doc_name2instance = load_ttl_oke_2015(file)
+    elif mode == 'oke_2016':
+        doc_name2instance = load_ttl_oke_2016(file)
+    elif mode == 'n3':
+        doc_name2instance = load_ttl_n3(file)
+    else:
+        raise ValueError('unknown mode!')
     return doc_name2instance
 
 

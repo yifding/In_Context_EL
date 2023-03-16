@@ -1,261 +1,118 @@
+import os
 import json
 import argparse
-import openai
 from tqdm import tqdm
-openai.api_key = "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"
+import openai
+from in_context_el.openai_key import OPENAI_API_KEY
+openai.api_key = OPENAI_API_KEY
+from in_context_el.openai_function import openai_chatgpt
+from in_context_el.dataset_reader import dataset_loader
 
-def load_tsv(file, key='', mode='char'):
-    def process_token_2_char_4_doc_name2instance(token_doc_name2instance):
-        char_doc_name2instance = dict()
-        for doc_name, instance in token_doc_name2instance.items():
-            starts = []
-            ends = []
-            entity_mentions = []
-            entity_names = []
-            assert doc_name == instance['doc_name']
-            tokens = instance['tokens']
-            sentence = ' '.join(tokens)
-            token_entities = instance['entities']
 
-            for token_start, token_end, token_entity_mention, token_entity_name in zip(
-                    token_entities['starts'], token_entities['ends'], token_entities['entity_mentions'],
-                    token_entities['entity_names']
-            ):
-                if not 0 <= token_start <= token_end < len(tokens):
-                    print(instance)
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description='1st step to collect prompt for entity information.',
+        allow_abbrev=False,
+    )
+    parser.add_argument(
+        "--mode",
+        help="the extension file used by load_dataset function to load dataset",
+        # required=True,
+        choices=["tsv", "oke_2015", "oke_2016", "n3"],
+        default="tsv",
+        type=str,
+    )
+    parser.add_argument(
+        "--key",
+        help="the split key of aida-conll dataset",
+        # required=True,
+        choices=["", "testa", "testb"],
+        default="",
+        type=str,
+    )
+    parser.add_argument(
+        "--input_file",
+        help="the dataset file used by load_dataset to load dataset",
+        # required=True,
+        default="/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv",
+        type=str,
+    )
+    parser.add_argument(
+        "--output_dir",
+        help="output directory",
+        # required=True,
+        default="/nfs/yding4/In_Context_EL/RUN_FILES/3_16_2023/mention_prompt",
+        type=str,
+    )
+    parser.add_argument(
+        "--output_file",
+        help="output file",
+        # required=True,
+        default="KORE50.json",
+        type=str,
+    )
 
-                assert 0 <= token_start <= token_end < len(tokens)
-                # **YD** sentence[char_start: char_end] == mention
-                # **YD** ' '.join(tokens[token_start: token_end+1]) == mention ## ignoring the ',', '.' without space cases
-                if token_start == 0:
-                    start = 0
-                else:
-                    start = len(' '.join(tokens[:token_start])) + 1
-                end = len(' '.join(tokens[:token_end + 1]))
-                entity_mention = sentence[start: end]
+    # hyper parameters:
+    parser.add_argument(
+        "--num_context_characters",
+        help="maximum number of characters of original input sentence around mention",
+        # required=True,
+        default=150,
+        type=int,
+    )
+    # parser.add_argument(
+    #     "--num_entity_candidates",
+    #     help="maximum number of entity candidates of each mention",
+    #     # required=True,
+    #     default=10,
+    #     type=int,
+    # )
 
-                starts.append(start)
-                ends.append(end)
-                entity_mentions.append(entity_mention)
-                entity_names.append(token_entity_name)
+    args = parser.parse_args()
 
-            char_doc_name2instance[doc_name] = {
-                'doc_name': doc_name,
-                # 'tokens': tokens,
-                'sentence': sentence,
-                'entities': {
-                    "starts": starts,
-                    "ends": ends,
-                    "entity_mentions": entity_mentions,
-                    "entity_names": entity_names,
-                }
-            }
-        return char_doc_name2instance
+    os.makedirs(args.output_dir, exist_ok=True)
+    args.output_file = os.path.join(args.output_dir, args.output_file)
+    assert os.path.isfile(args.input_file)
+    return args
 
-    def generate_instance(
-        doc_name,
-        tokens,
-        ner_tags,
-        entity_mentions,
-        entity_names,
-        entity_wikipedia_ids,
-    ):
-        assert len(tokens) == len(ner_tags) == len(entity_mentions) \
-               == len(entity_names) == len(entity_wikipedia_ids)
 
-        instance_starts = []
-        instance_ends = []
-        instance_entity_mentions = []
-        instance_entity_names = []
-        instance_entity_wikipedia_ids = []
+def main():
+    args = parse_args()
+    # load dataset
+    doc_name2instance = dataset_loader(args.input_file, key=args.key, mode=args.mode)
+    output_file = args.output_file
+    num_context_characters = args.num_context_characters
 
-        tmp_start = -1
-        for index, (ner_tag, entity_mention, entity_name, entity_wikipedia_id) in enumerate(
-                zip(ner_tags, entity_mentions, entity_names, entity_wikipedia_ids)
-        ):
-
-            # judge whether current token is the last token of an entity, if so, generate an entity.
-            if ner_tag == 'O':
-                continue
-            else:
-                if ner_tag.startswith('B'):
-                    # if the index hits the last one or next ner_tag is not 'I',
-                    if index == len(tokens) - 1 or ner_tags[index + 1].startswith('B') or ner_tags[index + 1] == 'O':
-                        instance_starts.append(index)
-                        instance_ends.append(index)
-                        # the end_index select the last token of a entity to allow simple index
-                        # location for a transformer tokenizer
-                        instance_entity_mentions.append(entity_mention)
-                        instance_entity_names.append(entity_name)
-                        instance_entity_wikipedia_ids.append(entity_wikipedia_id)
-                        tmp_start = -1
-                    else:
-                        tmp_start = index
-                else:
-                    assert ner_tag.startswith('I')
-                    if index == len(tokens) - 1 or ner_tags[index + 1].startswith('B') or ner_tags[index + 1] == 'O':
-                        instance_starts.append(tmp_start)
-                        instance_ends.append(index)
-                        # the end_index select the last token of a entity to allow simple index
-                        # location for a transformer tokenizer
-                        instance_entity_mentions.append(entity_mention)
-                        instance_entity_names.append(entity_name)
-                        instance_entity_wikipedia_ids.append(entity_wikipedia_id)
-
-                        assert tmp_start != -1
-                        tmp_start = -1
-
-        instance = {
-            'doc_name': doc_name,
-            'tokens': tokens,
-            'entities': {
-                "starts": instance_starts,
-                "ends": instance_ends,
-                "entity_mentions": instance_entity_mentions,
-                "entity_names": instance_entity_names,
-                "entity_wikipedia_ids": instance_entity_wikipedia_ids,
-            }
-        }
-        return instance
-
-    doc_name2dataset = dict()
-    doc_name = ''
-    tokens = []
-    ner_tags = []
-    entity_mentions = []
-    entity_names = []
-    entity_wikipedia_ids = []
-
-    assert all(token != ' ' for token in tokens)
-
-    with open(file) as reader:
-        for line in reader:
-            if line.startswith('-DOCSTART-'):
-                if tokens:
-                    assert doc_name != ''
-                    assert doc_name not in doc_name2dataset
-
-                    instance = generate_instance(
-                        doc_name,
-                        tokens,
-                        ner_tags,
-                        entity_mentions,
-                        entity_names,
-                        entity_wikipedia_ids,
-                    )
-                    if key in doc_name:
-                        doc_name2dataset[doc_name] = instance
-
-                    tokens = []
-                    ner_tags = []
-                    entity_mentions = []
-                    entity_names = []
-                    entity_wikipedia_ids = []
-
-                assert line.startswith('-DOCSTART- (')
-                tmp_start_index = len('-DOCSTART- (')
-                if line.endswith(')\n'):
-                    tmp_end_index = len(')\n')
-                else:
-                    tmp_end_index = len('\n')
-                doc_name = line[tmp_start_index: -tmp_end_index]
-                assert doc_name != ''
-
-            elif line == '' or line == '\n':
-                continue
-
-            else:
-                parts = line.rstrip('\n').split("\t")
-                # len(parts) = [1, 4, 6, 7]
-                # 1: single symbol
-                # 4: ['Tim', 'B', "Tim O'Gorman", '--NME--'] or ['David', 'B', 'David', 'David_Beckham']
-                # 6: ['House', 'B', 'House of Commons', 'House_of_Commons', 'http://en.wikipedia.org/wiki/House_of_Commons', '216091']
-                # 7: ['German', 'B', 'German', 'Germany', 'http://en.wikipedia.org/wiki/Germany', '11867', '/m/0345h']
-                assert len(parts) in [1, 4, 6, 7]
-
-                # Gets out of unicode storing in the entity names
-                # example: if s = "\u0027", in python, it will be represented as "\\u0027" and not recognized as an
-                # unicode, should do .encode().decode("unicode-escape") to output "\'"
-                if len(parts) >= 4:
-                    parts[3] = parts[3].encode().decode("unicode-escape")
-
-                # 1. add tokens
-                # the extra space may destroy the position of token when creating sentences
-                # tokens.append(parts[0].replace(' ', '_'))
-                tokens.append(parts[0])
-
-                # 2. add ner_tags
-                if len(parts) == 1:
-                    ner_tags.append('O')
-                else:
-                    ner_tags.append(parts[1])
-
-                # 3. add entity_names
-                if len(parts) == 1:
-                    entity_mentions.append('')
-                    entity_names.append('')
-                else:
-                    entity_mentions.append(parts[2])
-                    if parts[3] == '--NME--':
-                        entity_names.append('')
-                    else:
-                        entity_names.append(parts[3])
-
-                # 4. add entity_wikiid if possible (only aida dataset has wikiid)
-                if len(parts) >= 6 and int(parts[5]) > 0:
-                    wikipedia_id = int(parts[5])
-                    entity_wikipedia_ids.append(wikipedia_id)
-                else:
-                    entity_wikipedia_ids.append(-1)
-
-    if tokens:
-        assert doc_name != ''
-        assert doc_name not in doc_name2dataset
-
-        instance = generate_instance(
-            doc_name,
-            tokens,
-            ner_tags,
+    for doc_name, instance in tqdm(doc_name2instance.items()):
+        entities = instance['entities']
+        entity_mentions = entities['entity_mentions']
+        starts = entities['starts']
+        ends = entities['ends']
+        sentence = instance['sentence']
+        prompt_results = []
+        prompts = []
+        for (
+            entity_mention,
+            start,
+            end
+        ) in zip(
             entity_mentions,
-            entity_names,
-            entity_wikipedia_ids,
-        )
-        if key in doc_name:
-            doc_name2dataset[doc_name] = instance
+            starts,
+            ends,
+        ):
+            prompt_sentence = sentence[max(0, start - num_context_characters): start] + entity_mention + sentence[end: end + num_context_characters]
+            prompt = prompt_sentence + " \n What does " + entity_mention + " in this sentence referring to?"
+            prompts.append(prompt)
+            complete_output = openai_chatgpt(prompt)
+            prompt_results.append(complete_output)
+            
+        entities['prompts'] = prompts
+        entities['prompt_results'] = prompt_results
+        doc_name2instance[doc_name]['entities'] = entities
 
-    if mode == 'token':
-        return doc_name2dataset
-    else:
-        assert mode == 'char', 'MODE(parameter) only supports "token" and "char"'
-        return process_token_2_char_4_doc_name2instance(doc_name2dataset)
+    with open(output_file, 'w') as writer:
+        json.dump(doc_name2instance, writer, indent=4)
 
 
-# 1. load dataset
-input_file = '/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv'
-doc_name2instance = load_tsv(input_file)
-
-for doc_name, instance in tqdm(doc_name2instance.items()):
-    entities = instance['entities']
-    sentence = instance['sentence']
-    prompt_results = []
-    prompts = []
-    for entity_mention in entities['entity_mentions']:
-        prompt = sentence + " \n What does " + entity_mention + " in this sentence referring to?"
-        prompts.append(prompt)
-        openai_output = openai.ChatCompletion.create(
-            model="gpt-3.5-turbo",
-            messages=[
-            {"role": "system", "content": prompt},
-            ]
-        )
-        complete_output = openai_output["choices"][0]["message"]['content']
-        prompt_results.append(complete_output)
-        
-
-    entities['prompts'] = prompts
-    entities['prompt_result'] = prompt_results
-    doc_name2instance[doc_name]['entities'] = entities
-
-output_file = '/nfs/yding4/pair_query/in_context/RUN_FILES/init_prompt/KORE50.json'
-with open(output_file, 'w') as writer:
-    json.dump(doc_name2instance, writer, indent=4)
+if __name__ == '__main__':
+    main()
