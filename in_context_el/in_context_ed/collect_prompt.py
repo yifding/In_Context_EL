@@ -18,7 +18,7 @@ def parse_args():
         "--mode",
         help="the extension file used by load_dataset function to load dataset",
         # required=True,
-        choices=["tsv", "oke_2015", "oke_2016", "n3"],
+        choices=["tsv", "oke_2015", "oke_2016", "n3", "xml"],
         default="tsv",
         type=str,
     )
