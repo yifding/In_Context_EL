@@ -5,7 +5,7 @@ from tqdm import tqdm
 import openai
 from in_context_el.openai_key import OPENAI_API_KEY
 openai.api_key = OPENAI_API_KEY
-from in_context_el.openai_function import openai_chatgpt
+from in_context_el.openai_function import openai_chatgpt, openai_completion
 from in_context_el.dataset_reader import dataset_loader
 
 
@@ -51,7 +51,6 @@ def parse_args():
         default="KORE50.json",
         type=str,
     )
-
     # hyper parameters:
     parser.add_argument(
         "--num_context_characters",
@@ -59,6 +58,22 @@ def parse_args():
         # required=True,
         default=150,
         type=int,
+    )
+    parser.add_argument(
+        "--openai_mode",
+        help="",
+        # required=True,
+        default='chatgpt',
+        choices=['chatgpt', 'gpt'],
+        type=str,
+    )
+    parser.add_argument(
+        "--openai_model",
+        help="",
+        # required=True,
+        default='gpt-3.5-turbo',
+        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003'],
+        type=str,
     )
     # parser.add_argument(
     #     "--num_entity_candidates",
@@ -82,8 +97,26 @@ def main():
     doc_name2instance = dataset_loader(args.input_file, key=args.key, mode=args.mode)
     output_file = args.output_file
     num_context_characters = args.num_context_characters
+    openai_model = args.openai_model
+    if args.openai_mode == 'chatgpt':
+        openai_function = openai_chatgpt
+    elif args.openai_mode == 'gpt':
+        openai_function = openai_completion
+    else:
+        raise ValueError('Unknown gpt mode')
+
+    # consider continue querying when bug occurs
+    if os.path.isfile(output_file):
+        with open(output_file) as reader:
+            exist_doc_name2instance = json.load(reader)
+        exist_doc_names = list(exist_doc_name2instance.keys())
+    else:
+        exist_doc_names = []
 
     for doc_name, instance in tqdm(doc_name2instance.items()):
+        if doc_name in exist_doc_names and 'prompt_results' in exist_doc_name2instance[doc_name]['entities']:
+            doc_name2instance[doc_name]['entities'] = exist_doc_name2instance[doc_name]['entities']
+            continue
         entities = instance['entities']
         entity_mentions = entities['entity_mentions']
         starts = entities['starts']
@@ -103,15 +136,15 @@ def main():
             prompt_sentence = sentence[max(0, start - num_context_characters): start] + entity_mention + sentence[end: end + num_context_characters]
             prompt = prompt_sentence + " \n What does " + entity_mention + " in this sentence referring to?"
             prompts.append(prompt)
-            complete_output = openai_chatgpt(prompt)
+            complete_output = openai_function(prompt, model=openai_model)
             prompt_results.append(complete_output)
             
         entities['prompts'] = prompts
         entities['prompt_results'] = prompt_results
         doc_name2instance[doc_name]['entities'] = entities
 
-    with open(output_file, 'w') as writer:
-        json.dump(doc_name2instance, writer, indent=4)
+        with open(output_file, 'w') as writer:
+            json.dump(doc_name2instance, writer, indent=4)
 
 
 if __name__ == '__main__':
