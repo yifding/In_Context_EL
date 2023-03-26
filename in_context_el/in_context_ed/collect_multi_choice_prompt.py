@@ -11,7 +11,8 @@ from REL.wikipedia import Wikipedia
 from REL.wikipedia_yago_freq import WikipediaYagoFreq
 from REL.mention_detection import MentionDetection
 
-from in_context_el.openai_function import openai_chatgpt
+from in_context_el.openai_function import openai_chatgpt, openai_completion
+
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -68,6 +69,22 @@ def parse_args():
         default=150,
         type=int,
     )
+    parser.add_argument(
+        "--openai_mode",
+        help="",
+        # required=True,
+        default='chatgpt',
+        choices=['chatgpt', 'gpt'],
+        type=str,
+    )
+    parser.add_argument(
+        "--openai_model",
+        help="",
+        # required=True,
+        default='gpt-3.5-turbo',
+        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003'],
+        type=str,
+    )
 
     args = parser.parse_args()
 
@@ -86,12 +103,32 @@ def main():
     wikipedia_yago_freq = WikipediaYagoFreq(args.base_url, args.wiki_version, wikipedia)
     wikipedia_yago_freq.extract_entity_description()
 
+    openai_model = args.openai_model
+    if args.openai_mode == 'chatgpt':
+        openai_function = openai_chatgpt
+    elif args.openai_mode == 'gpt':
+        openai_function = openai_completion
+    else:
+        raise ValueError('Unknown gpt mode')
 
     input_file = args.input_file
+    output_file = args.output_file
     with open(input_file) as reader:
         doc_name2instance = json.load(reader)
 
+    # consider continue querying when bug occurs
+    if os.path.isfile(output_file):
+        with open(output_file) as reader:
+            exist_doc_name2instance = json.load(reader)
+        exist_doc_names = list(exist_doc_name2instance.keys())
+    else:
+        exist_doc_names = []
+
     for doc_name, instance in tqdm(doc_name2instance.items()):
+        if doc_name in exist_doc_names and 'multi_choice_prompts' in exist_doc_name2instance[doc_name]['entities']:
+            doc_name2instance[doc_name]['entities'] = exist_doc_name2instance[doc_name]['entities']
+            continue
+
         entities = instance['entities']
         entity_mentions = entities['entity_mentions']
         entity_names = entities['entity_names']
@@ -121,7 +158,7 @@ def main():
                 multi_choice_prompt += f'({index + 1}). ' + description + '\n'
         
             multi_choice_prompt = prompt_result + '\n\n' + f'Which of the following entity best describe {entity_mention} ?' + '\n\n' + multi_choice_prompt
-            complete_output = openai_chatgpt(multi_choice_prompt)
+            complete_output = openai_function(multi_choice_prompt, model=openai_model)
 
             multi_choice_prompts.append(multi_choice_prompt)
             multi_choice_prompt_results.append(complete_output)
@@ -132,9 +169,9 @@ def main():
         entities['entity_candidates'] = entity_candidates
         doc_name2instance[doc_name]['entities'] = entities
 
-    output_file = args.output_file
-    with open(output_file, 'w') as writer:
-        json.dump(doc_name2instance, writer, indent=4)
+    
+        with open(output_file, 'w') as writer:
+            json.dump(doc_name2instance, writer, indent=4)
 
 
 if __name__ == '__main__':
