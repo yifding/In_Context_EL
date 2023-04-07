@@ -1,0 +1,1542 @@
+{
+    "1 CEL01": {
+        "doc_name": "1 CEL01",
+        "sentence": "David and Victoria named their children Brooklyn , Romeo , Cruz , and Harper Seven .",
+        "entities": {
+            "starts": [
+                0,
+                10,
+                40,
+                51,
+                59,
+                70
+            ],
+            "ends": [
+                5,
+                18,
+                48,
+                56,
+                63,
+                82
+            ],
+            "entity_mentions": [
+                "David",
+                "Victoria",
+                "Brooklyn",
+                "Romeo",
+                "Cruz",
+                "Harper Seven"
+            ],
+            "entity_names": [
+                "David_Beckham",
+                "Victoria_Beckham",
+                "",
+                "",
+                "",
+                ""
+            ],
+            "predict_entity_names": [
+                "",
+                "",
+                "",
+                "",
+                "",
+                "Maryland ritual killings"
+            ]
+        }
+    },
+    "2 CEL02": {
+        "doc_name": "2 CEL02",
+        "sentence": "David and Victoria added spice to their marriage .",
+        "entities": {
+            "starts": [
+                0,
+                10
+            ],
+            "ends": [
+                5,
+                18
+            ],
+            "entity_mentions": [
+                "David",
+                "Victoria"
+            ],
+            "entity_names": [
+                "David_Beckham",
+                "Victoria_Beckham"
+            ],
+            "predict_entity_names": [
+                "",
+                ""
+            ]
+        }
+    },
+    "3 CEL03": {
+        "doc_name": "3 CEL03",
+        "sentence": "Tiger was lost in the woods when he got divorced from Elin .",
+        "entities": {
+            "starts": [
+                0,
+                54
+            ],
+            "ends": [
+                5,
+                58
+            ],
+            "entity_mentions": [
+                "Tiger",
+                "Elin"
+            ],
+            "entity_names": [
+                "Tiger_Woods",
+                "Elin_Nordegren"
+            ],
+            "predict_entity_names": [
+                "",
+                ""
+            ]
+        }
+    },
+    "4 CEL04": {
+        "doc_name": "4 CEL04",
+        "sentence": "Tiger lost the US Open .",
+        "entities": {
+            "starts": [
+                0,
+                15
+            ],
+            "ends": [
+                5,
+                22
+            ],
+            "entity_mentions": [
+                "Tiger",
+                "US Open"
+            ],
+            "entity_names": [
+                "Tiger_Woods",
+                "U.S._Open_(golf)"
+            ],
+            "predict_entity_names": [
+                "",
+                ""
+            ]
+        }
+    },
+    "5 CEL05": {
+        "doc_name": "5 CEL05",
+        "sentence": "Madonna played Eva and was seen with Carlos .",
+        "entities": {
+            "starts": [
+                0,
+                15,
+                37
+            ],
+            "ends": [
+                7,
+                18,
+                43
+            ],
+            "entity_mentions": [
+                "Madonna",
+                "Eva",
+                "Carlos"
+            ],
+            "entity_names": [
+                "Madonna_(entertainer)",
+                "Eva_Per\u00c3\u00b3n",
+                "Carlos_Leon"
+            ],
+            "predict_entity_names": [
+                "Madonna",
+                "",
+                "Carlos Bardem"
+            ]
+        }
+    },
+    "6 CEL06": {
+        "doc_name": "6 CEL06",
+        "sentence": "In this musical , Madonna played the role of the First Lady .",
+        "entities": {
+            "starts": [
+                18,
+                49
+            ],
+            "ends": [
+                25,
+                59
+            ],
+            "entity_mentions": [
+                "Madonna",
+                "First Lady"
+            ],
+            "entity_names": [
+                "Madonna_(entertainer)",
+                "First_Lady_of_Argentina"
+            ],
+            "predict_entity_names": [
+                "Madonna",
+                "First Lady of the United States"
+            ]
+        }
+    },
+    "7 CEL07": {
+        "doc_name": "7 CEL07",
+        "sentence": "Angelina , her father Jon , and her partner Brad never played together in the same movie .",
+        "entities": {
+            "starts": [
+                0,
+                22,
+                44
+            ],
+            "ends": [
+                8,
+                25,
+                48
+            ],
+            "entity_mentions": [
+                "Angelina",
+                "Jon",
+                "Brad"
+            ],
+            "entity_names": [
+                "Angelina_Jolie",
+                "Jon_Voight",
+                "Brad_Pitt"
+            ],
+            "predict_entity_names": [
+                "",
+                "Jon Cryer",
+                "Brad Pitt"
+            ]
+        }
+    },
+    "8 CEL08": {
+        "doc_name": "8 CEL08",
+        "sentence": "Heidi and her husband Seal live in Vegas .",
+        "entities": {
+            "starts": [
+                0,
+                22,
+                35
+            ],
+            "ends": [
+                5,
+                26,
+                40
+            ],
+            "entity_mentions": [
+                "Heidi",
+                "Seal",
+                "Vegas"
+            ],
+            "entity_names": [
+                "Heidi_Klum",
+                "Seal_(musician)",
+                "Las_Vegas,_Nevada"
+            ],
+            "predict_entity_names": [
+                "Heidi Montag",
+                "",
+                "Las Vegas"
+            ]
+        }
+    },
+    "9 CEL09": {
+        "doc_name": "9 CEL09",
+        "sentence": "Paris and Kim are both wealthy It Girls who had sex tapes on the Internet .",
+        "entities": {
+            "starts": [
+                0,
+                10
+            ],
+            "ends": [
+                5,
+                13
+            ],
+            "entity_mentions": [
+                "Paris",
+                "Kim"
+            ],
+            "entity_names": [
+                "Paris_Hilton",
+                "Kim_Kardashian"
+            ],
+            "predict_entity_names": [
+                "Paris Hilton",
+                "Kim Chiu"
+            ]
+        }
+    },
+    "10 CEL10": {
+        "doc_name": "10 CEL10",
+        "sentence": "Justin , Stefani , and Kate are among the most popular people on both MTV and Twitter .",
+        "entities": {
+            "starts": [
+                0,
+                9,
+                23,
+                70,
+                78
+            ],
+            "ends": [
+                6,
+                16,
+                27,
+                73,
+                85
+            ],
+            "entity_mentions": [
+                "Justin",
+                "Stefani",
+                "Kate",
+                "MTV",
+                "Twitter"
+            ],
+            "entity_names": [
+                "Justin_Bieber",
+                "Lady_gaga",
+                "Kate_Perry",
+                "MTV",
+                "Twitter"
+            ],
+            "predict_entity_names": [
+                "Justin Bieber",
+                "Gwen Stefani",
+                "Kate Taylor",
+                "MTV",
+                "Twitter"
+            ]
+        }
+    },
+    "11 MUS01": {
+        "doc_name": "11 MUS01",
+        "sentence": "Dylan performed Hurricane about the black fighter Carter , from his album Desire .",
+        "entities": {
+            "starts": [
+                0,
+                16,
+                50,
+                74
+            ],
+            "ends": [
+                5,
+                25,
+                56,
+                80
+            ],
+            "entity_mentions": [
+                "Dylan",
+                "Hurricane",
+                "Carter",
+                "Desire"
+            ],
+            "entity_names": [
+                "Bob_Dylan",
+                "Hurricane_(song)",
+                "Rubin_Carter",
+                "Desire_(Bob_Dylan_album)"
+            ],
+            "predict_entity_names": [
+                "Bob Dylan",
+                "",
+                "",
+                "Desire (Bob Dylan album)"
+            ]
+        }
+    },
+    "12 MUS02": {
+        "doc_name": "12 MUS02",
+        "sentence": "Desire contains a duet with Harris in the song Joey .",
+        "entities": {
+            "starts": [
+                0,
+                28,
+                47
+            ],
+            "ends": [
+                6,
+                34,
+                51
+            ],
+            "entity_mentions": [
+                "Desire",
+                "Harris",
+                "Joey"
+            ],
+            "entity_names": [
+                "Desire_(Bob_Dylan_album)",
+                "Emmylou_Harris",
+                "Joey_(Bob_Dylan_song)"
+            ],
+            "predict_entity_names": [
+                "",
+                "Harris (rapper)",
+                "Joey (Concrete Blonde song)"
+            ]
+        }
+    },
+    "13 MUS03": {
+        "doc_name": "13 MUS03",
+        "sentence": "Three of the greatest guitarists started their career in a single band : Clapton , Beck , and Page .",
+        "entities": {
+            "starts": [
+                73,
+                83,
+                94
+            ],
+            "ends": [
+                80,
+                87,
+                98
+            ],
+            "entity_mentions": [
+                "Clapton",
+                "Beck",
+                "Page"
+            ],
+            "entity_names": [
+                "Eric_Clapton",
+                "Jeff_Beck",
+                "Jimmy_Page"
+            ],
+            "predict_entity_names": [
+                "Eric Clapton",
+                "Beck",
+                "Jimmy Page"
+            ]
+        }
+    },
+    "14 MUS04": {
+        "doc_name": "14 MUS04",
+        "sentence": "Allen founded the EMP in Seattle , which featured exhibitions about Hendrix and Dylan , but also about various science fiction movies .",
+        "entities": {
+            "starts": [
+                0,
+                18,
+                25,
+                68,
+                80
+            ],
+            "ends": [
+                5,
+                21,
+                32,
+                75,
+                85
+            ],
+            "entity_mentions": [
+                "Allen",
+                "EMP",
+                "Seattle",
+                "Hendrix",
+                "Dylan"
+            ],
+            "entity_names": [
+                "Paul_Allen",
+                "EMP_Museum",
+                "Seattle",
+                "Jimi_Hendrix",
+                "Bob_Dylan"
+            ],
+            "predict_entity_names": [
+                "",
+                "Museum of Pop Culture",
+                "Seattle",
+                "Jimi Hendrix",
+                "Bob Dylan"
+            ]
+        }
+    },
+    "15 MUS05": {
+        "doc_name": "15 MUS05",
+        "sentence": "Despite featuring some of the most promininent musicians of their decade --- like Sinatra , Dylan , Joel , and Santana --- Columbia was aquired by Sony in the 1980s .",
+        "entities": {
+            "starts": [
+                82,
+                92,
+                100,
+                111,
+                123,
+                147
+            ],
+            "ends": [
+                89,
+                97,
+                104,
+                118,
+                131,
+                151
+            ],
+            "entity_mentions": [
+                "Sinatra",
+                "Dylan",
+                "Joel",
+                "Santana",
+                "Columbia",
+                "Sony"
+            ],
+            "entity_names": [
+                "Frank_Sinatra",
+                "Bob_Dylan",
+                "Billy_Joel",
+                "Carlos_Santana",
+                "Columbia_Records",
+                "Sony_Music_Entertainment"
+            ],
+            "predict_entity_names": [
+                "Frank Sinatra",
+                "Bob Dylan",
+                "Billy Joel",
+                "Santana (band)",
+                "Columbia Records",
+                "Sony"
+            ]
+        }
+    },
+    "16 MUS06": {
+        "doc_name": "16 MUS06",
+        "sentence": "After unsuccessful years , aging country star Cash made a grandiose comeback with his American Recordings , recorded at his home with the help of Rubin .",
+        "entities": {
+            "starts": [
+                46,
+                86,
+                146
+            ],
+            "ends": [
+                50,
+                105,
+                151
+            ],
+            "entity_mentions": [
+                "Cash",
+                "American Recordings",
+                "Rubin"
+            ],
+            "entity_names": [
+                "Johnny_Cash",
+                "American_Recordings_(album)",
+                "Rick_Rubin"
+            ],
+            "predict_entity_names": [
+                "Johnny Cash",
+                "American Recordings (record label)",
+                "Rick Rubin"
+            ]
+        }
+    },
+    "17 MUS07": {
+        "doc_name": "17 MUS07",
+        "sentence": "The group formed by Homme , Grohl , and Jones was supposed to be named Caligula , but the name was already taken.",
+        "entities": {
+            "starts": [
+                20,
+                28,
+                40
+            ],
+            "ends": [
+                25,
+                33,
+                45
+            ],
+            "entity_mentions": [
+                "Homme",
+                "Grohl",
+                "Jones"
+            ],
+            "entity_names": [
+                "Josh_Homme",
+                "Dave_Grohl",
+                "John_Paul_Jones_(musician)"
+            ],
+            "predict_entity_names": [
+                "",
+                "Dave Grohl",
+                ""
+            ]
+        }
+    },
+    "18 MUS08": {
+        "doc_name": "18 MUS08",
+        "sentence": "Jobs and Baez dated in the late 1970s , and she performed at his Stanford memorial .",
+        "entities": {
+            "starts": [
+                0,
+                9,
+                65
+            ],
+            "ends": [
+                4,
+                13,
+                73
+            ],
+            "entity_mentions": [
+                "Jobs",
+                "Baez",
+                "Stanford"
+            ],
+            "entity_names": [
+                "Steve_Jobs",
+                "Joan_Baez",
+                "Stanford_University"
+            ],
+            "predict_entity_names": [
+                "Steve Jobs",
+                "Joan Baez",
+                "Stanford University"
+            ]
+        }
+    },
+    "19 MUS09": {
+        "doc_name": "19 MUS09",
+        "sentence": "The Isle of Wight festival in 1970 was the biggest at its time , surpassing Woodstock with acts like Davis , Chicago , and Mitchell .",
+        "entities": {
+            "starts": [
+                4,
+                76,
+                101,
+                109,
+                123
+            ],
+            "ends": [
+                26,
+                85,
+                106,
+                116,
+                131
+            ],
+            "entity_mentions": [
+                "Isle of Wight festival",
+                "Woodstock",
+                "Davis",
+                "Chicago",
+                "Mitchell"
+            ],
+            "entity_names": [
+                "Isle_of_wight_festival",
+                "Woodstock_Festival",
+                "Miles_davis",
+                "Chicago_(band)",
+                "Joni_Mitchell"
+            ],
+            "predict_entity_names": [
+                "Isle of Wight Festival",
+                "Woodstock",
+                "Miles Davis",
+                "Chicago (band)",
+                ""
+            ]
+        }
+    },
+    "20 MUS10": {
+        "doc_name": "20 MUS10",
+        "sentence": "Eric preferred to play Blues instead of Rock , so he joined Mayall 's band .",
+        "entities": {
+            "starts": [
+                0,
+                23,
+                40,
+                60
+            ],
+            "ends": [
+                4,
+                28,
+                44,
+                66
+            ],
+            "entity_mentions": [
+                "Eric",
+                "Blues",
+                "Rock",
+                "Mayall"
+            ],
+            "entity_names": [
+                "Eric_Clapton",
+                "Blues",
+                "Rock_music",
+                "John_Mayall"
+            ],
+            "predict_entity_names": [
+                "Eric Clapton",
+                "Blues",
+                "Rock music",
+                "John Mayall"
+            ]
+        }
+    },
+    "21 BUS01": {
+        "doc_name": "21 BUS01",
+        "sentence": "After the death of Steve , the former CEO of Apple , his commencement speech at Stanford was watched thousands of times .",
+        "entities": {
+            "starts": [
+                19,
+                45,
+                80
+            ],
+            "ends": [
+                24,
+                50,
+                88
+            ],
+            "entity_mentions": [
+                "Steve",
+                "Apple",
+                "Stanford"
+            ],
+            "entity_names": [
+                "Steve_Jobs",
+                "Apple_Inc.",
+                "Stanford_University"
+            ],
+            "predict_entity_names": [
+                "Steve Irwin",
+                "Apple Inc.",
+                "Stanford University"
+            ]
+        }
+    },
+    "22 BUS02": {
+        "doc_name": "22 BUS02",
+        "sentence": "In 1980 , Steve dropped out of Stanford to join Microsoft , the company behind the Windows operating system .",
+        "entities": {
+            "starts": [
+                10,
+                31,
+                48,
+                83
+            ],
+            "ends": [
+                15,
+                39,
+                57,
+                90
+            ],
+            "entity_mentions": [
+                "Steve",
+                "Stanford",
+                "Microsoft",
+                "Windows"
+            ],
+            "entity_names": [
+                "Steve_Ballmer",
+                "Stanford_University",
+                "Microsoft",
+                "Microsoft_Windows"
+            ],
+            "predict_entity_names": [
+                "",
+                "Stanford University",
+                "Microsoft",
+                "Microsoft Windows"
+            ]
+        }
+    },
+    "23 BUS03": {
+        "doc_name": "23 BUS03",
+        "sentence": "Cairo was the code name for a project at Microsoft from 1991 to 1996 . Its charter was to build technologies for a next generation operating system that would fulfill the vision of Bill .",
+        "entities": {
+            "starts": [
+                0,
+                41,
+                181
+            ],
+            "ends": [
+                5,
+                50,
+                185
+            ],
+            "entity_mentions": [
+                "Cairo",
+                "Microsoft",
+                "Bill"
+            ],
+            "entity_names": [
+                "Cairo_(operating_system)",
+                "Microsoft",
+                "Bill_Gates"
+            ],
+            "predict_entity_names": [
+                "Cairo (operating system)",
+                "Microsoft",
+                "Bill Gates"
+            ]
+        }
+    },
+    "24 BUS04": {
+        "doc_name": "24 BUS04",
+        "sentence": "Steve , Bill , Sergey , and Larry have drawn a great deal of admiration these days for their pioneering successes that changed the world we live in .",
+        "entities": {
+            "starts": [
+                0,
+                8,
+                15,
+                28
+            ],
+            "ends": [
+                5,
+                12,
+                21,
+                33
+            ],
+            "entity_mentions": [
+                "Steve",
+                "Bill",
+                "Sergey",
+                "Larry"
+            ],
+            "entity_names": [
+                "Steve_Jobs",
+                "Bill_Gates",
+                "Sergey_Brin",
+                "Larry_Page"
+            ],
+            "predict_entity_names": [
+                "",
+                "",
+                "Sergey Brin",
+                "Larry Page"
+            ]
+        }
+    },
+    "25 BUS05": {
+        "doc_name": "25 BUS05",
+        "sentence": "Karl and Theo made their extreme fortunes selling low-price groceries .",
+        "entities": {
+            "starts": [
+                0,
+                9
+            ],
+            "ends": [
+                4,
+                13
+            ],
+            "entity_mentions": [
+                "Karl",
+                "Theo"
+            ],
+            "entity_names": [
+                "Karl_Albrecht",
+                "Theo_Albrecht"
+            ],
+            "predict_entity_names": [
+                "Karl Albrecht",
+                ""
+            ]
+        }
+    },
+    "26 BUS06": {
+        "doc_name": "26 BUS06",
+        "sentence": "While Apple is an electronics company , Mango is a clothing one and Orange is a communication one .",
+        "entities": {
+            "starts": [
+                6,
+                40,
+                68
+            ],
+            "ends": [
+                11,
+                45,
+                74
+            ],
+            "entity_mentions": [
+                "Apple",
+                "Mango",
+                "Orange"
+            ],
+            "entity_names": [
+                "Apple_Inc.",
+                "Mango_(clothing)",
+                "Orange_(telecommunications)"
+            ],
+            "predict_entity_names": [
+                "Apple Inc.",
+                "Mango (retailer)",
+                "Orange S.A."
+            ]
+        }
+    },
+    "27 BUS07": {
+        "doc_name": "27 BUS07",
+        "sentence": "Sam , the co-founder of Equity International , was given the nickname of \" the grave dancer \" because of his ability to buy businesses that others thought were dead .",
+        "entities": {
+            "starts": [
+                0,
+                24
+            ],
+            "ends": [
+                3,
+                44
+            ],
+            "entity_mentions": [
+                "Sam",
+                "Equity International"
+            ],
+            "entity_names": [
+                "Sam_Zell",
+                "Equity_International"
+            ],
+            "predict_entity_names": [
+                "Sam Maceo",
+                "Equity International"
+            ]
+        }
+    },
+    "28 BUS08": {
+        "doc_name": "28 BUS08",
+        "sentence": "Pixar produced Cars , and John directed it .",
+        "entities": {
+            "starts": [
+                0,
+                15,
+                26
+            ],
+            "ends": [
+                5,
+                19,
+                30
+            ],
+            "entity_mentions": [
+                "Pixar",
+                "Cars",
+                "John"
+            ],
+            "entity_names": [
+                "Pixar",
+                "Cars_(film)",
+                "John_Lasseter"
+            ],
+            "predict_entity_names": [
+                "Pixar",
+                "Cars (film)",
+                "John Lennon"
+            ]
+        }
+    },
+    "29 BUS09": {
+        "doc_name": "29 BUS09",
+        "sentence": "Mars , Galaxy , and Bounty are all chocolate .",
+        "entities": {
+            "starts": [
+                0,
+                7,
+                20
+            ],
+            "ends": [
+                4,
+                13,
+                26
+            ],
+            "entity_mentions": [
+                "Mars",
+                "Galaxy",
+                "Bounty"
+            ],
+            "entity_names": [
+                "Mars_bar",
+                "Galaxy_(chocolate)",
+                "Bounty_(chocolate_bar)"
+            ],
+            "predict_entity_names": [
+                "Mars (chocolate bar)",
+                "",
+                ""
+            ]
+        }
+    },
+    "30 BUS10": {
+        "doc_name": "30 BUS10",
+        "sentence": "Bosch and Sharp are both home appliances producing companies .",
+        "entities": {
+            "starts": [
+                0,
+                10
+            ],
+            "ends": [
+                5,
+                15
+            ],
+            "entity_mentions": [
+                "Bosch",
+                "Sharp"
+            ],
+            "entity_names": [
+                "Robert_Bosch_GmbH",
+                "Sharp_Corporation"
+            ],
+            "predict_entity_names": [
+                "Robert Bosch GmbH",
+                "Sharp Corporation"
+            ]
+        }
+    },
+    "31 SPO01": {
+        "doc_name": "31 SPO01",
+        "sentence": "City won 3:2 against the Spurs .",
+        "entities": {
+            "starts": [
+                0,
+                25
+            ],
+            "ends": [
+                4,
+                30
+            ],
+            "entity_mentions": [
+                "City",
+                "Spurs"
+            ],
+            "entity_names": [
+                "Manchester_City_F.C.",
+                "Tottenham_Hotspur_F.C."
+            ],
+            "predict_entity_names": [
+                "",
+                "San Antonio Spurs"
+            ]
+        }
+    },
+    "32 SPO02": {
+        "doc_name": "32 SPO02",
+        "sentence": "The Gunners now play their home matches at the Emirates .",
+        "entities": {
+            "starts": [
+                4,
+                47
+            ],
+            "ends": [
+                11,
+                55
+            ],
+            "entity_mentions": [
+                "Gunners",
+                "Emirates"
+            ],
+            "entity_names": [
+                "Arsenal_F.C.",
+                "Emirates_Stadium"
+            ],
+            "predict_entity_names": [
+                "Arsenal F.C.",
+                ""
+            ]
+        }
+    },
+    "33 SPO03": {
+        "doc_name": "33 SPO03",
+        "sentence": "Atletico has beaten its archrival Real .",
+        "entities": {
+            "starts": [
+                0,
+                34
+            ],
+            "ends": [
+                8,
+                38
+            ],
+            "entity_mentions": [
+                "Atletico",
+                "Real"
+            ],
+            "entity_names": [
+                "Atl\u00e9tico_Madrid",
+                "Real_Madrid_C.F."
+            ],
+            "predict_entity_names": [
+                "Clube Atl\u00e9tico Mineiro",
+                "Real Madrid CF"
+            ]
+        }
+    },
+    "34 SPO04": {
+        "doc_name": "34 SPO04",
+        "sentence": "M\u00fcller scored a hattrick against England .",
+        "entities": {
+            "starts": [
+                0,
+                33
+            ],
+            "ends": [
+                6,
+                40
+            ],
+            "entity_mentions": [
+                "M\u00fcller",
+                "England"
+            ],
+            "entity_names": [
+                "Thomas_M\u00fcller_(footballer)",
+                "England_national_football_team"
+            ],
+            "predict_entity_names": [
+                "",
+                "England cricket team"
+            ]
+        }
+    },
+    "35 SPO05": {
+        "doc_name": "35 SPO05",
+        "sentence": "Thomas and Mario are strikers playing in Munich .",
+        "entities": {
+            "starts": [
+                0,
+                11,
+                41
+            ],
+            "ends": [
+                6,
+                16,
+                47
+            ],
+            "entity_mentions": [
+                "Thomas",
+                "Mario",
+                "Munich"
+            ],
+            "entity_names": [
+                "Thomas_M\u00fcller_(footballer)",
+                "Mario_Gomez",
+                "FC_Bayern_Munich"
+            ],
+            "predict_entity_names": [
+                "",
+                "Mario Li\u010dka",
+                "Munich"
+            ]
+        }
+    },
+    "36 SPO06": {
+        "doc_name": "36 SPO06",
+        "sentence": "Haug congratulated Red Bull .",
+        "entities": {
+            "starts": [
+                0,
+                19
+            ],
+            "ends": [
+                4,
+                27
+            ],
+            "entity_mentions": [
+                "Haug",
+                "Red Bull"
+            ],
+            "entity_names": [
+                "Norbert_Haug",
+                "FC_Red_Bull_Salzburg"
+            ],
+            "predict_entity_names": [
+                "",
+                "Red Bull"
+            ]
+        }
+    },
+    "37 SPO07": {
+        "doc_name": "37 SPO07",
+        "sentence": "V\u00f6ller will never forget the match against Oranje in San Siro .",
+        "entities": {
+            "starts": [
+                0,
+                43,
+                53
+            ],
+            "ends": [
+                6,
+                49,
+                61
+            ],
+            "entity_mentions": [
+                "V\u00f6ller",
+                "Oranje",
+                "San Siro"
+            ],
+            "entity_names": [
+                "Rudi_V\u00f6ller",
+                "Netherlands_national_football_team",
+                "San_Siro"
+            ],
+            "predict_entity_names": [
+                "Rudi V\u00f6ller",
+                "Netherlands national football team",
+                "San Siro"
+            ]
+        }
+    },
+    "38 SPO08": {
+        "doc_name": "38 SPO08",
+        "sentence": "Landgraf and Meijer played at the Tivoli .",
+        "entities": {
+            "starts": [
+                0,
+                13,
+                34
+            ],
+            "ends": [
+                8,
+                19,
+                40
+            ],
+            "entity_mentions": [
+                "Landgraf",
+                "Meijer",
+                "Tivoli"
+            ],
+            "entity_names": [
+                "Willi_Landgraf",
+                "Erik_Meijer_(footballer)",
+                "New_Tivoli"
+            ],
+            "predict_entity_names": [
+                "Willi Landgraf",
+                "Henny Meijer",
+                ""
+            ]
+        }
+    },
+    "39 SPO09": {
+        "doc_name": "39 SPO09",
+        "sentence": "Yabo plays for Aachen .",
+        "entities": {
+            "starts": [
+                0,
+                15
+            ],
+            "ends": [
+                4,
+                21
+            ],
+            "entity_mentions": [
+                "Yabo",
+                "Aachen"
+            ],
+            "entity_names": [
+                "Reinhold_Yabo",
+                "Alemannia_Aachen"
+            ],
+            "predict_entity_names": [
+                "Reinhold Yabo",
+                "Aachen"
+            ]
+        }
+    },
+    "40 SPO10": {
+        "doc_name": "40 SPO10",
+        "sentence": "Hertha won against Dortmund .",
+        "entities": {
+            "starts": [
+                0,
+                19
+            ],
+            "ends": [
+                6,
+                27
+            ],
+            "entity_mentions": [
+                "Hertha",
+                "Dortmund"
+            ],
+            "entity_names": [
+                "Hertha_BSC",
+                "Borussia_Dortmund"
+            ],
+            "predict_entity_names": [
+                "Hertha BSC",
+                ""
+            ]
+        }
+    },
+    "41 POL01": {
+        "doc_name": "41 POL01",
+        "sentence": "Nixon resigned after Watergate despite his success in the Ping-Pong Diplomacy with China .",
+        "entities": {
+            "starts": [
+                0,
+                21,
+                58,
+                83
+            ],
+            "ends": [
+                5,
+                30,
+                77,
+                88
+            ],
+            "entity_mentions": [
+                "Nixon",
+                "Watergate",
+                "Ping-Pong Diplomacy",
+                "China"
+            ],
+            "entity_names": [
+                "Richard_Nixon",
+                "Watergate_scandal",
+                "Ping_Pong_Diplomacy",
+                "People's_Republic_of_China"
+            ],
+            "predict_entity_names": [
+                "Richard Nixon",
+                "Watergate scandal",
+                "Ping-pong diplomacy",
+                "China"
+            ]
+        }
+    },
+    "42 POL02": {
+        "doc_name": "42 POL02",
+        "sentence": "The Sun and The Times reported that Greece will have to leave the Euro soon .",
+        "entities": {
+            "starts": [
+                0,
+                12,
+                36,
+                66
+            ],
+            "ends": [
+                7,
+                21,
+                42,
+                70
+            ],
+            "entity_mentions": [
+                "The Sun",
+                "The Times",
+                "Greece",
+                "Euro"
+            ],
+            "entity_names": [
+                "The_Sun_(United_Kingdom)",
+                "The_Times",
+                "Greece",
+                "Eurozone"
+            ],
+            "predict_entity_names": [
+                "The Sun (United Kingdom)",
+                "The Times",
+                "Greece",
+                "Euro"
+            ]
+        }
+    },
+    "43 POL03": {
+        "doc_name": "43 POL03",
+        "sentence": "The Enola Gay bombed Hiroshima at the end of Second World War .\ufeff",
+        "entities": {
+            "starts": [
+                4,
+                21,
+                45
+            ],
+            "ends": [
+                13,
+                30,
+                61
+            ],
+            "entity_mentions": [
+                "Enola Gay",
+                "Hiroshima",
+                "Second World War"
+            ],
+            "entity_names": [
+                "Enola_Gay",
+                "Hiroshima",
+                "World_War_II"
+            ],
+            "predict_entity_names": [
+                "Enola Gay",
+                "Hiroshima",
+                "World War II"
+            ]
+        }
+    },
+    "44 POL04": {
+        "doc_name": "44 POL04",
+        "sentence": "The RAF was a terrorist group led by Baader and Meinhof that killed Schleyer .\ufeff",
+        "entities": {
+            "starts": [
+                4,
+                37,
+                48,
+                68
+            ],
+            "ends": [
+                7,
+                43,
+                55,
+                76
+            ],
+            "entity_mentions": [
+                "RAF",
+                "Baader",
+                "Meinhof",
+                "Schleyer"
+            ],
+            "entity_names": [
+                "Red_Army_Faction",
+                "Andreas_Baader",
+                "Ulrike_Meinhof",
+                "Hanns-Martin_Schleyer"
+            ],
+            "predict_entity_names": [
+                "Royal Air Force",
+                "Andreas Baader",
+                "Ulrike Meinhof",
+                "Hanns Martin Schleyer"
+            ]
+        }
+    },
+    "45 POL05": {
+        "doc_name": "45 POL05",
+        "sentence": "Onassis married Kennedy on October 20 , 1968 .",
+        "entities": {
+            "starts": [
+                0,
+                16
+            ],
+            "ends": [
+                7,
+                23
+            ],
+            "entity_mentions": [
+                "Onassis",
+                "Kennedy"
+            ],
+            "entity_names": [
+                "Jacqueline_Kennedy_Onassis",
+                "John_F._Kennedy"
+            ],
+            "predict_entity_names": [
+                "Jacqueline Kennedy Onassis",
+                ""
+            ]
+        }
+    },
+    "46 POL06": {
+        "doc_name": "46 POL06",
+        "sentence": "Armstrong was the first man on the Moon .",
+        "entities": {
+            "starts": [
+                0,
+                35
+            ],
+            "ends": [
+                9,
+                39
+            ],
+            "entity_mentions": [
+                "Armstrong",
+                "Moon"
+            ],
+            "entity_names": [
+                "Neil_Armstrong",
+                "Moon"
+            ],
+            "predict_entity_names": [
+                "Neil Armstrong",
+                "Moon"
+            ]
+        }
+    },
+    "47 POL07": {
+        "doc_name": "47 POL07",
+        "sentence": "Erich was born in Neunkirchen .",
+        "entities": {
+            "starts": [
+                0,
+                18
+            ],
+            "ends": [
+                5,
+                29
+            ],
+            "entity_mentions": [
+                "Erich",
+                "Neunkirchen"
+            ],
+            "entity_names": [
+                "Erich_Honecker",
+                "Neunkirchen,_Saarland"
+            ],
+            "predict_entity_names": [
+                "",
+                "Neunkirchen, Saarland"
+            ]
+        }
+    },
+    "48 POL08": {
+        "doc_name": "48 POL08",
+        "sentence": "Macedonia is a province of Greece .",
+        "entities": {
+            "starts": [
+                0,
+                27
+            ],
+            "ends": [
+                9,
+                33
+            ],
+            "entity_mentions": [
+                "Macedonia",
+                "Greece"
+            ],
+            "entity_names": [
+                "Macedonia_(Greece)",
+                "Greece"
+            ],
+            "predict_entity_names": [
+                "Macedonia (Greece)",
+                "Greece"
+            ]
+        }
+    },
+    "49 POL09": {
+        "doc_name": "49 POL09",
+        "sentence": "Obama welcomed Merkel upon her arrival at JFK .",
+        "entities": {
+            "starts": [
+                0,
+                15,
+                42
+            ],
+            "ends": [
+                5,
+                21,
+                45
+            ],
+            "entity_mentions": [
+                "Obama",
+                "Merkel",
+                "JFK"
+            ],
+            "entity_names": [
+                "Barack_Obama",
+                "Angela_Merkel",
+                "John_F._Kennedy_International_Airport"
+            ],
+            "predict_entity_names": [
+                "Barack Obama",
+                "Angela Merkel",
+                "John F. Kennedy International Airport"
+            ]
+        }
+    },
+    "50 POL10": {
+        "doc_name": "50 POL10",
+        "sentence": "Kennedy was also an active politician , yet he is most known for his writings , some of which he published under the name of Mark Littleton .",
+        "entities": {
+            "starts": [
+                0
+            ],
+            "ends": [
+                7
+            ],
+            "entity_mentions": [
+                "Kennedy"
+            ],
+            "entity_names": [
+                "John_P._Kennedy"
+            ],
+            "predict_entity_names": [
+                ""
+            ]
+        }
+    }
+}
