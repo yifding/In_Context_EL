@@ -1,0 +1,9 @@
+{
+    "precision": 0.896602658788774,
+    "recall": 0.8349381017881705,
+    "f1": 0.8646723646723647,
+    "gold_recall": 0.9408528198074277,
+    "num_true_positive": 607,
+    "num_pred_instance": 677,
+    "num_gt_instance": 727
+}
