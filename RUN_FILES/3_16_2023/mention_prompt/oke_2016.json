@@ -1,0 +1,2665 @@
+{
+    "1": {
+        "sentence": "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory.",
+        "entities": {
+            "starts": [
+                19,
+                68,
+                110,
+                121,
+                142,
+                146,
+                162,
+                176
+            ],
+            "ends": [
+                38,
+                76,
+                119,
+                136,
+                145,
+                153,
+                168,
+                183
+            ],
+            "entity_mentions": [
+                "Sport-Club Juventus",
+                "students",
+                "president",
+                "Eugenio Canfari",
+                "his",
+                "brother",
+                "author",
+                "company"
+            ],
+            "entity_names": [
+                "Juventus_F.C.",
+                "Student",
+                "President",
+                "Eugenio_Canfari",
+                "Eugenio_Canfari",
+                "Brother",
+                "Author",
+                "Company"
+            ],
+            "prompts": [
+                "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's hi \n What does Sport-Club Juventus in this sentence referring to?",
+                "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does students in this sentence referring to?",
+                "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does president in this sentence referring to?",
+                "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does Eugenio Canfari in this sentence referring to?",
+                "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does his in this sentence referring to?",
+                "Founded in 1897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does brother in this sentence referring to?",
+                "897 as Sport-Club Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does author in this sentence referring to?",
+                "lub Juventus by a group of young Torinese students, among them, who was their first president, Eugenio Canfari, and his brother Enrico, author of the company's historical memory. \n What does company in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nSport-Club Juventus refers to a sports club founded in 1897 by a group of young Torinese students.",
+                "\n\nThe word \"students\" in this sentence refers to young people who were studying in Torino (Turin), Italy at the time when Sport-Club Juventus was founded in 1897.",
+                "\n\nThe word \"president\" in this sentence refers to the first president of Sport-Club Juventus, Eugenio Canfari.",
+                "\n\nEugenio Canfari is referring to the first president of Sport-Club Juventus, who helped found the club in 1897 along with his brother Enrico.",
+                "\n\nThe word \"his\" in this sentence is referring to Enrico Canfari.",
+                "\n\nThe word \"brother\" in this sentence is referring to Enrico, who was the brother of Eugenio Canfari, the first president of Sport-Club Juventus.",
+                "\n\nThe author in this sentence is referring to Enrico Canfari.",
+                "\n\nThe term \"company\" in this sentence is referring to Juventus, a football club founded by a group of young students in Turin."
+            ]
+        }
+    },
+    "2": {
+        "sentence": "They have been managed by the industrial Agnelli family since 1923, which constitutes the oldest sporting partnership in Italy, thus making Juventus the first professional club in the country.",
+        "entities": {
+            "starts": [
+                41,
+                121,
+                140,
+                184
+            ],
+            "ends": [
+                55,
+                126,
+                148,
+                191
+            ],
+            "entity_mentions": [
+                "Agnelli family",
+                "Italy",
+                "Juventus",
+                "country"
+            ],
+            "entity_names": [
+                "The_Agnelli_family",
+                "Italy",
+                "Juventus_F.C.",
+                "Country"
+            ],
+            "prompts": [
+                "They have been managed by the industrial Agnelli family since 1923, which constitutes the oldest sporting partnership in Italy, thus making Juventus the first professional club in the country. \n What does Agnelli family in this sentence referring to?",
+                "They have been managed by the industrial Agnelli family since 1923, which constitutes the oldest sporting partnership in Italy, thus making Juventus the first professional club in the country. \n What does Italy in this sentence referring to?",
+                "They have been managed by the industrial Agnelli family since 1923, which constitutes the oldest sporting partnership in Italy, thus making Juventus the first professional club in the country. \n What does Juventus in this sentence referring to?",
+                "strial Agnelli family since 1923, which constitutes the oldest sporting partnership in Italy, thus making Juventus the first professional club in the country. \n What does country in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe Agnelli family refers to the Italian industrial family that has been managing Juventus Football Club since 1923.",
+                "\n\nIn this sentence, Italy is referring to the country of Italy.",
+                "\n\nJuventus refers to a professional football (soccer) club based in Turin, Italy.",
+                "\n\nThe sentence does not specify which country is being referred to. However, based on the context of the sentence and the fact that Juventus is an Italian football club, it can be inferred that \"country\" refers to Italy."
+            ]
+        }
+    },
+    "3": {
+        "sentence": "Gianni Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe.",
+        "entities": {
+            "starts": [
+                0,
+                34,
+                70,
+                102,
+                113,
+                156
+            ],
+            "ends": [
+                14,
+                38,
+                77,
+                109,
+                118,
+                162
+            ],
+            "entity_mentions": [
+                "Gianni Agnelli",
+                "Fiat",
+                "company",
+                "company",
+                "Italy",
+                "Europe"
+            ],
+            "entity_names": [
+                "Gianni_Agnelli",
+                "Fiat_Automobiles",
+                "Company",
+                "Company",
+                "Italy",
+                "Europe"
+            ],
+            "prompts": [
+                "Gianni Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe. \n What does Gianni Agnelli in this sentence referring to?",
+                "Gianni Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe. \n What does Fiat in this sentence referring to?",
+                "Gianni Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe. \n What does company in this sentence referring to?",
+                "Gianni Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe. \n What does company in this sentence referring to?",
+                "Gianni Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe. \n What does Italy in this sentence referring to?",
+                " Agnelli became the head of Fiat from 1966 to 2003 and made the company into the most important company in Italy and one of the major car builders of Europe. \n What does Europe in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nGianni Agnelli refers to a person who became the head of Fiat and led the company from 1966 to 2003.",
+                "\n\nFiat is referring to the car manufacturing company, officially known as Fiat Chrysler Automobiles, founded in Turin, Italy in 1899.",
+                "\n\nThe company in this sentence is referring to Fiat, the car manufacturing company.",
+                "\n\nThe company refers to Fiat.",
+                "\n\nItaly refers to the country Italy.",
+                "\n\nEurope in this sentence refers to the continent consisting of various countries in the Western Hemisphere."
+            ]
+        }
+    },
+    "4": {
+        "sentence": "Fiat has a long history in United States. In 1908, the Fiat Automobile Co. was established in the country and a plant in Poughkeepsie, N.Y., began producing Fiats a year later, like the Fiat 60 HP and the Fiat 16-20 HP.",
+        "entities": {
+            "starts": [
+                0,
+                27,
+                55,
+                98,
+                121
+            ],
+            "ends": [
+                4,
+                40,
+                74,
+                105,
+                139
+            ],
+            "entity_mentions": [
+                "Fiat",
+                "United States",
+                "Fiat Automobile Co.",
+                "country",
+                "Poughkeepsie, N.Y."
+            ],
+            "entity_names": [
+                "Fiat_Automobiles",
+                "United_States",
+                "Fiat_Automobiles",
+                "Country",
+                "Poughkeepsie,_New_York"
+            ],
+            "prompts": [
+                "Fiat has a long history in United States. In 1908, the Fiat Automobile Co. was established in the country and a plant in Poughkeepsie, N.Y., began produci \n What does Fiat in this sentence referring to?",
+                "Fiat has a long history in United States. In 1908, the Fiat Automobile Co. was established in the country and a plant in Poughkeepsie, N.Y., began producing Fiats a year later, like the Fiat \n What does United States in this sentence referring to?",
+                "Fiat has a long history in United States. In 1908, the Fiat Automobile Co. was established in the country and a plant in Poughkeepsie, N.Y., began producing Fiats a year later, like the Fiat 60 HP and the Fiat 16-20 HP. \n What does Fiat Automobile Co. in this sentence referring to?",
+                "Fiat has a long history in United States. In 1908, the Fiat Automobile Co. was established in the country and a plant in Poughkeepsie, N.Y., began producing Fiats a year later, like the Fiat 60 HP and the Fiat 16-20 HP. \n What does country in this sentence referring to?",
+                "Fiat has a long history in United States. In 1908, the Fiat Automobile Co. was established in the country and a plant in Poughkeepsie, N.Y., began producing Fiats a year later, like the Fiat 60 HP and the Fiat 16-20 HP. \n What does Poughkeepsie, N.Y. in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nFiat refers to the Fiat Automobile Co.",
+                "\n\nThe United States refers to the country located in North America.",
+                "\n\nFiat Automobile Co. in this sentence is referring to a company established by Fiat in the United States.",
+                "\n\nThe country in this sentence is the United States.",
+                "\n\nPoughkeepsie, N.Y. is referring to the location of a plant that began producing Fiats in the United States in 1909."
+            ]
+        }
+    },
+    "5": {
+        "sentence": "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School of Science.",
+        "entities": {
+            "starts": [
+                0,
+                33,
+                45,
+                76,
+                103,
+                135,
+                156,
+                172,
+                213
+            ],
+            "ends": [
+                17,
+                44,
+                51,
+                82,
+                111,
+                148,
+                158,
+                204,
+                241
+            ],
+            "entity_mentions": [
+                "Marvin Lee Minsky",
+                "eye surgeon",
+                "father",
+                "mother",
+                "activist",
+                "New York City",
+                "he",
+                "Ethical Culture Fieldston School",
+                "Bronx High School of Science"
+            ],
+            "entity_names": [
+                "Marvin_Minsky",
+                "Surgeon",
+                "Father",
+                "Mother",
+                "Activism",
+                "New_York_City",
+                "Marvin_Minsky",
+                "Ethical_Culture_Fieldston_School",
+                "The_Bronx_High_School_of_Science"
+            ],
+            "prompts": [
+                "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended \n What does Marvin Lee Minsky in this sentence referring to?",
+                "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fields \n What does eye surgeon in this sentence referring to?",
+                "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston Sch \n What does father in this sentence referring to?",
+                "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School o \n What does mother in this sentence referring to?",
+                "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School of Science. \n What does activist in this sentence referring to?",
+                "Marvin Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School of Science. \n What does New York City in this sentence referring to?",
+                " Lee Minsky was born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School of Science. \n What does he in this sentence referring to?",
+                "born to an eye surgeon father, Henry, and to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School of Science. \n What does Ethical Culture Fieldston School in this sentence referring to?",
+                " to a Jewish mother, Fannie, who was an activist in Zionist affairs, in New York City, where he attended the Ethical Culture Fieldston School and the Bronx High School of Science. \n What does Bronx High School of Science in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nMarvin Lee Minsky is referring to a person, specifically to himself, as he is the subject of the sentence.",
+                "\n\nEye surgeon refers to a medical doctor who specializes in performing surgery on the eyes.",
+                "\n\nFather in this sentence is referring to Marvin Lee Minsky's dad, Henry, who was an eye surgeon.",
+                "\n\nMother refers to Marvin Lee Minsky's Jewish mother, Fannie.",
+                "\n\n\"Activist\" in this sentence refers to Fannie's involvement in promoting and advocating for Zionist causes or Jewish nationalism.",
+                "New York City refers to a city in the state of New York, USA.",
+                "\n\nThe pronoun \"he\" in this sentence refers to Lee Minsky.",
+                "\n\nEthical Culture Fieldston School is a school located in New York City that the person attended.",
+                "\n\nBronx High School of Science is a school in New York City that the person attended."
+            ]
+        }
+    },
+    "6": {
+        "sentence": "In the early 1970s, at the\u00a0MIT Artificial Intelligence Lab, Minsky and Papert started developing what came to be called the\u00a0Society of Mind\u00a0theory.",
+        "entities": {
+            "starts": [
+                27,
+                60,
+                71
+            ],
+            "ends": [
+                58,
+                66,
+                77
+            ],
+            "entity_mentions": [
+                "MIT Artificial Intelligence Lab",
+                "Minsky",
+                "Papert"
+            ],
+            "entity_names": [
+                "MIT_Computer_Science_and_Artificial_Intelligence_Laboratory",
+                "Marvin_Minsky",
+                "Seymour_Papert"
+            ],
+            "prompts": [
+                "In the early 1970s, at the\u00a0MIT Artificial Intelligence Lab, Minsky and Papert started developing what came to be called the\u00a0Society of Mind\u00a0theory. \n What does MIT Artificial Intelligence Lab in this sentence referring to?",
+                "In the early 1970s, at the\u00a0MIT Artificial Intelligence Lab, Minsky and Papert started developing what came to be called the\u00a0Society of Mind\u00a0theory. \n What does Minsky in this sentence referring to?",
+                "In the early 1970s, at the\u00a0MIT Artificial Intelligence Lab, Minsky and Papert started developing what came to be called the\u00a0Society of Mind\u00a0theory. \n What does Papert in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe MIT Artificial Intelligence Lab refers to a research laboratory at the Massachusetts Institute of Technology focused on the development and study of artificial intelligence.",
+                "\n\nMinsky is referring to himself and his colleague Papert.",
+                "\n\nPapert refers to Seymour Papert, who was a co-developer of the Society of Mind theory with Marvin Minsky at the MIT Artificial Intelligence Lab in the early 1970s."
+            ]
+        }
+    },
+    "7": {
+        "sentence": "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to a diversity of religious faiths during his upbringing.",
+        "entities": {
+            "starts": [
+                0,
+                28,
+                53,
+                61,
+                91,
+                122,
+                169,
+                188,
+                253
+            ],
+            "ends": [
+                12,
+                41,
+                59,
+                63,
+                98,
+                129,
+                171,
+                210,
+                256
+            ],
+            "entity_mentions": [
+                "Ray Kurzweil",
+                "New York City",
+                "Queens",
+                "He",
+                "parents",
+                "Austria",
+                "He",
+                "Unitarian Universalism",
+                "his"
+            ],
+            "entity_names": [
+                "Ray_Kurzweil",
+                "New_York_City",
+                "Queens",
+                "Ray_Kurzweil",
+                "Parent",
+                "Austria",
+                "Ray_Kurzweil",
+                "Unitarian_Universalism",
+                "Ray_Kurzweil"
+            ],
+            "prompts": [
+                "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World W \n What does Ray Kurzweil in this sentence referring to?",
+                "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Uni \n What does New York City in this sentence referring to?",
+                "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalis \n What does Queens in this sentence referring to?",
+                "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to \n What does He in this sentence referring to?",
+                "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to a diversity of religious faiths du \n What does parents in this sentence referring to?",
+                "Ray Kurzweil grew up in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to a diversity of religious faiths during his upbringing. \n What does Austria in this sentence referring to?",
+                "p in the New York City borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to a diversity of religious faiths during his upbringing. \n What does He in this sentence referring to?",
+                "ity borough of\u00a0Queens. He was born to\u00a0secular Jewish\u00a0parents who had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to a diversity of religious faiths during his upbringing. \n What does Unitarian Universalism in this sentence referring to?",
+                "had emigrated from\u00a0Austria\u00a0just before the onset of World War II. He was exposed via Unitarian Universalism\u00a0to a diversity of religious faiths during his upbringing. \n What does his in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\n\"World W\" is most likely referring to World War II, which would make sense in the context of the sentence as Kurzweil's parents emigrated just before the onset of the war.",
+                "\n\nThe sentence is referring to the borough of Queens within New York City.",
+                "\n\nQueens refers to a borough in New York City.",
+                "\n\n\"He\" in this sentence is referring to Ray Kurzweil.",
+                "\n\nThe word \"parents\" in this sentence refers to the parents of Ray Kurzweil.",
+                "\n\nThe sentence is referring to the country of Austria.",
+                "\n\n\"He\" in this sentence refers to the person mentioned in the previous sentence. In this case, it refers to the person who was born in Queens to secular Jewish parents.",
+                "\n\nUnitarian Universalism refers to a religious denomination that emphasizes the unity of all people, the worth and dignity of every person, and the use of reason and free inquiry in exploring spiritual questions.",
+                "\n\n\"His\" in this sentence refers to the person mentioned earlier, who emigrated from Austria just before the onset of World War II."
+            ]
+        }
+    },
+    "8": {
+        "sentence": "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell.",
+        "entities": {
+            "starts": [
+                9,
+                22,
+                53,
+                92,
+                99,
+                110,
+                118,
+                140,
+                160
+            ],
+            "ends": [
+                20,
+                30,
+                66,
+                95,
+                102,
+                112,
+                126,
+                156,
+                167
+            ],
+            "entity_mentions": [
+                "high school",
+                "Kurzweil",
+                "Marvin Minsky",
+                "him",
+                "MIT",
+                "he",
+                "Kurzweil",
+                "Frank Rosenblatt",
+                "Cornell"
+            ],
+            "entity_names": [
+                "High_school",
+                "Ray_Kurzweil",
+                "Marvin_Minsky",
+                "Marvin_Minsky",
+                "Massachusetts_Institute_of_Technology",
+                "Ray_Kurzweil",
+                "Ray_Kurzweil",
+                "Frank_Rosenblatt",
+                "Cornell_University"
+            ],
+            "prompts": [
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does high school in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does Kurzweil in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does Marvin Minsky in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does him in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does MIT in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does he in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does Kurzweil in this sentence referring to?",
+                "While in high school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does Frank Rosenblatt in this sentence referring to?",
+                "igh school, Kurzweil had corresponded with\u00a0Marvin Minsky\u00a0and was invited to visit him at MIT, which he did. Kurzweil also visited\u00a0Frank Rosenblatt\u00a0at Cornell. \n What does Cornell in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence is referring to the time period when Kurzweil was a student in high school.",
+                "\n\nKurzweil is referring to his own self, meaning he visited Marvin Minsky and Frank Rosenblatt during his high school years.",
+                "\n\nMarvin Minsky is referring to a person, who Kurzweil had corresponded with while in high school and later visited at MIT.",
+                "\n\nThe pronoun \"him\" in this sentence refers to Ray Kurzweil.",
+                "\n\nMIT refers to Massachusetts Institute of Technology, a prestigious research university located in Cambridge, Massachusetts.",
+                "\n\nKurzweil is referred to in this sentence.",
+                "\n\nKurzweil is referring to himself.",
+                "\n\nFrank Rosenblatt is being referred to as a person who was visited by Kurzweil while he was in high school.",
+                "\n\nCornell refers to Cornell University, a private Ivy League research university located in Ithaca, New York."
+            ]
+        }
+    },
+    "9": {
+        "sentence": "He obtained a B.S. in computer science and literature in 1970 at\u00a0MIT. He went to MIT to study with\u00a0Marvin Minsky. He took all of the computer programming courses (eight or nine) offered at MIT in the first year and a half.",
+        "entities": {
+            "starts": [
+                65,
+                81,
+                99,
+                189
+            ],
+            "ends": [
+                68,
+                84,
+                112,
+                192
+            ],
+            "entity_mentions": [
+                "MIT",
+                "MIT",
+                "Marvin Minsky",
+                "MIT"
+            ],
+            "entity_names": [
+                "Massachusetts_Institute_of_Technology",
+                "Massachusetts_Institute_of_Technology",
+                "Marvin_Minsky",
+                "Massachusetts_Institute_of_Technology"
+            ],
+            "prompts": [
+                "He obtained a B.S. in computer science and literature in 1970 at\u00a0MIT. He went to MIT to study with\u00a0Marvin Minsky. He took all of the computer programming courses (eight or nine) offered at MIT in the first year and a h \n What does MIT in this sentence referring to?",
+                "He obtained a B.S. in computer science and literature in 1970 at\u00a0MIT. He went to MIT to study with\u00a0Marvin Minsky. He took all of the computer programming courses (eight or nine) offered at MIT in the first year and a half. \n What does MIT in this sentence referring to?",
+                "He obtained a B.S. in computer science and literature in 1970 at\u00a0MIT. He went to MIT to study with\u00a0Marvin Minsky. He took all of the computer programming courses (eight or nine) offered at MIT in the first year and a half. \n What does Marvin Minsky in this sentence referring to?",
+                "and literature in 1970 at\u00a0MIT. He went to MIT to study with\u00a0Marvin Minsky. He took all of the computer programming courses (eight or nine) offered at MIT in the first year and a half. \n What does MIT in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nMIT refers to the Massachusetts Institute of Technology, a prestigious university in Cambridge, Massachusetts, known for its focus on science, engineering, and technology.",
+                "\n\nMIT refers to the Massachusetts Institute of Technology, a prestigious university located in Cambridge, Massachusetts, USA.",
+                "\n\nMarvin Minsky is a person being referred to in this sentence. He is likely a professor or researcher in the field of computer science.",
+                "\n\nMIT refers to the Massachusetts Institute of Technology, a prestigious university in Cambridge, Massachusetts, USA."
+            ]
+        }
+    },
+    "10": {
+        "sentence": "He graduated from high school at 16, then moved to the\u00a0University of Turin. Despite a strong interest for\u00a0mathematics\u00a0and\u00a0physics, he decided to study\u00a0medicine.",
+        "entities": {
+            "starts": [
+                18,
+                55
+            ],
+            "ends": [
+                29,
+                74
+            ],
+            "entity_mentions": [
+                "high school",
+                "University of Turin"
+            ],
+            "entity_names": [
+                "High_school",
+                "University_of_Turin"
+            ],
+            "prompts": [
+                "He graduated from high school at 16, then moved to the\u00a0University of Turin. Despite a strong interest for\u00a0mathematics\u00a0and\u00a0physics, he decided to study\u00a0medicine. \n What does high school in this sentence referring to?",
+                "He graduated from high school at 16, then moved to the\u00a0University of Turin. Despite a strong interest for\u00a0mathematics\u00a0and\u00a0physics, he decided to study\u00a0medicine. \n What does University of Turin in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\n\"High school\" in this sentence refers to the last level of secondary education before university.",
+                "\n\nThe University of Turin refers to a specific educational institution where the subject in the sentence moved to study."
+            ]
+        }
+    },
+    "11": {
+        "sentence": "Dulbecco was the recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974. He was elected a Foreign Member of the Royal Society (ForMemRS) in 1974.",
+        "entities": {
+            "starts": [
+                0,
+                34,
+                83,
+                121,
+                160
+            ],
+            "ends": [
+                8,
+                73,
+                111,
+                123,
+                173
+            ],
+            "entity_mentions": [
+                "Dulbecco",
+                "Selman A. Waksman Award in Microbiology",
+                "National Academy of Sciences",
+                "He",
+                "Royal Society"
+            ],
+            "entity_names": [
+                "Renato_Dulbecco",
+                "Selman_A._Waksman_Award_in_Microbiology",
+                "National_Academy_of_Sciences",
+                "Renato_Dulbecco",
+                "Royal_Society"
+            ],
+            "prompts": [
+                "Dulbecco was the recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974. He was elected a Foreign Member of th \n What does Dulbecco in this sentence referring to?",
+                "Dulbecco was the recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974. He was elected a Foreign Member of the Royal Society (ForMemRS) in 1974. \n What does Selman A. Waksman Award in Microbiology in this sentence referring to?",
+                "Dulbecco was the recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974. He was elected a Foreign Member of the Royal Society (ForMemRS) in 1974. \n What does National Academy of Sciences in this sentence referring to?",
+                "Dulbecco was the recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974. He was elected a Foreign Member of the Royal Society (ForMemRS) in 1974. \n What does He in this sentence referring to?",
+                "as the recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974. He was elected a Foreign Member of the Royal Society (ForMemRS) in 1974. \n What does Royal Society in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence is referring to someone named \"Dulbecco,\" who was a recipient of the Selman A. Waksman Award in Microbiology from the National Academy of Sciences in 1974 and was elected a Foreign Member of some organization (which is not specified in the sentence). The sentence does not provide enough information to determine the full name or identity of Dulbecco.",
+                "\n\nThe Selman A. Waksman Award in Microbiology is an award that was given to Dulbecco by the National Academy of Sciences in 1974.",
+                "\n\nNational Academy of Sciences refers to an American non-profit, non-governmental organization that serves as an advisory body to the United States Congress on scientific and technological matters.",
+                "\n\nDulbecco.",
+                "\n\nThe Royal Society in this sentence refers to the prestigious scientific academy of the United Kingdom, which was founded in 1660 and is dedicated to promoting excellence in science."
+            ]
+        }
+    },
+    "12": {
+        "sentence": "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University.",
+        "entities": {
+            "starts": [
+                17,
+                27,
+                46,
+                59,
+                75,
+                95,
+                112,
+                135,
+                149,
+                170,
+                182,
+                195,
+                244,
+                281,
+                299
+            ],
+            "ends": [
+                26,
+                39,
+                48,
+                62,
+                93,
+                100,
+                134,
+                145,
+                168,
+                172,
+                190,
+                202,
+                273,
+                289,
+                320
+            ],
+            "entity_mentions": [
+                "physicist",
+                "Enrico Fermi",
+                "he",
+                "his",
+                "University of Rome",
+                "Luria",
+                "Rockefeller Foundation",
+                "fellowship",
+                "Columbia University",
+                "He",
+                "Delbr\u00fcck",
+                "Hershey",
+                "Cold Spring Harbor Laboratory",
+                "Delbr\u00fcck",
+                "Vanderbilt University"
+            ],
+            "entity_names": [
+                "Physicist",
+                "Enrico_Fermi",
+                "Salvador_Luria",
+                "Salvador_Luria",
+                "Sapienza_University_of_Rome",
+                "Salvador_Luria",
+                "Rockefeller_Foundation",
+                "Fellow",
+                "Columbia_University",
+                "Salvador_Luria",
+                "Max_Delbr\u00fcck",
+                "Alfred_Hershey",
+                "Cold_Spring_Harbor_Laboratory",
+                "Max_Delbr\u00fcck",
+                "Vanderbilt_University"
+            ],
+            "prompts": [
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soo \n What does physicist in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcc \n What does Enrico Fermi in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Her \n What does he in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they \n What does his in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at \n What does University of Rome in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold S \n What does Luria in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Del \n What does Rockefeller Foundation in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab \n What does fellowship in this sentence referring to?",
+                "With the help of physicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt Universi \n What does Columbia University in this sentence referring to?",
+                "sicist Enrico Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University. \n What does He in this sentence referring to?",
+                "o Fermi, whom he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University. \n What does Delbr\u00fcck in this sentence referring to?",
+                " he knew from his time at the University of Rome, Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University. \n What does Hershey in this sentence referring to?",
+                " Luria received a Rockefeller Foundation fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University. \n What does Cold Spring Harbor Laboratory in this sentence referring to?",
+                "ion fellowship at Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University. \n What does Delbr\u00fcck in this sentence referring to?",
+                "Columbia University. He soon met Delbr\u00fcck and Hershey, and they collaborated on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University. \n What does Vanderbilt University in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nPhysicist in this sentence refers to Enrico Fermi.",
+                "\n\nEnrico Fermi refers to a physicist who helped Luria receive a fellowship at Columbia University.",
+                "\n\nLuria is the pronoun \"he\" referring to the person mentioned earlier in the sentence.",
+                "\n\nThe pronoun \"his\" in this sentence is referring to \"Luria\".",
+                "\n\nThe University of Rome refers to a specific academic institution where Luria studied before receiving the Rockefeller Foundation fellowship at Columbia University.",
+                "\n\nLuria is referring to Salvador Luria, a scientist who received a Rockefeller Foundation fellowship at Columbia University.",
+                "\n\nThe Rockefeller Foundation in this sentence refers to the organization that provided Luria with a fellowship to support his research at Columbia University.",
+                "\n\nThe fellowship in this sentence refers to the Rockefeller Foundation fellowship that Luria received at Columbia University with the help of physicist Enrico Fermi.",
+                "\n\nColumbia University refers to the university where Luria received his Rockefeller Foundation fellowship with the help of physicist Enrico Fermi.",
+                "\n\nThe pronoun \"He\" in this sentence most likely refers to Salvador Luria.",
+                "\n\nDelbr\u00fcck refers to Max Delbr\u00fcck, a German-American biophysicist and Nobel laureate who collaborated with Luria and Hershey on experiments.",
+                "\n\nHershey refers to a scientist who collaborated with Luria and Delbr\u00fcck on experiments at Cold Spring Harbor Laboratory and in Delbr\u00fcck's lab at Vanderbilt University.",
+                "\n\nCold Spring Harbor Laboratory is a research institution where Luria and his colleagues conducted experiments.",
+                "\n\nDelbr\u00fcck refers to Max Delbr\u00fcck, a German-American biophysicist and Nobel laureate.",
+                "\n\nVanderbilt University is referring to a university where Delbr\u00fcck had a lab, and where the author collaborated on experiments with Delbr\u00fcck and Hershey."
+            ]
+        }
+    },
+    "13": {
+        "sentence": "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the United States.",
+        "entities": {
+            "starts": [
+                19,
+                32,
+                52,
+                62,
+                83,
+                150,
+                182,
+                209,
+                224
+            ],
+            "ends": [
+                21,
+                50,
+                55,
+                78,
+                98,
+                163,
+                187,
+                216,
+                237
+            ],
+            "entity_mentions": [
+                "he",
+                "Indiana University",
+                "His",
+                "graduate student",
+                "James D. Watson",
+                "Francis Crick",
+                "Luria",
+                "citizen",
+                "United States"
+            ],
+            "entity_names": [
+                "Salvador_Luria",
+                "Indiana_University",
+                "Salvador_Luria",
+                "Student",
+                "James_Watson",
+                "Francis_Crick",
+                "Salvador_Luria",
+                "Citizenship",
+                "United_States"
+            ],
+            "prompts": [
+                "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In Jan \n What does he in this sentence referring to?",
+                "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a nat \n What does Indiana University in this sentence referring to?",
+                "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturali \n What does His in this sentence referring to?",
+                "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the Unit \n What does graduate student in this sentence referring to?",
+                "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the United States. \n What does James D. Watson in this sentence referring to?",
+                "From 1943 to 1950, he worked at Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the United States. \n What does Francis Crick in this sentence referring to?",
+                "Indiana University. His first graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the United States. \n What does Luria in this sentence referring to?",
+                "st graduate student was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the United States. \n What does citizen in this sentence referring to?",
+                "dent was James D. Watson, who went on to discover the structure of DNA with Francis Crick. In January 1947, Luria became a naturalized citizen of the United States. \n What does United States in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nWithout more context, it is unclear who \"he\" is referring to in this sentence.",
+                "\n\nIndiana University refers to the institution where Luria worked from 1943 to 1950.",
+                "\n\nThe sentence does not provide enough context to determine who \"His\" is referring to.",
+                "\n\nThe graduate student in this sentence refers to James D. Watson, who studied under Luria at Indiana University.",
+                "\n\nJames D. Watson is referring to the scientist who later became famous for discovering the structure of DNA with Francis Crick.",
+                "\n\nFrancis Crick is referenced as one of the individuals who discovered the structure of DNA along with James D. Watson, who was Luria's first graduate student.",
+                "\n\nLuria refers to Salvador Luria.",
+                "\n\n\"Citizen\" in this sentence refers to the legal status of being a member of a country or nation, with accompanying rights and responsibilities. Specifically, it refers to Luria becoming a citizen of the United States.",
+                "\n\nThe United States refers to the country of the United States of America."
+            ]
+        }
+    },
+    "14": {
+        "sentence": "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities.",
+        "entities": {
+            "starts": [
+                2,
+                19,
+                31,
+                44,
+                66,
+                87,
+                99,
+                115,
+                140,
+                186,
+                221
+            ],
+            "ends": [
+                11,
+                25,
+                38,
+                52,
+                73,
+                95,
+                108,
+                127,
+                149,
+                193,
+                239
+            ],
+            "entity_mentions": [
+                "president",
+                "leader",
+                "country",
+                "division",
+                "country",
+                "republic",
+                "democracy",
+                "dictatorship",
+                "president",
+                "leaders",
+                "corporate entities"
+            ],
+            "entity_names": [
+                "President",
+                "Leadership",
+                "Country",
+                "Political_division",
+                "Country",
+                "Republic",
+                "Democracy",
+                "Dictatorship",
+                "President",
+                "Leadership",
+                "Corporation"
+            ],
+            "prompts": [
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometim \n What does president in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by ext \n What does leader in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for le \n What does country in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other \n What does division in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including co \n What does country in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities. \n What does republic in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities. \n What does democracy in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities. \n What does dictatorship in this sentence referring to?",
+                "A president is the leader of a country or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities. \n What does president in this sentence referring to?",
+                "ry or a division or part of a country, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities. \n What does leaders in this sentence referring to?",
+                "ry, typically a republic, a democracy, or a dictatorship. The title \"president\" is sometimes used by extension for leaders of other groups, including corporate entities. \n What does corporate entities in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence is incomplete and ambiguous as it ends abruptly, so it is not clear what president is being referred to. More context or information is needed to answer this question accurately.",
+                "\n\n\"Leader\" in this sentence refers to the person who has the highest position of power and authority in a country, division, or part of a country.",
+                "\n\nThe sentence is referring to a country as a whole, which could be a republic, a democracy, or a dictatorship.",
+                "\n\nThe sentence is not clear about the specific division being referred to. It is possible that it could be a subdivision of a larger country or a separate entity within a larger political or geographic region.",
+                "\n\nThe country in this sentence refers to a sovereign state or nation.",
+                "\n\n\"Republic\" in this sentence refers to a form of government in which power is held by the people or their elected representatives. In a republic, the head of state is usually a president, who serves as the leader of the government and represents the country on the international stage.",
+                "\n\nDemocracy in this sentence is referring to a form of government where power is held by the people, either directly or through elected representatives.",
+                "\n\nDictatorship in this sentence refers to a form of government where one person or a small group of people have absolute power and authority over the country without any opposition or representation from the people.",
+                "\n\nThe sentence is not providing any context to determine which specific president it is referring to. It is discussing the general definition and role of a president as a leader.",
+                "\n\nThe sentence does not specify which particular sentence it refers to. However, in general, \"leaders\" in this context refers to individuals who hold positions of authority and influence over a group of people, such as a country or a corporation.",
+                "\n\nCorporate entities in this sentence refer to companies or businesses that are incorporated as legal entities."
+            ]
+        }
+    },
+    "15": {
+        "sentence": "Etymologically, a president is one who presides. Originally, the term referred to the presiding officer of a ceremony or meeting (i.e., chairman), but today it most commonly refers to an executive official.",
+        "entities": {
+            "starts": [
+                18
+            ],
+            "ends": [
+                27
+            ],
+            "entity_mentions": [
+                "president"
+            ],
+            "entity_names": [
+                "President"
+            ],
+            "prompts": [
+                "Etymologically, a president is one who presides. Originally, the term referred to the presiding officer of a ceremony or meeting (i.e., chairman), but today it most commonly ref \n What does president in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence does not provide enough context to determine what the president is referring to."
+            ]
+        }
+    },
+    "16": {
+        "sentence": "Among other things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary republics.",
+        "entities": {
+            "starts": [
+                21,
+                64,
+                87,
+                106,
+                130,
+                161
+            ],
+            "ends": [
+                30,
+                78,
+                96,
+                128,
+                157,
+                184
+            ],
+            "entity_mentions": [
+                "President",
+                "heads of state",
+                "republics",
+                "presidential republics",
+                "semi-presidential republics",
+                "parliamentary republics"
+            ],
+            "entity_names": [
+                "President",
+                "Head_of_state",
+                "Republic",
+                "Presidential_system",
+                "Semi-presidential_system",
+                "Parliamentary_republic"
+            ],
+            "prompts": [
+                "Among other things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary repub \n What does President in this sentence referring to?",
+                "Among other things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary republics. \n What does heads of state in this sentence referring to?",
+                "Among other things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary republics. \n What does republics in this sentence referring to?",
+                "Among other things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary republics. \n What does presidential republics in this sentence referring to?",
+                "Among other things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary republics. \n What does semi-presidential republics in this sentence referring to?",
+                " things, \"President\" today is a common title for the heads of state of most republics, whether presidential republics, semi-presidential republics or parliamentary republics. \n What does parliamentary republics in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nPresident in this sentence refers to the head of state of a republic.",
+                "\n\nHeads of state refer to the highest-ranking officials in a country who hold formal and ceremonial roles as representatives of the country's sovereignty, both domestically and internationally.",
+                "\n\nThe term \"republics\" in this sentence refers to forms of government characterized by elected representatives and a separation of powers between the executive, legislative and judicial branches.",
+                "\n\nPresidential republics refer to a form of government where the head of state is directly elected by the people and has significant powers, such as appointing government officials, vetoing legislation, and making executive decisions. Examples include the United States, France, and Brazil.",
+                "\n\nIn this sentence, semi-presidential republics refer to a type of republic where both a president and a prime minister coexist and share power.",
+                "\n\nParliamentary republics refer to a form of government where the executive branch (led by a prime minister) is accountable to the legislative branch (parliament) and is dependent on its confidence to remain in power. Examples of parliamentary republics include India, Germany, and Ireland."
+            ]
+        }
+    },
+    "17": {
+        "sentence": "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.",
+        "entities": {
+            "starts": [
+                48,
+                69,
+                73,
+                89,
+                103,
+                119,
+                136,
+                153,
+                175
+            ],
+            "ends": [
+                63,
+                72,
+                88,
+                98,
+                118,
+                134,
+                151,
+                169,
+                187
+            ],
+            "entity_mentions": [
+                "Mark Zuckerberg",
+                "his",
+                "Harvard College",
+                "roommates",
+                "fellow students",
+                "Eduardo Saverin",
+                "Andrew McCollum",
+                "Dustin Moskovitz",
+                "Chris Hughes"
+            ],
+            "entity_names": [
+                "Mark_Zuckerberg",
+                "Mark_Zuckerberg",
+                "Harvard_College",
+                "Roommate",
+                "Student",
+                "Eduardo_Saverin",
+                "Andrew_McCollum",
+                "Dustin_Moskovitz",
+                "Chris_Hughes"
+            ],
+            "prompts": [
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does Mark Zuckerberg in this sentence referring to?",
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does his in this sentence referring to?",
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does Harvard College in this sentence referring to?",
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does roommates in this sentence referring to?",
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does fellow students in this sentence referring to?",
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does Eduardo Saverin in this sentence referring to?",
+                "Its website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does Andrew McCollum in this sentence referring to?",
+                " website was launched on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does Dustin Moskovitz in this sentence referring to?",
+                "on February 4, 2004 by Mark Zuckerberg with his Harvard College roommates and fellow students Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes. \n What does Chris Hughes in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nMark Zuckerberg is referring to the launch of the Facebook website, which he co-founded with his Harvard College roommates and fellow students.",
+                "\n\n\"His\" in this sentence is referring to Mark Zuckerberg.",
+                "\n\nHarvard College refers to the undergraduate college of Harvard University, where Mark Zuckerberg and his co-founders were students when they launched the website.",
+                "\n\n\"Roommates\" in this sentence refers to Mark Zuckerberg's fellow Harvard College students who shared a living space with him.",
+                "\n\n\"fellow students\" refers to the other people in the sentence who were also studying at Harvard College, namely Eduardo Saverin, Andrew McCollum, Dustin Moskovitz, and Chris Hughes.",
+                "\n\nEduardo Saverin refers to one of Mark Zuckerberg's Harvard College roommates and fellow students who co-founded Facebook with him.",
+                "\n\nAndrew McCollum is one of Mark Zuckerberg's Harvard College roommates and fellow students who co-founded Facebook along with Zuckerberg, Eduardo Saverin, Dustin Moskovitz, and Chris Hughes.",
+                "\n\nDustin Moskovitz is one of the co-founders of Facebook, along with Mark Zuckerberg, Eduardo Saverin, Andrew McCollum, and Chris Hughes.",
+                "\n\nChris Hughes refers to one of Mark Zuckerberg's Harvard College roommates and fellow students who co-founded Facebook with him in 2004."
+            ]
+        }
+    },
+    "18": {
+        "sentence": "Those people, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University.",
+        "entities": {
+            "starts": [
+                21,
+                81,
+                89,
+                124,
+                140,
+                157,
+                173
+            ],
+            "ends": [
+                29,
+                88,
+                97,
+                132,
+                146,
+                167,
+                192
+            ],
+            "entity_mentions": [
+                "founders",
+                "Harvard",
+                "students",
+                "colleges",
+                "Boston",
+                "Ivy League",
+                "Stanford University"
+            ],
+            "entity_names": [
+                "Founder",
+                "Harvard_University",
+                "Student",
+                "College",
+                "Boston",
+                "Ivy_League",
+                "Stanford_University"
+            ],
+            "prompts": [
+                "Those people, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanfo \n What does founders in this sentence referring to?",
+                "Those people, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University. \n What does Harvard in this sentence referring to?",
+                "Those people, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University. \n What does students in this sentence referring to?",
+                "Those people, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University. \n What does colleges in this sentence referring to?",
+                "Those people, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University. \n What does Boston in this sentence referring to?",
+                "eople, called founders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University. \n What does Ivy League in this sentence referring to?",
+                "unders, had initially limited the website's membership to Harvard students, but later expanded it to colleges in the Boston area, the Ivy League, and Stanford University. \n What does Stanford University in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nFounders in this sentence refers to the people who created and launched the website.",
+                "\n\nHarvard refers to Harvard University, an Ivy League research university located in Cambridge, Massachusetts.",
+                "\n\nThe word \"students\" in this sentence is referring to the students of Harvard University.",
+                "\n\nThe colleges in this sentence are referring to educational institutions such as universities or colleges.",
+                "\n\nBoston refers to the area of colleges in the city of Boston, Massachusetts, USA.",
+                "\n\nThe Ivy League in this sentence refers to a group of eight prestigious universities in the Northeastern United States: Brown University, Columbia University, Cornell University, Dartmouth College, Harvard University, University of Pennsylvania, Princeton University, and Yale University.",
+                "\n\nStanford University is one of the colleges that the website's membership was later expanded to, along with colleges in the Boston area, the Ivy League."
+            ]
+        }
+    },
+    "19": {
+        "sentence": "Professorships in Italy were granted by competition (concorso) for a vacant chair, the applicants being rated on their publications by a committee of professors.",
+        "entities": {
+            "starts": [
+                0,
+                18,
+                150
+            ],
+            "ends": [
+                14,
+                23,
+                160
+            ],
+            "entity_mentions": [
+                "Professorships",
+                "Italy",
+                "professors"
+            ],
+            "entity_names": [
+                "Professor",
+                "Italy",
+                "Professor"
+            ],
+            "prompts": [
+                "Professorships in Italy were granted by competition (concorso) for a vacant chair, the applicants being rated on their publications by a committee of professors. \n What does Professorships in this sentence referring to?",
+                "Professorships in Italy were granted by competition (concorso) for a vacant chair, the applicants being rated on their publications by a committee of professors. \n What does Italy in this sentence referring to?",
+                "Professorships in Italy were granted by competition (concorso) for a vacant chair, the applicants being rated on their publications by a committee of professors. \n What does professors in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence is referring to the process of awarding academic positions known as \"professorships\" in Italy.",
+                "\n\nItaly in this sentence refers to the country.",
+                "\n\nThe professors in this sentence refer to the members of the committee who evaluate the applicants for the vacant chair."
+            ]
+        }
+    },
+    "20": {
+        "sentence": "Fermi applied for a chair of mathematical physics at the University of Cagliari on Sardinia, but was narrowly passed over in favour of Giovanni Giorgi.",
+        "entities": {
+            "starts": [
+                0,
+                57,
+                83,
+                135
+            ],
+            "ends": [
+                5,
+                79,
+                91,
+                150
+            ],
+            "entity_mentions": [
+                "Fermi",
+                "University of Cagliari",
+                "Sardinia",
+                "Giovanni Giorgi"
+            ],
+            "entity_names": [
+                "Enrico_Fermi",
+                "University_of_Cagliari",
+                "Sardinia",
+                "Giovanni_Giorgi"
+            ],
+            "prompts": [
+                "Fermi applied for a chair of mathematical physics at the University of Cagliari on Sardinia, but was narrowly passed over in favour of Giovanni Giorgi. \n What does Fermi in this sentence referring to?",
+                "Fermi applied for a chair of mathematical physics at the University of Cagliari on Sardinia, but was narrowly passed over in favour of Giovanni Giorgi. \n What does University of Cagliari in this sentence referring to?",
+                "Fermi applied for a chair of mathematical physics at the University of Cagliari on Sardinia, but was narrowly passed over in favour of Giovanni Giorgi. \n What does Sardinia in this sentence referring to?",
+                "Fermi applied for a chair of mathematical physics at the University of Cagliari on Sardinia, but was narrowly passed over in favour of Giovanni Giorgi. \n What does Giovanni Giorgi in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nFermi is referring to the Italian physicist Enrico Fermi.",
+                "\n\nThe University of Cagliari on Sardinia.",
+                "\n\nSardinia refers to an Italian island in the Mediterranean Sea.",
+                "\n\nGiovanni Giorgi refers to a person who was selected for a chair of mathematical physics at the University of Cagliari, and who was favored over Fermi."
+            ]
+        }
+    },
+    "21": {
+        "sentence": "In 1926, at the age of 24, he applied for a professorship at the Sapienza University of Rome.",
+        "entities": {
+            "starts": [
+                44,
+                65
+            ],
+            "ends": [
+                57,
+                92
+            ],
+            "entity_mentions": [
+                "professorship",
+                "Sapienza University of Rome"
+            ],
+            "entity_names": [
+                "Professor",
+                "Sapienza_University_of_Rome"
+            ],
+            "prompts": [
+                "In 1926, at the age of 24, he applied for a professorship at the Sapienza University of Rome. \n What does professorship in this sentence referring to?",
+                "In 1926, at the age of 24, he applied for a professorship at the Sapienza University of Rome. \n What does Sapienza University of Rome in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThis sentence is referring to the position of a professor at the Sapienza University of Rome which the person applied for.",
+                "\n\nThe Sapienza University of Rome is a university in Rome, Italy."
+            ]
+        }
+    },
+    "22": {
+        "sentence": "This was a new chair, one of the first three in theoretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet.",
+        "entities": {
+            "starts": [
+                71,
+                107,
+                146,
+                156,
+                188,
+                201,
+                240,
+                256,
+                294,
+                313
+            ],
+            "ends": [
+                76,
+                128,
+                155,
+                174,
+                198,
+                210,
+                248,
+                276,
+                310,
+                320
+            ],
+            "entity_mentions": [
+                "Italy",
+                "Minister of Education",
+                "Professor",
+                "Orso Mario Corbino",
+                "University",
+                "professor",
+                "Director",
+                "Institute of Physics",
+                "Benito Mussolini",
+                "cabinet"
+            ],
+            "entity_names": [
+                "Italy",
+                "Education_minister",
+                "Professor",
+                "Orso_Mario_Corbino",
+                "University",
+                "Professor",
+                "Director_(business)",
+                "Institute_of_Physics",
+                "Benito_Mussolini",
+                "Cabinet_(government)"
+            ],
+            "prompts": [
+                "This was a new chair, one of the first three in theoretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental \n What does Italy in this sentence referring to?",
+                "This was a new chair, one of the first three in theoretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics,  \n What does Minister of Education in this sentence referring to?",
+                "This was a new chair, one of the first three in theoretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Muss \n What does Professor in this sentence referring to?",
+                "as a new chair, one of the first three in theoretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does Orso Mario Corbino in this sentence referring to?",
+                " three in theoretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does University in this sentence referring to?",
+                "oretical physics in Italy, that had been created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does professor in this sentence referring to?",
+                "n created by the Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does Director in this sentence referring to?",
+                " Minister of Education at the urging of Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does Institute of Physics in this sentence referring to?",
+                "f Professor Orso Mario Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does Benito Mussolini in this sentence referring to?",
+                "rio Corbino, who was the University's professor of experimental physics, the Director of the Institute of Physics, and a member of Benito Mussolini's cabinet. \n What does cabinet in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "Italy refers to the country of Italy.",
+                "\n\nMinister of Education refers to the government official who holds the position responsible for overseeing education policy and funding in a country or jurisdiction.",
+                "\n\nThe pronoun \"Professor\" in this sentence refers to Professor Orso Mario Corbino.",
+                "\n\nOrso Mario Corbino is referring to a person, specifically a professor of experimental physics at the University and a member of Mussolini's cabinet.",
+                "\n\nThe University in this sentence is referring to an unspecified university in Italy.",
+                "\n\nThe word \"professor\" in this sentence refers to Professor Orso Mario Corbino.",
+                "\n\nDirector in this sentence refers to the Director of the Institute of Physics.",
+                "\n\nThe Institute of Physics refers to a specific organization within a university.",
+                "\n\nBenito Mussolini refers to the Italian dictator who was in power during the time Professor Orso Mario Corbino was a member of his cabinet.",
+                "\n\nThe cabinet in this sentence refers to the group of high-ranking officials who advise and make decisions for the government, headed by the Prime Minister in this case."
+            ]
+        }
+    },
+    "23": {
+        "sentence": "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928.",
+        "entities": {
+            "starts": [
+                0,
+                24,
+                38,
+                48,
+                67,
+                77,
+                111
+            ],
+            "ends": [
+                11,
+                28,
+                43,
+                60,
+                70,
+                84,
+                129
+            ],
+            "entity_mentions": [
+                "Laura Capon",
+                "Rome",
+                "Capon",
+                "Enrico Fermi",
+                "she",
+                "student",
+                "University of Rome"
+            ],
+            "entity_names": [
+                "Laura_Fermi",
+                "Rome",
+                "Laura_Fermi",
+                "Enrico_Fermi",
+                "Laura_Fermi",
+                "Student",
+                "Sapienza_University_of_Rome"
+            ],
+            "prompts": [
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does Laura Capon in this sentence referring to?",
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does Rome in this sentence referring to?",
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does Capon in this sentence referring to?",
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does Enrico Fermi in this sentence referring to?",
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does she in this sentence referring to?",
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does student in this sentence referring to?",
+                "Laura Capon was born in Rome in 1907. Capon met Enrico Fermi while she was a student in general science at the University of Rome. The couple married in 1928. \n What does University of Rome in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nLaura Capon refers to a woman who was born in Rome in 1907 and who later married Enrico Fermi.",
+                "\n\nRome in this sentence refers to the capital city of Italy.",
+                "\n\nCapon in this sentence is referring to Laura Capon, who was born in Rome in 1907 and met Enrico Fermi while she was a student at the University of Rome.",
+                "\n\nEnrico Fermi refers to a person, who Laura Capon met while she was a student in general science at the University of Rome, and later married in 1928. Enrico Fermi was a renowned Italian physicist and Nobel Prize laureate known for his work on nuclear reactions and the development of the first nuclear reactor.",
+                "\n\n\"She\" in this sentence is referring to Laura Capon.",
+                "\n\nThe word \"student\" in this sentence refers to Laura Capon.",
+                "\n\nThe University of Rome in this sentence is referring to the institution where Laura Capon studied general science."
+            ]
+        }
+    },
+    "24": {
+        "sentence": "Reagan was twice elected as President of the Screen Actors Guild, the labor union for actors, where he worked to root out Communist influence.",
+        "entities": {
+            "starts": [
+                0,
+                28,
+                86,
+                100
+            ],
+            "ends": [
+                6,
+                37,
+                92,
+                102
+            ],
+            "entity_mentions": [
+                "Reagan",
+                "President",
+                "actors",
+                "he"
+            ],
+            "entity_names": [
+                "Ronald_Reagan",
+                "President",
+                "Actor",
+                "Ronald_Reagan"
+            ],
+            "prompts": [
+                "Reagan was twice elected as President of the Screen Actors Guild, the labor union for actors, where he worked to root out Communist influence. \n What does Reagan in this sentence referring to?",
+                "Reagan was twice elected as President of the Screen Actors Guild, the labor union for actors, where he worked to root out Communist influence. \n What does President in this sentence referring to?",
+                "Reagan was twice elected as President of the Screen Actors Guild, the labor union for actors, where he worked to root out Communist influence. \n What does actors in this sentence referring to?",
+                "Reagan was twice elected as President of the Screen Actors Guild, the labor union for actors, where he worked to root out Communist influence. \n What does he in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nReagan refers to Ronald Reagan, the former President of the United States.",
+                "\n\nPresident in this sentence refers to the position of President of the Screen Actors Guild.",
+                "\n\nThe word \"actors\" in this sentence refers to those who work as performers in the entertainment industry.",
+                "\n\nThe sentence is referring to Ronald Reagan."
+            ]
+        }
+    },
+    "25": {
+        "sentence": "As governor, Reagan raised taxes, turned a state budget deficit to a surplus, challenged the protesters at the University of California, ordered National Guard troops in during a period of protest movements in 1969, and was re-elected in 1970.",
+        "entities": {
+            "starts": [
+                3,
+                13,
+                43,
+                111,
+                145
+            ],
+            "ends": [
+                11,
+                19,
+                48,
+                135,
+                159
+            ],
+            "entity_mentions": [
+                "governor",
+                "Reagan",
+                "state",
+                "University of California",
+                "National Guard"
+            ],
+            "entity_names": [
+                "Governor",
+                "Ronald_Reagan",
+                "State",
+                "University_of_California",
+                "National_Guard_of_the_United_States"
+            ],
+            "prompts": [
+                "As governor, Reagan raised taxes, turned a state budget deficit to a surplus, challenged the protesters at the University of California, ordered National Guard t \n What does governor in this sentence referring to?",
+                "As governor, Reagan raised taxes, turned a state budget deficit to a surplus, challenged the protesters at the University of California, ordered National Guard troops in \n What does Reagan in this sentence referring to?",
+                "As governor, Reagan raised taxes, turned a state budget deficit to a surplus, challenged the protesters at the University of California, ordered National Guard troops in during a period of protest m \n What does state in this sentence referring to?",
+                "As governor, Reagan raised taxes, turned a state budget deficit to a surplus, challenged the protesters at the University of California, ordered National Guard troops in during a period of protest movements in 1969, and was re-elected in 1970. \n What does University of California in this sentence referring to?",
+                "As governor, Reagan raised taxes, turned a state budget deficit to a surplus, challenged the protesters at the University of California, ordered National Guard troops in during a period of protest movements in 1969, and was re-elected in 1970. \n What does National Guard in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe governor in this sentence is referring to Ronald Reagan, who was the governor of California.",
+                "\n\nReagan refers to the former governor of California who later became the President of the United States, Ronald Reagan.",
+                "\n\n\"State\" in this sentence refers to the state of California.",
+                "\n\nThe University of California refers to the public university system in California, which includes several campuses such as UC Berkeley, UCLA, and UC San Diego.",
+                "\n\nThe National Guard refers to a reserve military force that can be called upon by the state's governor to respond to emergencies or maintain order within the state. Therefore, in this context, it means that Reagan ordered the National Guard troops to maintain order during a period of protest movements in 1969."
+            ]
+        }
+    },
+    "26": {
+        "sentence": "In Italy the rector is the head of the university and Rappresentante Legale (Legal representative) of the university. He or she is elected by an electoral body.",
+        "entities": {
+            "starts": [
+                3,
+                13,
+                39,
+                106
+            ],
+            "ends": [
+                8,
+                19,
+                49,
+                116
+            ],
+            "entity_mentions": [
+                "Italy",
+                "rector",
+                "university",
+                "university"
+            ],
+            "entity_names": [
+                "Italy",
+                "Rector_(academia)",
+                "University",
+                "University"
+            ],
+            "prompts": [
+                "In Italy the rector is the head of the university and Rappresentante Legale (Legal representative) of the university. He or she is elected by an electoral bod \n What does Italy in this sentence referring to?",
+                "In Italy the rector is the head of the university and Rappresentante Legale (Legal representative) of the university. He or she is elected by an electoral body. \n What does rector in this sentence referring to?",
+                "In Italy the rector is the head of the university and Rappresentante Legale (Legal representative) of the university. He or she is elected by an electoral body. \n What does university in this sentence referring to?",
+                "In Italy the rector is the head of the university and Rappresentante Legale (Legal representative) of the university. He or she is elected by an electoral body. \n What does university in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nItaly is referring to the country of Italy.",
+                "\n\nThe rector in this sentence refers to the head of the university in Italy who also serves as the legal representative of the university and is elected by an electoral body.",
+                "\n\nThe university in this sentence is referring to an educational institution.",
+                "\n\nThe university in this sentence is referring to an academic institution in Italy."
+            ]
+        }
+    },
+    "27": {
+        "sentence": "The College of William and Mary also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster.",
+        "entities": {
+            "starts": [
+                4,
+                44,
+                110,
+                148,
+                158,
+                179,
+                207,
+                235
+            ],
+            "ends": [
+                31,
+                54,
+                122,
+                154,
+                175,
+                192,
+                213,
+                245
+            ],
+            "entity_mentions": [
+                "College of William and Mary",
+                "Chancellor",
+                "high schools",
+                "Rector",
+                "St. Paul's School",
+                "New Hampshire",
+                "Rector",
+                "Headmaster"
+            ],
+            "entity_names": [
+                "College_of_William_%26_Mary",
+                "Chancellor_(education)",
+                "High_school",
+                "Rector_(academia)",
+                "St._Paul's_School_(New_Hampshire)",
+                "New_Hampshire",
+                "Rector_(academia)",
+                "Head_teacher"
+            ],
+            "prompts": [
+                "The College of William and Mary also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in Ne \n What does College of William and Mary in this sentence referring to?",
+                "The College of William and Mary also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which t \n What does Chancellor in this sentence referring to?",
+                "The College of William and Mary also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster. \n What does high schools in this sentence referring to?",
+                "The College of William and Mary also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster. \n What does Rector in this sentence referring to?",
+                "ege of William and Mary also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster. \n What does St. Paul's School in this sentence referring to?",
+                "ry also has a \"Chancellor\" who acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster. \n What does New Hampshire in this sentence referring to?",
+                "ho acts in a ceremonial capacity. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster. \n What does Rector in this sentence referring to?",
+                "city. As far as American high schools, one notable case is the Rector of St. Paul's School in New Hampshire, in which the Rector is equivalent to the Headmaster. \n What does Headmaster in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence is referring to the College of William and Mary, a public research university located in Williamsburg, Virginia.",
+                "\n\nThe sentence does not provide enough context to determine which Chancellor it is referring to.",
+                "\n\nHigh schools refer to secondary schools in the United States, typically for students in grades 9-12.",
+                "\n\nThe Rector in this sentence is referring to the leader or headmaster of St. Paul's School in New Hampshire.",
+                "\n\nSt. Paul's School refers to a high school located in New Hampshire.",
+                "\n\nNew Hampshire is a state located in the northeastern region of the United States. In this sentence, it is referring to the Rector of St. Paul's School who is based in the state of New Hampshire.",
+                "\n\nThe sentence is referring to the Rector of St. Paul's School in New Hampshire, who is equivalent to the Headmaster. Therefore, \"Rector\" is the title or position held by the person in charge of the school.",
+                "\n\nThe word \"Headmaster\" in this sentence is referring to the leader or principal of a school."
+            ]
+        }
+    },
+    "28": {
+        "sentence": "The term \"rector\" is uncommon in Australian academic institutions. The executive head of an Australian university has traditionally been given the British title Vice-Chancellor, although in recent times the American term President has also been adopted.",
+        "entities": {
+            "starts": [
+                10,
+                44,
+                103,
+                161,
+                221
+            ],
+            "ends": [
+                16,
+                65,
+                113,
+                176,
+                230
+            ],
+            "entity_mentions": [
+                "rector",
+                "academic institutions",
+                "university",
+                "Vice-Chancellor",
+                "President"
+            ],
+            "entity_names": [
+                "Rector_(academia)",
+                "Academic_institution",
+                "University",
+                "Chancellor_(education)",
+                "Chancellor_(education)"
+            ],
+            "prompts": [
+                "The term \"rector\" is uncommon in Australian academic institutions. The executive head of an Australian university has traditionally been given the British title Vice- \n What does rector in this sentence referring to?",
+                "The term \"rector\" is uncommon in Australian academic institutions. The executive head of an Australian university has traditionally been given the British title Vice-Chancellor, although in recent times the American \n What does academic institutions in this sentence referring to?",
+                "The term \"rector\" is uncommon in Australian academic institutions. The executive head of an Australian university has traditionally been given the British title Vice-Chancellor, although in recent times the American term President has also been adopted. \n What does university in this sentence referring to?",
+                "ector\" is uncommon in Australian academic institutions. The executive head of an Australian university has traditionally been given the British title Vice-Chancellor, although in recent times the American term President has also been adopted. \n What does Vice-Chancellor in this sentence referring to?",
+                "executive head of an Australian university has traditionally been given the British title Vice-Chancellor, although in recent times the American term President has also been adopted. \n What does President in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe word \"rector\" in this sentence is referring to the executive head of an academic institution in some countries, typically a university or a college.",
+                "\n\nAcademic institutions in this sentence are referring to universities or other higher education institutions in Australia.",
+                "\n\nThe sentence is referring to Australian academic institutions, specifically universities.",
+                "\n\nThe term Vice-Chancellor in this sentence refers to the executive head of an Australian university who traditionally holds this title.",
+                "\n\nPresident refers to the title given to the executive head of an Australian university, which has been adopted from the American system."
+            ]
+        }
+    },
+    "29": {
+        "sentence": "The prize ceremonies take place annually in Stockholm, Sweden, except for the peace prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of money that has been decided by the Nobel Foundation.",
+        "entities": {
+            "starts": [
+                44,
+                55,
+                107,
+                113,
+                143,
+                234
+            ],
+            "ends": [
+                53,
+                61,
+                111,
+                119,
+                151,
+                250
+            ],
+            "entity_mentions": [
+                "Stockholm",
+                "Sweden",
+                "Oslo",
+                "Norway",
+                "laureate",
+                "Nobel Foundation"
+            ],
+            "entity_names": [
+                "Stockholm",
+                "Sweden",
+                "Oslo",
+                "Norway",
+                "Laureate",
+                "Nobel_Foundation"
+            ],
+            "prompts": [
+                "The prize ceremonies take place annually in Stockholm, Sweden, except for the peace prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of mone \n What does Stockholm in this sentence referring to?",
+                "The prize ceremonies take place annually in Stockholm, Sweden, except for the peace prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of money that h \n What does Sweden in this sentence referring to?",
+                "The prize ceremonies take place annually in Stockholm, Sweden, except for the peace prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of money that has been decided by the Nobel Foundation. \n What does Oslo in this sentence referring to?",
+                "The prize ceremonies take place annually in Stockholm, Sweden, except for the peace prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of money that has been decided by the Nobel Foundation. \n What does Norway in this sentence referring to?",
+                "The prize ceremonies take place annually in Stockholm, Sweden, except for the peace prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of money that has been decided by the Nobel Foundation. \n What does laureate in this sentence referring to?",
+                "prize which is held in Oslo, Norway and each recipient, or laureate, receives a gold medal, a diploma and a sum of money that has been decided by the Nobel Foundation. \n What does Nobel Foundation in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nStockholm is referring to the location where the prize ceremonies take place annually.",
+                "\n\nSweden in this sentence is referring to the location where the Nobel Prize ceremonies take place annually, except for the peace prize which is held in Oslo, Norway.",
+                "\n\nOslo refers to the city in Norway where the Nobel Peace Prize ceremony takes place annually.",
+                "\n\nOslo, Norway is the location where the peace prize ceremony is held.",
+                "\n\nThe term laureate in this sentence refers to the recipient of a Nobel Prize.",
+                "\n\nNobel Foundation refers to the organization that administers the Nobel Prizes, which includes deciding the prize money, selecting the committees to select the Laureates, and arranging the Nobel Prize ceremony."
+            ]
+        }
+    },
+    "30": {
+        "sentence": "Alfred Nobel was born on 21 October 1833 in Stockholm, Sweden, into a family of engineers.",
+        "entities": {
+            "starts": [
+                0,
+                44,
+                55,
+                80
+            ],
+            "ends": [
+                12,
+                53,
+                61,
+                89
+            ],
+            "entity_mentions": [
+                "Alfred Nobel",
+                "Stockholm",
+                "Sweden",
+                "engineers"
+            ],
+            "entity_names": [
+                "Alfred_Nobel",
+                "Stockholm",
+                "Sweden",
+                "Engineer"
+            ],
+            "prompts": [
+                "Alfred Nobel was born on 21 October 1833 in Stockholm, Sweden, into a family of engineers. \n What does Alfred Nobel in this sentence referring to?",
+                "Alfred Nobel was born on 21 October 1833 in Stockholm, Sweden, into a family of engineers. \n What does Stockholm in this sentence referring to?",
+                "Alfred Nobel was born on 21 October 1833 in Stockholm, Sweden, into a family of engineers. \n What does Sweden in this sentence referring to?",
+                "Alfred Nobel was born on 21 October 1833 in Stockholm, Sweden, into a family of engineers. \n What does engineers in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nAlfred Nobel refers to the person who was born on 21 October 1833 in Stockholm, Sweden.",
+                "\n\nStockholm refers to the capital city of Sweden.",
+                "\n\nSweden refers to the country of Alfred Nobel's birth.",
+                "\n\nThe word \"engineers\" in this sentence refers to people who design, build, and maintain machines, structures, and systems."
+            ]
+        }
+    },
+    "31": {
+        "sentence": "James Alexander Hendler is an artificial intelligence researcher at Rensselaer Polytechnic Institute, USA, and one of the originators of the Semantic Web.",
+        "entities": {
+            "starts": [
+                0,
+                68,
+                102
+            ],
+            "ends": [
+                23,
+                100,
+                105
+            ],
+            "entity_mentions": [
+                "James Alexander Hendler",
+                "Rensselaer Polytechnic Institute",
+                "USA"
+            ],
+            "entity_names": [
+                "James_Hendler",
+                "Rensselaer_Polytechnic_Institute",
+                "United_States"
+            ],
+            "prompts": [
+                "James Alexander Hendler is an artificial intelligence researcher at Rensselaer Polytechnic Institute, USA, and one of the originators of the Semantic Web. \n What does James Alexander Hendler in this sentence referring to?",
+                "James Alexander Hendler is an artificial intelligence researcher at Rensselaer Polytechnic Institute, USA, and one of the originators of the Semantic Web. \n What does Rensselaer Polytechnic Institute in this sentence referring to?",
+                "James Alexander Hendler is an artificial intelligence researcher at Rensselaer Polytechnic Institute, USA, and one of the originators of the Semantic Web. \n What does USA in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nJames Alexander Hendler is referring to a person, who is an artificial intelligence researcher at Rensselaer Polytechnic Institute, USA, and one of the originators of the Semantic Web.",
+                "\n\nRensselaer Polytechnic Institute refers to the university where James Alexander Hendler works as an artificial intelligence researcher.",
+                "\n\nThe USA in this sentence refers to the United States of America."
+            ]
+        }
+    },
+    "32": {
+        "sentence": "Hendler held a longstanding position as professor at the University of Maryland where he was the Director of the Joint Institute for Knowledge Discovery and held joint appointments in the Department of Computer Science, the Institute for Advanced Computer Studies and the Institute for Systems Research.",
+        "entities": {
+            "starts": [
+                0,
+                40,
+                57,
+                86,
+                97
+            ],
+            "ends": [
+                7,
+                49,
+                79,
+                88,
+                105
+            ],
+            "entity_mentions": [
+                "Hendler",
+                "professor",
+                "University of Maryland",
+                "he",
+                "Director"
+            ],
+            "entity_names": [
+                "James_Hendler",
+                "Professor",
+                "University_of_Maryland,_College_Park",
+                "James_Hendler",
+                "Director_(business)"
+            ],
+            "prompts": [
+                "Hendler held a longstanding position as professor at the University of Maryland where he was the Director of the Joint Institute for Knowledge Discovery and  \n What does Hendler in this sentence referring to?",
+                "Hendler held a longstanding position as professor at the University of Maryland where he was the Director of the Joint Institute for Knowledge Discovery and held joint appointments in the Department  \n What does professor in this sentence referring to?",
+                "Hendler held a longstanding position as professor at the University of Maryland where he was the Director of the Joint Institute for Knowledge Discovery and held joint appointments in the Department of Computer Science, the Insti \n What does University of Maryland in this sentence referring to?",
+                "Hendler held a longstanding position as professor at the University of Maryland where he was the Director of the Joint Institute for Knowledge Discovery and held joint appointments in the Department of Computer Science, the Institute for  \n What does he in this sentence referring to?",
+                "Hendler held a longstanding position as professor at the University of Maryland where he was the Director of the Joint Institute for Knowledge Discovery and held joint appointments in the Department of Computer Science, the Institute for Advanced Computer \n What does Director in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nHendler refers to a person whose full name is not provided in the sentence.",
+                "\n\nThe word \"professor\" in this sentence refers to Hendler's job title as a faculty member at the University of Maryland.",
+                "\n\nUniversity of Maryland refers to the academic institution where Hendler held a professorship and served as the Director of the Joint Institute for Knowledge Discovery.",
+                "\n\nThe pronoun \"he\" in this sentence refers to Hendler.",
+                "\n\nDirector in this sentence refers to Hendler's position as the director of the Joint Institute for Knowledge Discovery at the University of Maryland."
+            ]
+        }
+    },
+    "33": {
+        "sentence": "Hendler was the Director for Semantic Web and Agent Technology at the Maryland Information and Network Dynamics Laboratory.",
+        "entities": {
+            "starts": [
+                0,
+                16
+            ],
+            "ends": [
+                7,
+                24
+            ],
+            "entity_mentions": [
+                "Hendler",
+                "Director"
+            ],
+            "entity_names": [
+                "James_Hendler",
+                "Director_(business)"
+            ],
+            "prompts": [
+                "Hendler was the Director for Semantic Web and Agent Technology at the Maryland Information and Network Dynamics Laboratory. \n What does Hendler in this sentence referring to?",
+                "Hendler was the Director for Semantic Web and Agent Technology at the Maryland Information and Network Dynamics Laboratory. \n What does Director in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nHendler refers to a person, who was the Director for Semantic Web and Agent Technology at the Maryland Information and Network Dynamics Laboratory.",
+                "\n\nDirector in this sentence refers to Hendler's position or job title as the head or leader of the Semantic Web and Agent Technology department at the Maryland Information and Network Dynamics Laboratory."
+            ]
+        }
+    },
+    "34": {
+        "sentence": "He is a Fellow of the American Association for Artificial Intelligence, the British Computer Society, the Institute of Electrical and Electronics Engineers and the AAAS.",
+        "entities": {
+            "starts": [
+                8,
+                22,
+                76,
+                106,
+                164
+            ],
+            "ends": [
+                14,
+                70,
+                100,
+                155,
+                168
+            ],
+            "entity_mentions": [
+                "Fellow",
+                "American Association for Artificial Intelligence",
+                "British Computer Society",
+                "Institute of Electrical and Electronics Engineers",
+                "AAAS"
+            ],
+            "entity_names": [
+                "Fellow",
+                "Association_for_the_Advancement_of_Artificial_Intelligence",
+                "British_Computer_Society",
+                "Institute_of_Electrical_and_Electronics_Engineers",
+                "American_Association_for_the_Advancement_of_Science"
+            ],
+            "prompts": [
+                "He is a Fellow of the American Association for Artificial Intelligence, the British Computer Society, the Institute of Electrical and Electronics Engineers and the  \n What does Fellow in this sentence referring to?",
+                "He is a Fellow of the American Association for Artificial Intelligence, the British Computer Society, the Institute of Electrical and Electronics Engineers and the AAAS. \n What does American Association for Artificial Intelligence in this sentence referring to?",
+                "He is a Fellow of the American Association for Artificial Intelligence, the British Computer Society, the Institute of Electrical and Electronics Engineers and the AAAS. \n What does British Computer Society in this sentence referring to?",
+                "He is a Fellow of the American Association for Artificial Intelligence, the British Computer Society, the Institute of Electrical and Electronics Engineers and the AAAS. \n What does Institute of Electrical and Electronics Engineers in this sentence referring to?",
+                " of the American Association for Artificial Intelligence, the British Computer Society, the Institute of Electrical and Electronics Engineers and the AAAS. \n What does AAAS in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\n\"Fellow\" in this sentence refers to a professional membership grade or honorific title given to individuals by certain professional organizations, such as the American Association for Artificial Intelligence, the British Computer Society, and the Institute of Electrical and Electronics Engineers. It indicates a recognition of significant contributions and achievements in the field.",
+                "\n\nAmerican Association for Artificial Intelligence refers to an academic society or organization related to the field of artificial intelligence.",
+                "\n\nThe British Computer Society (BCS) is a professional organization in the United Kingdom that aims to promote the advancement of computing and information technology.",
+                "\n\nThe Institute of Electrical and Electronics Engineers (IEEE) is a professional organization for engineers and technologists in the fields of electrical engineering, electronics, and related disciplines.",
+                "\n\nAAAS is referring to the American Association for the Advancement of Science."
+            ]
+        }
+    },
+    "35": {
+        "sentence": "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the founders chair at the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL).",
+        "entities": {
+            "starts": [
+                0,
+                19,
+                35,
+                121,
+                136,
+                151,
+                245
+            ],
+            "ends": [
+                11,
+                27,
+                60,
+                123,
+                143,
+                176,
+                304
+            ],
+            "entity_mentions": [
+                "Berners-Lee",
+                "director",
+                "World Wide Web Consortium",
+                "He",
+                "founder",
+                "World Wide Web Foundation",
+                "MIT Computer Science and Artificial Intelligence Laboratory"
+            ],
+            "entity_names": [
+                "Tim_Berners-Lee",
+                "Director_(business)",
+                "World_Wide_Web_Consortium",
+                "Tim_Berners-Lee",
+                "Founder",
+                "World_Wide_Web_Foundation",
+                "MIT_Computer_Science_and_Artificial_Intelligence_Laboratory"
+            ],
+            "prompts": [
+                "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide \n What does Berners-Lee in this sentence referring to?",
+                "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, \n What does director in this sentence referring to?",
+                "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and h \n What does World Wide Web Consortium in this sentence referring to?",
+                "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the founders chair at the MIT Computer Science and Art \n What does He in this sentence referring to?",
+                "Berners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the founders chair at the MIT Computer Science and Artificial Intelligence \n What does founder in this sentence referring to?",
+                "erners-Lee is the director of the World Wide Web Consortium (W3C), which oversees the continued development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the founders chair at the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL). \n What does World Wide Web Foundation in this sentence referring to?",
+                "d development of the Web. He is also the founder of the World Wide Web Foundation, and is a senior researcher and holder of the founders chair at the MIT Computer Science and Artificial Intelligence Laboratory (CSAIL). \n What does MIT Computer Science and Artificial Intelligence Laboratory in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBerners-Lee refers to Sir Tim Berners-Lee, the person mentioned in the previous sentence.",
+                "\n\nDirector in this sentence refers to the person who is in charge of an organization, program, or project. Specifically, it refers to Tim Berners-Lee who is the director of the World Wide Web Consortium.",
+                "\n\nThe World Wide Web Consortium (W3C) is being referred to in this sentence.",
+                "\"Berner-Lee\"",
+                "\n\nThe word \"founder\" in this sentence refers to someone who established or created something, in this case, Sir Tim Berners-Lee who is the founder of the World Wide Web Foundation.",
+                "\n\nThe World Wide Web Foundation refers to an organization founded by Tim Berners-Lee.",
+                "\n\nMIT Computer Science and Artificial Intelligence Laboratory (CSAIL) is a research institute at the Massachusetts Institute of Technology (MIT) that focuses on computer science, artificial intelligence, robotics, and related areas. The sentence is referring to this research institute where Tim Berners-Lee works as a senior researcher and holder of the founders chair."
+            ]
+        }
+    },
+    "36": {
+        "sentence": "He attended Sheen Mount Primary School, and then went on to attend south west London's Emanuel School from 1969 to 1973, at the time a direct grant grammar school, which became an independent school in 1975.",
+        "entities": {
+            "starts": [
+                78,
+                87
+            ],
+            "ends": [
+                84,
+                101
+            ],
+            "entity_mentions": [
+                "London",
+                "Emanuel School"
+            ],
+            "entity_names": [
+                "London",
+                "Emanuel_School"
+            ],
+            "prompts": [
+                "He attended Sheen Mount Primary School, and then went on to attend south west London's Emanuel School from 1969 to 1973, at the time a direct grant grammar school, which became an independent school in 1975. \n What does London in this sentence referring to?",
+                "He attended Sheen Mount Primary School, and then went on to attend south west London's Emanuel School from 1969 to 1973, at the time a direct grant grammar school, which became an independent school in 1975. \n What does Emanuel School in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThis sentence is referring to south west London.",
+                "\n\nEmanuel School refers to a school located in south west London that the person attended from 1969 to 1973."
+            ]
+        }
+    },
+    "37": {
+        "sentence": "Berners-Lee worked as an independent contractor at CERN from June to December 1980. While in Geneva, he proposed a project based on the concept of hypertext, to facilitate sharing and updating information among researchers.",
+        "entities": {
+            "starts": [
+                0,
+                25,
+                51,
+                93,
+                101
+            ],
+            "ends": [
+                11,
+                47,
+                55,
+                99,
+                103
+            ],
+            "entity_mentions": [
+                "Berners-Lee",
+                "independent contractor",
+                "CERN",
+                "Geneva",
+                "he"
+            ],
+            "entity_names": [
+                "Tim_Berners-Lee",
+                "Independent_contractor",
+                "CERN",
+                "Geneva",
+                "Tim_Berners-Lee"
+            ],
+            "prompts": [
+                "Berners-Lee worked as an independent contractor at CERN from June to December 1980. While in Geneva, he proposed a project based on the concept of hypertext, to  \n What does Berners-Lee in this sentence referring to?",
+                "Berners-Lee worked as an independent contractor at CERN from June to December 1980. While in Geneva, he proposed a project based on the concept of hypertext, to facilitate sharing and updating info \n What does independent contractor in this sentence referring to?",
+                "Berners-Lee worked as an independent contractor at CERN from June to December 1980. While in Geneva, he proposed a project based on the concept of hypertext, to facilitate sharing and updating information  \n What does CERN in this sentence referring to?",
+                "Berners-Lee worked as an independent contractor at CERN from June to December 1980. While in Geneva, he proposed a project based on the concept of hypertext, to facilitate sharing and updating information among researchers. \n What does Geneva in this sentence referring to?",
+                "Berners-Lee worked as an independent contractor at CERN from June to December 1980. While in Geneva, he proposed a project based on the concept of hypertext, to facilitate sharing and updating information among researchers. \n What does he in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBerners-Lee is referring to himself.",
+                "\n\nIndependent contractor in this sentence refers to Berners-Lee working for CERN but not as a permanent employee. Instead, he was hired on a temporary or project-by-project basis.",
+                "\n\nCERN refers to the European Organization for Nuclear Research, a research organization that operates the largest particle physics laboratory in the world, located in Geneva, Switzerland.",
+                "\n\nGeneva refers to the city in Switzerland where CERN (the European Organization for Nuclear Research) is located, where Berners-Lee worked as a contractor.",
+                "\n\nBerners-Lee is referring to himself in this sentence. He is the one who proposed the project based on the concept of hypertext while working as an independent contractor at CERN."
+            ]
+        }
+    },
+    "38": {
+        "sentence": "Brown's time as Chancellor was marked by major reform of Britain's monetary and fiscal policy architecture, transferring interest rate setting powers to the Bank of England, by a wide extension of the powers of the Treasury to cover much domestic policy and by transferring responsibility for banking supervision to the Financial Services Authority.",
+        "entities": {
+            "starts": [
+                0,
+                16,
+                57,
+                157,
+                215,
+                320
+            ],
+            "ends": [
+                5,
+                26,
+                64,
+                172,
+                223,
+                348
+            ],
+            "entity_mentions": [
+                "Brown",
+                "Chancellor",
+                "Britain",
+                "Bank of England",
+                "Treasury",
+                "Financial Services Authority"
+            ],
+            "entity_names": [
+                "Gordon_Brown",
+                "Chancellor",
+                "Britain",
+                "Bank_of_England",
+                "Treasury",
+                "Financial_Services_Authority"
+            ],
+            "prompts": [
+                "Brown's time as Chancellor was marked by major reform of Britain's monetary and fiscal policy architecture, transferring interest rate setting powers to th \n What does Brown in this sentence referring to?",
+                "Brown's time as Chancellor was marked by major reform of Britain's monetary and fiscal policy architecture, transferring interest rate setting powers to the Bank of England, by \n What does Chancellor in this sentence referring to?",
+                "Brown's time as Chancellor was marked by major reform of Britain's monetary and fiscal policy architecture, transferring interest rate setting powers to the Bank of England, by a wide extension of the powers of the \n What does Britain in this sentence referring to?",
+                " time as Chancellor was marked by major reform of Britain's monetary and fiscal policy architecture, transferring interest rate setting powers to the Bank of England, by a wide extension of the powers of the Treasury to cover much domestic policy and by transferring responsibility for banking supervision to the Fi \n What does Bank of England in this sentence referring to?",
+                "s monetary and fiscal policy architecture, transferring interest rate setting powers to the Bank of England, by a wide extension of the powers of the Treasury to cover much domestic policy and by transferring responsibility for banking supervision to the Financial Services Authority. \n What does Treasury in this sentence referring to?",
+                "nd, by a wide extension of the powers of the Treasury to cover much domestic policy and by transferring responsibility for banking supervision to the Financial Services Authority. \n What does Financial Services Authority in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe sentence is referring to a person named Brown who was the Chancellor at a certain point in time. The sentence does not provide any further context or information about who this Brown is.",
+                "\n\nChancellor refers to the Chancellor of the Exchequer, who is the head of the Treasury Department in the United Kingdom and is responsible for formulating and implementing the country's fiscal policy.",
+                "\n\nBritain in this sentence refers to the United Kingdom.",
+                "\n\nThe Bank of England is referred to as an institution to which interest rate setting powers were transferred during the Chancellor's tenure.",
+                "\n\nIn this sentence, \"Treasury\" most likely refers to the UK Treasury, which is responsible for managing the country's economic policy, setting tax and spending policies, and managing public finances.",
+                "\n\nThe Financial Services Authority refers to a regulatory body responsible for supervising financial services firms and markets in the United Kingdom."
+            ]
+        }
+    },
+    "39": {
+        "sentence": "Brown was educated first at Kirkcaldy West Primary School where he was selected for an experimental fast stream education programme, which took him two years early to Kirkcaldy High School for an academic hothouse education taught in separate classes.",
+        "entities": {
+            "starts": [
+                0,
+                64,
+                144,
+                167
+            ],
+            "ends": [
+                5,
+                66,
+                147,
+                188
+            ],
+            "entity_mentions": [
+                "Brown",
+                "he",
+                "him",
+                "Kirkcaldy High School"
+            ],
+            "entity_names": [
+                "Gordon_Brown",
+                "Gordon_Brown",
+                "Gordon_Brown",
+                "Kirkcaldy_High_School"
+            ],
+            "prompts": [
+                "Brown was educated first at Kirkcaldy West Primary School where he was selected for an experimental fast stream education programme, which took him two yea \n What does Brown in this sentence referring to?",
+                "Brown was educated first at Kirkcaldy West Primary School where he was selected for an experimental fast stream education programme, which took him two years early to Kirkcaldy High School for an academic hothouse ed \n What does he in this sentence referring to?",
+                "Brown was educated first at Kirkcaldy West Primary School where he was selected for an experimental fast stream education programme, which took him two years early to Kirkcaldy High School for an academic hothouse education taught in separate classes. \n What does him in this sentence referring to?",
+                "d first at Kirkcaldy West Primary School where he was selected for an experimental fast stream education programme, which took him two years early to Kirkcaldy High School for an academic hothouse education taught in separate classes. \n What does Kirkcaldy High School in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBrown is a person, but it is unclear from the given sentence who exactly he is referring to.",
+                "\n\nThe pronoun \"he\" in this sentence is referring to Brown.",
+                "\n\n\"Him\" in this sentence refers to Brown.",
+                "\n\nKirkcaldy High School in this sentence refers to a school where the person attended for an \"academic hothouse education taught in separate classes\" as a part of an experimental fast stream education program."
+            ]
+        }
+    },
+    "40": {
+        "sentence": "He served as Rector until 1975, and also edited the document The Red Paper on Scotland.",
+        "entities": {
+            "starts": [
+                13,
+                78
+            ],
+            "ends": [
+                19,
+                86
+            ],
+            "entity_mentions": [
+                "Rector",
+                "Scotland"
+            ],
+            "entity_names": [
+                "Rector_(academia)",
+                "Scotland"
+            ],
+            "prompts": [
+                "He served as Rector until 1975, and also edited the document The Red Paper on Scotland. \n What does Rector in this sentence referring to?",
+                "He served as Rector until 1975, and also edited the document The Red Paper on Scotland. \n What does Scotland in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nRector in this sentence is referring to a position in a university or college that is elected by the students to represent their interests in academic and administrative matters.",
+                "\n\nScotland refers to the country of Scotland."
+            ]
+        }
+    },
+    "41": {
+        "sentence": "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University",
+        "entities": {
+            "starts": [
+                18,
+                42,
+                66,
+                97,
+                117,
+                131
+            ],
+            "ends": [
+                23,
+                50,
+                95,
+                99,
+                122,
+                146
+            ],
+            "entity_mentions": [
+                "Brown",
+                "lecturer",
+                "Glasgow College of Technology",
+                "He",
+                "tutor",
+                "Open University"
+            ],
+            "entity_names": [
+                "Gordon_Brown",
+                "Lecturer",
+                "Glasgow_Caledonian_University",
+                "Gordon_Brown",
+                "Tutor",
+                "Open_University"
+            ],
+            "prompts": [
+                "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University \n What does Brown in this sentence referring to?",
+                "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University \n What does lecturer in this sentence referring to?",
+                "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University \n What does Glasgow College of Technology in this sentence referring to?",
+                "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University \n What does He in this sentence referring to?",
+                "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University \n What does tutor in this sentence referring to?",
+                "From 1976 to 1980 Brown was employed as a lecturer in politics at Glasgow College of Technology. He also worked as a tutor for the Open University \n What does Open University in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nIt is not specified in the given sentence who Brown is referring to.",
+                "\n\nIn this sentence, \"lecturer\" refers to Brown's job position at Glasgow College of Technology, where he taught politics.",
+                "\n\nThe sentence is referring to the institution known as Glasgow College of Technology, where Brown was employed as a lecturer in politics from 1976 to 1980.",
+                "\n\n\"He\" in this sentence is referring to Brown.",
+                "\n\nIn this sentence, \"tutor\" refers to a teacher or instructor who provides academic assistance or guidance to students, often on a one-on-one or small group basis, in a specific subject or course.",
+                "\n\nThe Open University refers to a distance learning and research university based in the United Kingdom."
+            ]
+        }
+    },
+    "42": {
+        "sentence": "He attended grammar school in Belfast from the age of 12 and entered the University of Glasgow in 1746 when he was eighteen years old, studying there for four years before spending another four at the University of Edinburgh, furthering his medical studies.",
+        "entities": {
+            "starts": [
+                30,
+                73,
+                201
+            ],
+            "ends": [
+                37,
+                94,
+                224
+            ],
+            "entity_mentions": [
+                "Belfast",
+                "University of Glasgow",
+                "University of Edinburgh"
+            ],
+            "entity_names": [
+                "Belfast",
+                "University_of_Glasgow",
+                "University_of_Edinburgh"
+            ],
+            "prompts": [
+                "He attended grammar school in Belfast from the age of 12 and entered the University of Glasgow in 1746 when he was eighteen years old, studying there for four years before spending anothe \n What does Belfast in this sentence referring to?",
+                "He attended grammar school in Belfast from the age of 12 and entered the University of Glasgow in 1746 when he was eighteen years old, studying there for four years before spending another four at the University of Edinburgh, furthering his med \n What does University of Glasgow in this sentence referring to?",
+                "of 12 and entered the University of Glasgow in 1746 when he was eighteen years old, studying there for four years before spending another four at the University of Edinburgh, furthering his medical studies. \n What does University of Edinburgh in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBelfast refers to a city in Northern Ireland.",
+                "\n\nThe University of Glasgow in this sentence is referring to the educational institution where the subject of the sentence attended for four years.",
+                "\n\nThe University of Edinburgh is referring to the institution where the person studied for four years to further their medical education."
+            ]
+        }
+    },
+    "43": {
+        "sentence": "In 1757, Black was appointed Regius Professor of the Practice of Medicine at the University of Glasgow.",
+        "entities": {
+            "starts": [
+                9,
+                29,
+                81
+            ],
+            "ends": [
+                14,
+                45,
+                102
+            ],
+            "entity_mentions": [
+                "Black",
+                "Regius Professor",
+                "University of Glasgow"
+            ],
+            "entity_names": [
+                "Joseph_Black",
+                "Regius_Professor",
+                "University_of_Glasgow"
+            ],
+            "prompts": [
+                "In 1757, Black was appointed Regius Professor of the Practice of Medicine at the University of Glasgow. \n What does Black in this sentence referring to?",
+                "In 1757, Black was appointed Regius Professor of the Practice of Medicine at the University of Glasgow. \n What does Regius Professor in this sentence referring to?",
+                "In 1757, Black was appointed Regius Professor of the Practice of Medicine at the University of Glasgow. \n What does University of Glasgow in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBlack is referring to a person who was appointed as Regius Professor of the Practice of Medicine at the University of Glasgow in 1757.",
+                "\n\nRegius Professor refers to a prestigious academic title in the field of Medicine, specifically the Practice of Medicine, at the University of Glasgow.",
+                "\n\nThe University of Glasgow refers to the educational institution where Black was appointed as Regius Professor of the Practice of Medicine in 1757."
+            ]
+        }
+    },
+    "44": {
+        "sentence": "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh.",
+        "entities": {
+            "starts": [
+                38,
+                42,
+                60,
+                71,
+                80,
+                96,
+                114,
+                157
+            ],
+            "ends": [
+                41,
+                48,
+                67,
+                78,
+                85,
+                110,
+                123,
+                180
+            ],
+            "entity_mentions": [
+                "his",
+                "friend",
+                "teacher",
+                "Glasgow",
+                "Black",
+                "William Cullen",
+                "Professor",
+                "University of Edinburgh"
+            ],
+            "entity_names": [
+                "Joseph_Black",
+                "Friendship",
+                "Teacher",
+                "Glasgow",
+                "Joseph_Black",
+                "William_Cullen",
+                "Professor",
+                "University_of_Edinburgh"
+            ],
+            "prompts": [
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does his in this sentence referring to?",
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does friend in this sentence referring to?",
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does teacher in this sentence referring to?",
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does Glasgow in this sentence referring to?",
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does Black in this sentence referring to?",
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does William Cullen in this sentence referring to?",
+                "In 1766, treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does Professor in this sentence referring to?",
+                ", treading in the footsteps of his friend and former teacher at Glasgow, Black succeeded William Cullen as Professor of Medicine and Chemistry at the University of Edinburgh. \n What does University of Edinburgh in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe pronoun \"his\" in this sentence is referring to Joseph Black.",
+                "\n\nfriend in this sentence is referring to William Cullen.",
+                "\n\nThe word \"teacher\" in this sentence is referring to William Cullen.",
+                "\n\nGlasgow refers to a location or institution where Black had a friend and former teacher before becoming a professor at the University of Edinburgh.",
+                "\n\nBlack refers to a person, likely a scientist or academic.",
+                "\n\nWilliam Cullen is the person who Black succeeded as Professor of Medicine and Chemistry at the University of Edinburgh.",
+                "\n\nThe word \"Professor\" in this sentence is referring to Black's occupation or job title.",
+                "\n\nThe University of Edinburgh is referring to the higher education institution where Black became a professor."
+            ]
+        }
+    },
+    "45": {
+        "sentence": "In 1755 he was enticed by Lord Kames to become Professor of Chemistry and Medicine at the University of Edinburgh. It was in Edinburgh, in 1756, that he gave the first documented public demonstration of artificial refrigeration.",
+        "entities": {
+            "starts": [
+                26,
+                47,
+                90,
+                125
+            ],
+            "ends": [
+                36,
+                56,
+                113,
+                134
+            ],
+            "entity_mentions": [
+                "Lord Kames",
+                "Professor",
+                "University of Edinburgh",
+                "Edinburgh"
+            ],
+            "entity_names": [
+                "Henry_Home,_Lord_Kames",
+                "Professor",
+                "University_of_Edinburgh",
+                "Edinburgh"
+            ],
+            "prompts": [
+                "In 1755 he was enticed by Lord Kames to become Professor of Chemistry and Medicine at the University of Edinburgh. It was in Edinburgh, in 1756, that he gave the first documented public  \n What does Lord Kames in this sentence referring to?",
+                "In 1755 he was enticed by Lord Kames to become Professor of Chemistry and Medicine at the University of Edinburgh. It was in Edinburgh, in 1756, that he gave the first documented public demonstration of art \n What does Professor in this sentence referring to?",
+                "In 1755 he was enticed by Lord Kames to become Professor of Chemistry and Medicine at the University of Edinburgh. It was in Edinburgh, in 1756, that he gave the first documented public demonstration of artificial refrigeration. \n What does University of Edinburgh in this sentence referring to?",
+                "In 1755 he was enticed by Lord Kames to become Professor of Chemistry and Medicine at the University of Edinburgh. It was in Edinburgh, in 1756, that he gave the first documented public demonstration of artificial refrigeration. \n What does Edinburgh in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nLord Kames is a person who enticed someone (the subject of the sentence, not specified in this excerpt) to become a Professor of Chemistry and Medicine at the University of Edinburgh.",
+                "\n\nThe word \"Professor\" in this sentence refers to the academic title given to a teacher or instructor at a university or college.",
+                "\n\nThe University of Edinburgh refers to the institution of higher education located in Edinburgh, Scotland where the individual became a professor in 1755.",
+                "\n\nEdinburgh refers to the University of Edinburgh, where Joseph Black became a professor in 1755."
+            ]
+        }
+    },
+    "46": {
+        "sentence": "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796.",
+        "entities": {
+            "starts": [
+                7,
+                21,
+                27,
+                52,
+                62,
+                92,
+                96,
+                121
+            ],
+            "ends": [
+                13,
+                26,
+                40,
+                61,
+                74,
+                95,
+                102,
+                126
+            ],
+            "entity_mentions": [
+                "father",
+                "judge",
+                "Robert Cullen",
+                "physician",
+                "Henry Cullen",
+                "son",
+                "Robert",
+                "judge"
+            ],
+            "entity_names": [
+                "Father",
+                "Judge",
+                "Robert_Cullen,_Lord_Cullen",
+                "Physician",
+                "Henry_Cullen",
+                "Son",
+                "Robert_Cullen,_Lord_Cullen",
+                "Judge"
+            ],
+            "prompts": [
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does father in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does judge in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does Robert Cullen in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does physician in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does Henry Cullen in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does son in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does Robert in this sentence referring to?",
+                "He was father to the judge Robert Cullen and to the physician Henry Cullen. Cullen's eldest son Robert became a Scottish judge in 1796. \n What does judge in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nFather refers to a person who is a parent and is the father of two individuals - Robert Cullen and Henry Cullen.",
+                "\n\nJudge in this sentence refers to a legal professional who presides over a court of law and is responsible for making decisions or judgments on legal disputes.",
+                "\n\nRobert Cullen in this sentence refers to the son of William Cullen.",
+                "\n\nPhysician in this sentence refers to a medical doctor or a person who practices medicine professionally.",
+                "\n\nHenry Cullen refers to a physician who was the son of the person mentioned earlier in the sentence.",
+                "\n\nThe sentence is referring to William Cullen's son, specifically his eldest son Robert.",
+                "\n\nRobert in this sentence refers to Cullen's son.",
+                "\n\nJudge refers to a legal professional who presides over a court of law and makes decisions in legal cases."
+            ]
+        }
+    },
+    "47": {
+        "sentence": "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowship.",
+        "entities": {
+            "starts": [
+                41,
+                56,
+                69,
+                86,
+                111,
+                133,
+                167,
+                197,
+                212,
+                255
+            ],
+            "ends": [
+                54,
+                63,
+                77,
+                109,
+                113,
+                143,
+                170,
+                204,
+                214,
+                265
+            ],
+            "entity_mentions": [
+                "mathematician",
+                "Maxwell",
+                "Scotland",
+                "University of Cambridge",
+                "He",
+                "Peterhouse",
+                "his",
+                "Trinity",
+                "he",
+                "fellowship"
+            ],
+            "entity_names": [
+                "Mathematician",
+                "James_Clerk_Maxwell",
+                "Scotland",
+                "University_of_Cambridge",
+                "James_Clerk_Maxwell",
+                "Peterhouse,_Cambridge",
+                "James_Clerk_Maxwell",
+                "Trinity_College,_Cambridge",
+                "James_Clerk_Maxwell",
+                "Fellow"
+            ],
+            "prompts": [
+                "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity \n What does mathematician in this sentence referring to?",
+                "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where h \n What does Maxwell in this sentence referring to?",
+                "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it  \n What does Scotland in this sentence referring to?",
+                "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fell \n What does University of Cambridge in this sentence referring to?",
+                "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowsh \n What does He in this sentence referring to?",
+                "In October 1850, already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowship. \n What does Peterhouse in this sentence referring to?",
+                "already an accomplished mathematician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowship. \n What does his in this sentence referring to?",
+                "atician, Maxwell left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowship. \n What does Trinity in this sentence referring to?",
+                "l left Scotland for the University of Cambridge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowship. \n What does he in this sentence referring to?",
+                "idge. He initially attended Peterhouse, but before the end of his first term transferred to Trinity, where he believed it would be easier to obtain a fellowship. \n What does fellowship in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe word \"mathematician\" in this sentence refers to Maxwell himself, indicating that he was already a skilled mathematician when he left Scotland for the University of Cambridge.",
+                "\n\nMaxwell refers to James Clerk Maxwell, a Scottish mathematician who left Scotland to attend the University of Cambridge in 1850.",
+                "\n\nScotland refers to the country where Maxwell was previously located before leaving for the University of Cambridge in October 1850.",
+                "The University of Cambridge referred to in this sentence is a prestigious university located in Cambridge, England.",
+                "\n\n\"He\" refers to Maxwell, the subject of the previous sentence.",
+                "\n\nPeterhouse is referring to a college at the University of Cambridge which Maxwell initially attended before transferring to Trinity.",
+                "\n\nThe pronoun \"he\" in this sentence refers to Maxwell.",
+                "\n\nTrinity refers to the University of Cambridge college called Trinity College.",
+                "\n\nThe sentence refers to someone who left Scotland for the University of Cambridge and transferred from Peterhouse to Trinity. It does not provide enough context to determine the person's name or other identifying information.",
+                "\n\nThe fellowship in this sentence refers to a position as a fellow at Trinity College, Cambridge."
+            ]
+        }
+    },
+    "48": {
+        "sentence": "In 1857 Maxwell befriended the Reverend Daniel Dewar, who was then the Principal of Marischal.",
+        "entities": {
+            "starts": [
+                8,
+                31,
+                84
+            ],
+            "ends": [
+                15,
+                39,
+                93
+            ],
+            "entity_mentions": [
+                "Maxwell",
+                "Reverend",
+                "Marischal"
+            ],
+            "entity_names": [
+                "James_Clerk_Maxwell",
+                "The_Reverend",
+                "Marischal_College"
+            ],
+            "prompts": [
+                "In 1857 Maxwell befriended the Reverend Daniel Dewar, who was then the Principal of Marischal. \n What does Maxwell in this sentence referring to?",
+                "In 1857 Maxwell befriended the Reverend Daniel Dewar, who was then the Principal of Marischal. \n What does Reverend in this sentence referring to?",
+                "In 1857 Maxwell befriended the Reverend Daniel Dewar, who was then the Principal of Marischal. \n What does Marischal in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nMaxwell is referring to himself.",
+                "\n\nReverend is referring to the title of the person, indicating that Daniel Dewar was a religious figure, likely a priest or minister.",
+                "\n\nMarischal refers to Marischal College, which is a historic building located in Aberdeen, Scotland. It was a college of the University of Aberdeen until 1860, and now serves as the second campus of the University of Aberdeen."
+            ]
+        }
+    },
+    "49": {
+        "sentence": "In 1871 he became the first Cavendish Professor of Physics at Cambridge.",
+        "entities": {
+            "starts": [
+                28,
+                62
+            ],
+            "ends": [
+                58,
+                71
+            ],
+            "entity_mentions": [
+                "Cavendish Professor of Physics",
+                "Cambridge"
+            ],
+            "entity_names": [
+                "Cavendish_Professor_of_Physics",
+                "University_of_Cambridge"
+            ],
+            "prompts": [
+                "In 1871 he became the first Cavendish Professor of Physics at Cambridge. \n What does Cavendish Professor of Physics in this sentence referring to?",
+                "In 1871 he became the first Cavendish Professor of Physics at Cambridge. \n What does Cambridge in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe Cavendish Professorship of Physics is a named chair in physics at the University of Cambridge, England.",
+                "\n\nThe sentence is referring to the University of Cambridge in England."
+            ]
+        }
+    },
+    "50": {
+        "sentence": "Faraday was born in Newington Butts, which is now part of the London Borough of Southwark but was then a suburban part of Surrey.",
+        "entities": {
+            "starts": [
+                0,
+                20,
+                62,
+                122
+            ],
+            "ends": [
+                7,
+                35,
+                89,
+                128
+            ],
+            "entity_mentions": [
+                "Faraday",
+                "Newington Butts",
+                "London Borough of Southwark",
+                "Surrey"
+            ],
+            "entity_names": [
+                "Michael_Faraday",
+                "Newington_Butts",
+                "London_Borough_of_Southwark",
+                "Surrey"
+            ],
+            "prompts": [
+                "Faraday was born in Newington Butts, which is now part of the London Borough of Southwark but was then a suburban part of Surrey. \n What does Faraday in this sentence referring to?",
+                "Faraday was born in Newington Butts, which is now part of the London Borough of Southwark but was then a suburban part of Surrey. \n What does Newington Butts in this sentence referring to?",
+                "Faraday was born in Newington Butts, which is now part of the London Borough of Southwark but was then a suburban part of Surrey. \n What does London Borough of Southwark in this sentence referring to?",
+                "Faraday was born in Newington Butts, which is now part of the London Borough of Southwark but was then a suburban part of Surrey. \n What does Surrey in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nFaraday refers to a person, most likely Michael Faraday, a famous British scientist and physicist.",
+                "\n\nNewington Butts is a location in London Borough of Southwark.",
+                "\n\nLondon Borough of Southwark is a local government district in the city of London, England.",
+                "\n\nSurrey refers to a county in south-east England."
+            ]
+        }
+    },
+    "55": {
+        "sentence": "Along with the University of Edinburgh, the University was part of the Scottish Enlightenment during the 18th century.",
+        "entities": {
+            "starts": [
+                15,
+                44,
+                71
+            ],
+            "ends": [
+                38,
+                54,
+                93
+            ],
+            "entity_mentions": [
+                "University of Edinburgh",
+                "University",
+                "Scottish Enlightenment"
+            ],
+            "entity_names": [
+                "University_of_Edinburgh",
+                "University",
+                "Scottish_Enlightenment"
+            ],
+            "prompts": [
+                "Along with the University of Edinburgh, the University was part of the Scottish Enlightenment during the 18th century. \n What does University of Edinburgh in this sentence referring to?",
+                "Along with the University of Edinburgh, the University was part of the Scottish Enlightenment during the 18th century. \n What does University in this sentence referring to?",
+                "Along with the University of Edinburgh, the University was part of the Scottish Enlightenment during the 18th century. \n What does Scottish Enlightenment in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe University of Edinburgh is referring to another university that was a part of the Scottish Enlightenment during the 18th century.",
+                "\n\nThe University in this sentence is referring to a specific university that was part of the Scottish Enlightenment during the 18th century. The name of the university is not specified, but it is implied that the reader or listener is aware of which university is being discussed.",
+                "\n\nThe Scottish Enlightenment was a period of intellectual flourishing in Scotland during the 18th century, characterized by the spread of new ideas in philosophy, science, and economics."
+            ]
+        }
+    },
+    "56": {
+        "sentence": "The University of Glasgow was founded in 1451 AD by a charter or papal bull from Pope Nicholas V.",
+        "entities": {
+            "starts": [
+                4,
+                81
+            ],
+            "ends": [
+                25,
+                96
+            ],
+            "entity_mentions": [
+                "University of Glasgow",
+                "Pope Nicholas V"
+            ],
+            "entity_names": [
+                "University_of_Glasgow",
+                "Pope_Nicholas_V"
+            ],
+            "prompts": [
+                "The University of Glasgow was founded in 1451 AD by a charter or papal bull from Pope Nicholas V. \n What does University of Glasgow in this sentence referring to?",
+                "The University of Glasgow was founded in 1451 AD by a charter or papal bull from Pope Nicholas V. \n What does Pope Nicholas V in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nThe University of Glasgow is referring to an educational institution.",
+                "\n\nPope Nicholas V refers to the pope who issued the charter or papal bull that established the University of Glasgow in 1451 AD."
+            ]
+        }
+    },
+    "57": {
+        "sentence": "He studied at Bologna and Florence, gaining a degree in theology in 1422.",
+        "entities": {
+            "starts": [
+                14,
+                26
+            ],
+            "ends": [
+                21,
+                34
+            ],
+            "entity_mentions": [
+                "Bologna",
+                "Florence"
+            ],
+            "entity_names": [
+                "Bologna",
+                "Florence"
+            ],
+            "prompts": [
+                "He studied at Bologna and Florence, gaining a degree in theology in 1422. \n What does Bologna in this sentence referring to?",
+                "He studied at Bologna and Florence, gaining a degree in theology in 1422. \n What does Florence in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBologna in this sentence is referring to a place where the person studied.",
+                "\n\nIn this sentence, Florence refers to a city in Italy."
+            ]
+        }
+    },
+    "58": {
+        "sentence": "After a long decline, Bologna was reborn in the 5th century under Bishop Petronius.",
+        "entities": {
+            "starts": [
+                22,
+                66
+            ],
+            "ends": [
+                29,
+                82
+            ],
+            "entity_mentions": [
+                "Bologna",
+                "Bishop Petronius"
+            ],
+            "entity_names": [
+                "Bologna",
+                "Petronius_of_Bologna"
+            ],
+            "prompts": [
+                "After a long decline, Bologna was reborn in the 5th century under Bishop Petronius. \n What does Bologna in this sentence referring to?",
+                "After a long decline, Bologna was reborn in the 5th century under Bishop Petronius. \n What does Bishop Petronius in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nBologna refers to the city of Bologna in Italy.",
+                "\n\nBishop Petronius refers to a bishop who played a significant role in the revival of Bologna in the 5th century."
+            ]
+        }
+    },
+    "59": {
+        "sentence": "Saint Petronius was bishop of Bologna during the fifth century.",
+        "entities": {
+            "starts": [
+                0,
+                20,
+                30
+            ],
+            "ends": [
+                15,
+                26,
+                37
+            ],
+            "entity_mentions": [
+                "Saint Petronius",
+                "bishop",
+                "Bologna"
+            ],
+            "entity_names": [
+                "Petronius_of_Bologna",
+                "Bishop",
+                "Bologna"
+            ],
+            "prompts": [
+                "Saint Petronius was bishop of Bologna during the fifth century. \n What does Saint Petronius in this sentence referring to?",
+                "Saint Petronius was bishop of Bologna during the fifth century. \n What does bishop in this sentence referring to?",
+                "Saint Petronius was bishop of Bologna during the fifth century. \n What does Bologna in this sentence referring to?"
+            ],
+            "prompt_results": [
+                "\n\nSaint Petronius refers to a person, specifically a bishop of Bologna during the fifth century.",
+                "\n\nThe word \"bishop\" in this sentence refers to a high-ranking member of the Christian clergy who is typically in charge of one or more churches or dioceses.",
+                "\n\nBologna in this sentence refers to a city in Italy."
+            ]
+        }
+    }
+}
