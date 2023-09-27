@@ -346,6 +346,32 @@ def load_ttl_oke_2015(
     return doc_name2instance
 
 
+def load_unseen_mentions(file='/nfs/yding4/EL_project/dataset/unseen_mentions/test.json'):
+    doc_name2instance = dict()
+    with open(file) as reader:
+        for index, line in enumerate(reader):
+            d = json.loads(line)
+            # doc_name = str(d['docId'])
+            doc_name = str(index)
+            mention = ' '.join(d['mention_as_list'])
+            entity = d['y_title']
+            sentence = d['left_context_text'] + ' ' + mention + ' ' + d['right_context_text']
+            start = len( d['left_context_text']) + 1
+            end = start + len(mention)
+
+            doc_name2instance[doc_name] = {
+                'sentence': sentence,
+                'entities': {
+                    'starts': [start],
+                    'ends': [end],
+                    'entity_mentions': [mention],
+                    'entity_names': [entity],
+                }
+            }
+    
+    return doc_name2instance
+
+
 def load_ttl_oke_2016(
     file='/nfs/yding4/EL_project/dataset/oke-challenge-2016/evaluation-data/task1/evaluation-dataset-task1.ttl',
 ):
@@ -848,6 +874,8 @@ def dataset_loader(file, key='', mode='tsv'):
         doc_name2instance = load_ttl_oke_2016(file)
     elif mode == 'n3':
         doc_name2instance = load_ttl_n3(file)
+    elif mode == 'unseen_mentions':
+        doc_name2instance = load_unseen_mentions(file)
     elif mode == 'xml':
         parent_dir = os.path.dirname(os.path.dirname(file))
         dataset = os.path.basename(file).split('.')[0]
@@ -864,5 +892,6 @@ if __name__ == '__main__':
     # load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/Reuters-128.ttl')
     # load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/RSS-500.ttl')
 
-    file = '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/ace2004/ace2004.xml'
-    doc_name2instance = dataset_loader(file, mode='xml')
+    # file = '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/ace2004/ace2004.xml'
+    # doc_name2instance = dataset_loader(file, mode='xml')
+    doc_name2instance = load_unseen_mentions()
