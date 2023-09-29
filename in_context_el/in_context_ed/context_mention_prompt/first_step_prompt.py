@@ -55,7 +55,7 @@ def parse_args():
         help="",
         # required=True,
         default='gpt-3.5-turbo',
-        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003'],
+        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003', 'gpt-4'],
         type=str,
     )
 
