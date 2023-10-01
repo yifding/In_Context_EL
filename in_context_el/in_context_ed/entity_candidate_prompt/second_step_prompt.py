@@ -1,5 +1,6 @@
 import os
 import json
+import time
 import argparse
 from tqdm import tqdm
 import openai
@@ -128,6 +129,7 @@ def main():
 
             multi_choice_prompts.append(multi_choice_prompt)
             multi_choice_prompt_results.append(complete_output)
+            time.sleep(3)
 
         entities['multi_choice_prompts'] = multi_choice_prompts
         entities['multi_choice_prompt_results'] = multi_choice_prompt_results
