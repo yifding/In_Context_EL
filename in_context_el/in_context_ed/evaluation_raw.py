@@ -51,7 +51,10 @@ def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
         return ''
     elif L == 1:
         return entity_candidates[0]
-    
+    # palm may return non type for results
+    if type(multi_choice_prompt_result) is not str:
+        return ''
+
     if any (s in multi_choice_prompt_result.lower() for s in [' not ', 'doesn\'t', 'none']):
         return ''
     

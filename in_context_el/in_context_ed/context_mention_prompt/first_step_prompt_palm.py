@@ -1,11 +1,11 @@
 import os
 import json
+import time
 import argparse
-import replicate
 from tqdm import tqdm
-from transformers import pipeline, set_seed
-# os.environ['TRANSFORMERS_CACHE'] = '/nfs/yding4/transformers_cache'
-os.environ['REPLICATE_API_TOKEN'] = 'r8_EzgWgZmHLxJ7JP0NI2V5HnyOyQkHydW1lkFPP'
+import google.generativeai as palm
+token='AIzaSyAh4ksS7xiS9hGITSv-I7cNir-Tq8CCxBs'
+palm.configure(api_key=token)
 
 
 def parse_args():
@@ -24,7 +24,7 @@ def parse_args():
         "--output_dir",
         help="output directory",
         # required=True,
-        default='/nfs/yding4/In_Context_EL/RUN_FILES/4_13_2023/rel_blink/mention_prompt_llama',
+        default='/nfs/yding4/In_Context_EL/RUN_FILES/4_13_2023/rel_blink/mention_prompt_palm',
         type=str,
     )
     parser.add_argument(
@@ -95,12 +95,13 @@ def main():
             prompt_sentence = sentence[max(0, start - num_context_characters): start] + entity_mention + sentence[end: end + num_context_characters]
             prompt = prompt_sentence + " \n What does " + entity_mention + " in this sentence referring to?"
             prompts.append(prompt)
-            output = replicate.run(
-                "meta/llama-2-70b-chat:2c1608e18606fad2812020dc541930f2d0495ce32eee50074220b87300bc16e1",
-                input={"prompt": prompt}
+            complete_output = palm.generate_text(
+                model='models/text-bison-001',
+                prompt=prompt,
+                temperature=0,
+                max_output_tokens=500,
             )
-            complete_output = ''.join(output)
-            prompt_results.append(complete_output)
+            prompt_results.append(complete_output.result)
             
         entities['prompts'] = prompts
         entities['prompt_results'] = prompt_results
