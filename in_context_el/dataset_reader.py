@@ -892,6 +892,20 @@ if __name__ == '__main__':
     # load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/Reuters-128.ttl')
     # load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/RSS-500.ttl')
 
-    # file = '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/ace2004/ace2004.xml'
-    # doc_name2instance = dataset_loader(file, mode='xml')
-    doc_name2instance = load_unseen_mentions()
+    file = '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/clueweb/clueweb.xml'
+    doc_name2instance = dataset_loader(file, mode='xml')
+    # doc_name2instance = load_unseen_mentions()
+    # doc_name2instance = load_ttl_oke_2016()
+    # doc_name2instance = load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/Reuters-128.ttl')
+    num_entities = 0
+    num_mentions = 0
+    num_docs = 0
+    for doc_name, instance in doc_name2instance.items():
+        num_docs += 1
+        entities = instance['entities']
+        for entity_name in entities['entity_names']:
+            if entity_name != '':
+                num_entities += 1
+            num_mentions += 1
+    print(f'num_mentions: {num_mentions}, num_entities: {num_entities}, plnum_docs: {num_docs}')
+
