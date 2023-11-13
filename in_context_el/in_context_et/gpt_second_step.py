@@ -1,4 +1,5 @@
 import os
+import time
 import jsonlines
 import nltk
 from nltk.tokenize import sent_tokenize
@@ -69,6 +70,7 @@ for index, record in enumerate(tqdm(records)):
         complete_output = openai_chatgpt(prompt, model='gpt-3.5-turbo-16k')
         prompt_answer[entity_type] = complete_output
     records[index]['prompt_answer'] = prompt_answer
+    time.sleep(1)
 
     with jsonlines.open(output_file, 'w') as writer:
         writer.write_all(records)

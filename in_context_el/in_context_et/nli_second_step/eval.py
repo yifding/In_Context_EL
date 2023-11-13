@@ -12,7 +12,7 @@ from torch.utils.data import DataLoader, SequentialSampler
 import numpy as np
 from transformers import AutoTokenizer, RobertaForSequenceClassification, RobertaConfig
 
-from dataset import TypingDataset
+from dataset import TypingDataset, Typing4TypingDataset, Entity4TypingDataset
 from model import roberta_mnli_typing
 
 
@@ -24,10 +24,10 @@ def eval(args, eval_dataset, model, tokenizer):
 
     eval_res = []
     for sample_index, sample in enumerate(tqdm(eval_dataloader, desc='eval progress')):
-        premise, annotation, _, _, _ = [items for items in sample]
+        premise, annotation, entity, _, _, _ = [items for items in sample]
         premise = str(premise[0])
-        # entity = str(entity[0])
-        entity = premise[:20]  # approximate
+        entity = str(entity[0])
+        # entity = premise[:20]  # approximate
         annotation = list(annotation[0])
         # idx = str(idx[0])
         res = {'id': str(sample_index), 'premise': premise, 'entity': entity, 'annotation': annotation}
@@ -72,6 +72,16 @@ def main():
                         default='test',
                         choices=['train', 'dev', 'test'],
                         help='mode of data to process')
+    parser.add_argument('--dataset_type',
+                        type=str,
+                        default='dbpedia',
+                        choices=['dbpedia', 'typing', 'entity'],
+                        help='dataset type to process')
+    parser.add_argument('--dataset',
+                        type=str,
+                        default='bbn',
+                        choices=['bbn', 'dbpedia'],
+                        help='dataset')
     parser.add_argument('--threshold',
                         type=float,
                         default=0.0,
@@ -85,7 +95,7 @@ def main():
     try:
         # output file would be modelFileName_evalFileName.json
         output_suffix = args.eval_data_path.split('/')[-1]
-        output_path = os.path.join(args.model_dir, f'Evaluation_{args.mode}')
+        output_path = os.path.join(args.model_dir, f'Evaluation_{args.dataset_type}_{args.dataset}_{args.mode}')
     except:
         raise ValueError("Cannot generate output file name, please manually input")
 
@@ -103,7 +113,15 @@ def main():
 
     print(f'Evaluating {args.model_dir}\n on {args.eval_data_path} '
           f'\n result file will be saved to {output_path}')
-    eval_dataset = TypingDataset(args.mode, args.eval_data_path)
+    if args.dataset_type == 'dbpedia':
+        eval_dataset = TypingDataset(args.mode, args.eval_data_path)
+    elif args.dataset_type == 'typing':
+        eval_dataset = Typing4TypingDataset(args.mode, args.eval_data_path, args.dataset)
+    elif args.dataset_type == 'entity':
+        eval_dataset = Entity4TypingDataset(args.mode, args.eval_data_path, args.dataset)
+    else:
+        raise ValueError('Unknown dataset type')
+
     eval_res = eval(args, eval_dataset, model, tokenizer)
 
     # save res file

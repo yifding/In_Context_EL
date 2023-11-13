@@ -81,6 +81,10 @@ def main():
                         type=str,
                         default='',
                         help='dir path to model checkpoint. Used to save typing result')
+    parser.add_argument('--output_file',
+                        type=str,
+                        default='result.json',
+                        help='file name to save typing result')
     parser.add_argument('--threshold_start',
                         type=float,
                         default=0.0,
@@ -90,6 +94,7 @@ def main():
                         type=float,
                         default=0.005,
                         help='threshold increment every time')
+
 
     args = parser.parse_args()
 
@@ -118,6 +123,7 @@ def main():
     print(f'{"*"*10}\n F1 champ on DEV = {round(f1_champ, 3) * 100} when threshold = {threshold_champ}\n{"*"*10}')
 
     print("Eval TEST on Loose Macro Score:")
+    threshold_champ=0.72
     precision, recall, res = macro(test_dat, threshold_champ, True)
     summary = f'{round(precision, 3) * 100}\t' \
               f'{round(recall, 3) * 100}\t' \
@@ -125,7 +131,7 @@ def main():
     print(summary)
 
     # save res file
-    with open(os.path.join(args.model_dir,'result.json'), 'w+') as fout:
+    with open(os.path.join(args.model_dir, args.output_file), 'w') as fout:
         fout.write("\n".join([json.dumps(items) for items in res]))
 
 

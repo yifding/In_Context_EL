@@ -51,18 +51,18 @@ def train(args, train_dataset, model, tokenizer):
         loss_stat = []
         for step, batch in enumerate(epoch_iterator):
             model.train()
-            premise_lst, pos_lst, pos_general_lst, pos_fine_lst, pos_ultrafine_lst = [list(item) for item in batch]
+            premise_lst, pos_lst, entity_lst, _, _, _ = [list(item) for item in batch]
             dat_true = []
             dat_false = []
-            depend_true = []
-            depend_false = []
+            # depend_true = []
+            # depend_false = []
             for idx in range(len(premise_lst)):
                 premise = premise_lst[idx]
-                entity = premise[:20]   # approximate
+                entity = entity_lst[idx]   # approximate
                 label = pos_lst[idx]
-                general = pos_general_lst[idx]
-                fine = pos_fine_lst[idx]
-                ultrafine = pos_ultrafine_lst[idx]
+                # general = pos_general_lst[idx]
+                # fine = pos_fine_lst[idx]
+                # ultrafine = pos_ultrafine_lst[idx]
 
                 pos = random.sample(label, 1)[0]
                 neg = random.sample([tmp for tmp in train_dataset.label_lst if tmp not in pos_lst], 1)[0]

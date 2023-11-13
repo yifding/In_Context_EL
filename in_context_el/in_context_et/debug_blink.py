@@ -125,30 +125,19 @@ def main():
         left_context = record['left_context_text']
         right_context = record['right_context_text']
         mention = record['word']
-        if len(mention) > 50:
-            mention = mention[:50]
         data_to_link = [
             {
                 "id": 0,
                 "label": "unknown",
                 "label_id": -1,
-                "context_left": left_context,
-                "mention": mention,
-                "context_right": right_context,
+                "context_left": "The broken purchase appears as additional evidence of trouble at",
+                # "mention": "Imperial Corp. , whose spokesman said the company withdrew its application from the federal Office of Thrift Supervision because of an informal notice that Imperial 's thrift unit failed to meet Community Reinvestment Act requirements",
+                "mention": "Imperial Corp. , whose spokesman said the company ",
+                "context_right": ".",
             },
         ]
         _, _, _, _, _, predictions, scores, = main_dense.run(blink_args, None, *models, test_data=data_to_link)
-        entity_candidates = predictions[0][:10]
-        entity_candidates_descriptions = []
-        for entity_candidate in entity_candidates:
-            text = id2text[title2id[entity_candidate]]
-            entity_candidates_descriptions.append(text)
-        records[record_index]['entity_candidates'] = entity_candidates
-        records[record_index]['entity_candidates_descriptions'] = entity_candidates_descriptions
-
-    with jsonlines.open(output_file, 'w') as writer:
-        writer.write_all(records)
-
+        print(predictions)
 
 if __name__ == '__main__':
     main()
