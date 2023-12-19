@@ -13,7 +13,7 @@ import torch.nn as nn
 from torch.utils.data import DataLoader, RandomSampler
 from transformers import AutoTokenizer, AdamW
 
-from dataset import TypingDataset
+from dataset import TypingDataset, Typing4TypingDataset
 from model import roberta_mnli_typing
 
 logger = logging.getLogger(__name__)
@@ -161,6 +161,11 @@ def main():
                         type=str,
                         default='/afs/crc.nd.edu/user/y/yding4/ET_project/In_Context_EL/RUN_FILES/11_2_2023/nli_second_step',
                         help="The input data directory.")
+    parser.add_argument("--data_format",
+                        type=str,
+                        choices=['typing', 'typing4typing'],
+                        default='typing4typing',
+                        )
     parser.add_argument("--output_dir",
                         type=str,
                         default='/afs/crc.nd.edu/user/y/yding4/ET_project/In_Context_EL/RUN_FILES/11_2_2023/nli_second_step/output',
@@ -238,7 +243,12 @@ def main():
     tokenizer = AutoTokenizer.from_pretrained(pretrained_model, model_max_length=256, truncation=True)
 
     # training date
-    train_dataset = TypingDataset(mode='train',)
+    if args.data_format == 'typing':
+        train_dataset = TypingDataset(mode='train',)
+    elif args.data_format == 'typing4typing':
+        train_dataset = Typing4TypingDataset(mode='train',)
+    else:
+        raise ValueError('Unknown data format for training data')
 
     # train
     train(args, train_dataset, model, tokenizer)
