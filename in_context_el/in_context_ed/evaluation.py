@@ -65,6 +65,8 @@ def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
         return ''
     elif L == 1:
         return entity_candidates[0]
+    elif 'None of the entity match' in multi_choice_prompt_result:
+        return ''
     
     # update the index finding schema with regular expression.
     
