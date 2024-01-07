@@ -51,6 +51,8 @@ def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
         return ''
     elif L == 1:
         return entity_candidates[0]
+    elif 'None of the entity match' in multi_choice_prompt_result:
+        return ''
     # palm may return non type for results
     if type(multi_choice_prompt_result) is not str:
         return ''
@@ -79,8 +81,8 @@ def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
     for index, entity_candidate in enumerate(entity_candidates):
         if entity_candidate.lower() in multi_choice_prompt_result.lower():
             add_flag = True
-            other_candiddates = entity_candidates[:index] + entity_candidates[index+1:]
-            for other_candidate in other_candiddates:
+            other_candidates = entity_candidates[:index] + entity_candidates[index+1:]
+            for other_candidate in other_candidates:
                 if entity_candidate.lower() in other_candidate.lower() and other_candidate.lower() in multi_choice_prompt_result.lower():
                     add_flag = False
                     break
@@ -91,7 +93,6 @@ def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
         # print(index_list[0])
         # print(len(entity_candidates))
         return entity_candidates[index_list[0]]
-    
     
     return ''
 
