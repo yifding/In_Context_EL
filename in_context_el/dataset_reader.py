@@ -2,6 +2,7 @@ import os
 import json
 import requests
 import argparse
+import jsonlines
 import collections
 import urllib
 import rdflib
@@ -846,6 +847,7 @@ def gen_anno_from_xml(
 
     return doc_name2instance
 
+
     '''
     doc_name2instance[str(tmp_sent_index)] = {
                 'sentence': sentence,
@@ -857,6 +859,36 @@ def gen_anno_from_xml(
                 }
             }
     '''
+
+
+def load_gendre_jsonl(file):
+    with jsonlines.open(file) as reader:
+        records = [record for record in reader]
+    doc_name2instance = dict()
+    for record in records:
+        doc_name = record['id']
+        sentence = record['input']
+        mention = record['meta']['mention']
+        entity_name = record['output'][0]['answer']
+        start = sentence.index('[START_ENT] ') + len('[STRT_ENT] ') + 1
+        entity_candidates = record['candidates']
+        end = start + len(mention)
+        if sentence[start: end] != mention:
+            print(f'sentence[start: end]: {sentence[start: end]}; mention: {mention}')
+        assert sentence[start: end] == mention
+        doc_name2instance[doc_name] = {
+            'sentence': sentence,
+            'entities': {
+                'starts': [start],
+                'ends': [end],
+                'entity_mentions': [mention],
+                'entity_names': [entity_name],
+                'entity_candidates': [
+                    entity_candidates
+                ],
+            }
+        }
+    return doc_name2instance
 
 
 def dataset_loader(file, key='', mode='tsv'): 
@@ -880,6 +912,8 @@ def dataset_loader(file, key='', mode='tsv'):
         parent_dir = os.path.dirname(os.path.dirname(file))
         dataset = os.path.basename(file).split('.')[0]
         doc_name2instance = gen_anno_from_xml(prefix=parent_dir, dataset=dataset)
+    elif mode == 'gendre_jsonl':
+        doc_name2instance = load_gendre_jsonl(file)
     else:
         raise ValueError('unknown mode!')
     return doc_name2instance
@@ -892,20 +926,33 @@ if __name__ == '__main__':
     # load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/Reuters-128.ttl')
     # load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/RSS-500.ttl')
 
-    file = '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/clueweb/clueweb.xml'
-    doc_name2instance = dataset_loader(file, mode='xml')
+    # file = '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/clueweb/clueweb.xml'
+    # doc_name2instance = dataset_loader(file, mode='xml')
     # doc_name2instance = load_unseen_mentions()
     # doc_name2instance = load_ttl_oke_2016()
     # doc_name2instance = load_ttl_n3('/nfs/yding4/EL_project/dataset/n3-collection/Reuters-128.ttl')
-    num_entities = 0
-    num_mentions = 0
-    num_docs = 0
-    for doc_name, instance in doc_name2instance.items():
-        num_docs += 1
-        entities = instance['entities']
-        for entity_name in entities['entity_names']:
-            if entity_name != '':
-                num_entities += 1
-            num_mentions += 1
-    print(f'num_mentions: {num_mentions}, num_entities: {num_entities}, plnum_docs: {num_docs}')
+    # num_entities = 0
+    # num_mentions = 0
+    # num_docs = 0
+    # for doc_name, instance in doc_name2instance.items():
+    #     num_docs += 1
+    #     entities = instance['entities']
+    #     for entity_name in entities['entity_names']:
+    #         if entity_name != '':
+    #             num_entities += 1
+    #         num_mentions += 1
+    # print(f'num_mentions: {num_mentions}, num_entities: {num_entities}, plnum_docs: {num_docs}')
 
+    input_dir = '/nfs/yding4/In_Context_EL/data/ed/gendre'
+    datasets = [
+        'ace2004',
+        'aida',
+        'aquaint',
+        'clueweb',
+        'msnbc',
+        'wiki',
+    ]
+    for dataset in datasets:
+        print(f'dataset:{dataset}')
+        input_file = os.path.join(input_dir, dataset + '-test-kilt.jsonl')
+        load_gendre_jsonl(input_file)
