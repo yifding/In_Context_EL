@@ -3,7 +3,6 @@ import json
 import argparse
 import replicate
 from tqdm import tqdm
-from transformers import pipeline, set_seed
 # os.environ['TRANSFORMERS_CACHE'] = '/nfs/yding4/transformers_cache'
 os.environ['REPLICATE_API_TOKEN'] = 'r8_EzgWgZmHLxJ7JP0NI2V5HnyOyQkHydW1lkFPP'
 
