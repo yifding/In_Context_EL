@@ -50,6 +50,7 @@ def parse_args():
         # required=True,
         default="yifding/aida_discriminative:24fdd2cb1085b68ddbac8be95a2b9e354718f5a793b80cd88e96421f5b4a5bba",
         choices=[
+            "meta/llama-2-70b:a52e56fee2269a78c9279800ec88898cecb6c8f1df22a6483132bea266648f00",
             "yifding/aida_discriminative:24fdd2cb1085b68ddbac8be95a2b9e354718f5a793b80cd88e96421f5b4a5bba",
             "mistralai/mixtral-8x7b-instruct-v0.1:cf18decbf51c27fed6bbdc3492312c1c903222a56e3fe9ca02d6cbe5198afc10",
         ],
