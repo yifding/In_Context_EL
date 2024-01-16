@@ -110,6 +110,8 @@ def evaluate_ed_chatgpt_multi_choice(args, doc_name2instance):
         entity_names = entities['entity_names']
 
         # chatgpt output
+        if 'multi_choice_prompt_results' not in entities:
+            continue
         multi_choice_prompt_results = entities['multi_choice_prompt_results']
 
         # entity candidates
