@@ -57,8 +57,14 @@ def parse_args():
         help="",
         # required=True,
         default='ft:gpt-3.5-turbo-0613:amrit::8VNXmmdS',
-        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003', 'gpt-4',
-                 'ft:gpt-3.5-turbo-0613:amrit::8VNXmmdS'],
+        choices=[
+            'gpt-3.5-turbo',
+            'text-curie-001',
+            'text-davinci-003',
+            'gpt-4',
+            'ft:gpt-3.5-turbo-0613:amrit::8VNXmmdS',
+            'ft:gpt-3.5-turbo-0613:amrit:finetune-control:8fw9eH5q',
+        ],
         type=str,
     )
 
