@@ -3,6 +3,7 @@ import argparse
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import json
+import jsonlines
 from tqdm import tqdm
 from in_context_el.dataset_reader import dataset_loader
 
@@ -33,7 +34,7 @@ def parse_args():
         "--mode",
         help="the extension file used by load_dataset function to load dataset",
         # required=True,
-        choices=["tsv", "oke_2015", "oke_2016", "n3", "xml", "unseen_mentions"],
+        choices=["jsonl", "tsv", "oke_2015", "oke_2016", "n3", "xml", "unseen_mentions"],
         default="tsv",
         type=str,
     )
@@ -98,6 +99,7 @@ def parse_args():
     args.output_file = os.path.join(args.output_dir, args.output_file)
     assert os.path.isfile(args.input_file)
     return args
+
 
 def main():
     args = parse_args()
@@ -189,7 +191,14 @@ def main():
 
     num_context_characters = 150
     max_num_entity_candidates = 10
-    doc_name2instance = dataset_loader(input_file, mode=mode)
+    if mode == 'jsonl':
+        doc_name2instance = dict()
+        with jsonlines.open(input_file) as reader:
+            for record in reader:
+                doc_name = record.pop('doc_name')
+                doc_name2instance[doc_name] = record
+    else:
+        doc_name2instance = dataset_loader(input_file, mode=mode)
 
     for doc_name, instance in tqdm(doc_name2instance.items()):
         sentence = instance['sentence']
@@ -226,7 +235,6 @@ def main():
             entity_candidates_list.append(entity_candidates)
 
         doc_name2instance[doc_name]['entities']['blink_entity_candidates_list'] = entity_candidates_list
-
 
     output_file = args.output_file
     with open(output_file, 'w') as writer:
