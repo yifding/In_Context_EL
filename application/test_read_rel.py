@@ -1,8 +1,13 @@
 import os
 import csv
 from tqdm import tqdm
+import jsonlines
 import pandas as pd
-import blink.main_dense as main_dense
+import requests
+
+IP_ADDRESS = "http://localhost"
+PORT = "5555"
+
 
 # 0. processing input data
 def to_records(input_file):
@@ -18,48 +23,25 @@ def to_records(input_file):
         records.append(record)
     return records
 
-input_file = 'should-the-us-adopt-stricter-gun-controls-3346.csv'
+
+input_file = '/nfs/yding4/In_Context_EL/data/ed/wanying/news_sample_srl_output.csv'
+output_file = '/nfs/yding4/In_Context_EL/data/ed/wanying/news_sample_srl_output_with_entities.jsonl'
 records = to_records(input_file)
 
-# 1. prepare data for entity candidate extraction and 
-max_num_entity_candidates = 10
-num_context_characters = 150
-for tmp_record_index, record in tqdm(enumerate(records)):
-    if tmp_record_index == 0:
-        continue
-    print(tmp_record_index)
-    record = records[0]
+new_records = []
+# 1. prepare data for entity candidate extraction and
+for record_index, record in enumerate(tqdm(records)):
     sentence = record['sentence']
-    ARG0 = record['ARG0']
-    ARG1 = record['ARG1']
-
-    print(f'ARG0: {ARG0}; sentence: {sentence}')
-    assert ARG0 in sentence
-    print(f'ARG1: {ARG1}; sentence: {sentence}')
-    assert ARG1 in sentence
-    ARG0_start = sentence.index(ARG0)
-    ARG0_end = ARG0_start + len(ARG0)
-    ARG1_start = sentence.index(ARG1)
-    ARG1_end = ARG1_start + len(ARG1)
-
-
-# 2. load BLINK model
-models_path = '/nfs/yding4/EL_project/BLINK/models/' # the path where you stored the BLINK models
-
-config = {
-    "test_entities": None,
-    "test_mentions": None,
-    "interactive": False,
-    "top_k": args.blink_num_candidates,
-    "biencoder_model": models_path+"biencoder_wiki_large.bin",
-    "biencoder_config": models_path+"biencoder_wiki_large.json",
-    "entity_catalogue": models_path+"entity.jsonl",
-    "entity_encoding": models_path+"all_entities_large.t7",
-    "crossencoder_model": models_path+"crossencoder_wiki_large.bin",
-    "crossencoder_config": models_path+"crossencoder_wiki_large.json",
-    "fast": False, # set this to be true if speed is a concern
-    "output_path": "logs/" # logging directory
-}
+    document = {
+        "text": sentence,
+        "spans": [],  # in case of ED only, this can also be left out when using the API
+    }
+    API_result = requests.post("{}:{}".format(IP_ADDRESS, PORT), json=document).json()
+    new_record = {
+        'sentence': sentence,
+        'entities': API_result,
+    }
+    new_records.append(new_record)
 
 # blink_args = argparse.Namespace(**config)
 
@@ -88,6 +70,5 @@ config = {
 # ARG0_entity_candidates = predictions[0][:max_num_entity_candidates]
 # ARG1_entity_candidates = predictions[1][:max_num_entity_candidates]
 
-
-
-
+with jsonlines.open(output_file, 'w') as writer:
+    writer.write_all(new_records)
