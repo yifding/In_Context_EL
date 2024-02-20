@@ -5,8 +5,9 @@ import argparse
 import replicate
 from tqdm import tqdm
 
-os.environ['REPLICATE_API_TOKEN'] = 'r8_EzgWgZmHLxJ7JP0NI2V5HnyOyQkHydW1lkFPP'
+from in_context_el.openai_key import REPLICATE_API_KEY
 
+os.environ['REPLICATE_API_TOKEN'] = REPLICATE_API_KEY
 
 def parse_args():
     parser = argparse.ArgumentParser(
