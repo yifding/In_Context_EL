@@ -37,7 +37,7 @@ OPENAI_API_KEY = "sk-*****"
 0. donwload the running script with running outputs from [google drive](https://drive.google.com/file/d/1cs5jGoVJcV32XuJkxrx-OZv6GDOvFO32/view?usp=sharing)
 1. obtain REL entity candidates
 ```
-sh In_Context_EL/RUN_FILES/public/rel_blink_candidates/KORE50.sh
+sh In_Context_EL/RUN_FILES/public/blink_candidates/KORE50.sh
 ```
 
 2. obtain BLINK and REL entity candidates
