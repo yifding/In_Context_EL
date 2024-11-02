@@ -30,33 +30,17 @@ def parse_args():
         allow_abbrev=False,
     )
     parser.add_argument(
-        "--mode",
-        help="the extension file used by load_dataset function to load dataset",
-        # required=True,
-        choices=["tsv", "oke_2015", "oke_2016", "n3", "xml", "unseen_mentions"],
-        default="tsv",
-        type=str,
-    )
-    parser.add_argument(
-        "--key",
-        help="the split key of aida-conll dataset",
-        # required=True,
-        choices=["", "testa", "testb"],
-        default="",
-        type=str,
-    )
-    parser.add_argument(
         "--input_file",
         help="the dataset file used by load_dataset to load dataset",
-        # required=True,
-        default="/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv",
+        required=True,
+        # default="/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv",
         type=str,
     )
     parser.add_argument(
         "--output_dir",
         help="output directory",
-        # required=True,
-        default="/nfs/yding4/In_Context_EL/RUN_FILES/3_16_2023/mention_prompt",
+        required=True,
+        # default="/nfs/yding4/In_Context_EL/RUN_FILES/3_16_2023/mention_prompt",
         type=str,
     )
     parser.add_argument(
@@ -99,9 +83,16 @@ def parse_args():
     assert os.path.isfile(args.input_file)
     return args
 
+
 def main():
     args = parse_args()
     models_path = args.blink_models_path # the path where you stored the BLINK models
+
+    input_file = args.input_file
+    with open(input_file) as reader:
+        doc_name2instance = json.load(reader)
+    num_context_characters = args.num_context_characters
+    output_file = args.output_file
 
     config = {
         "test_entities": None,
@@ -185,11 +176,9 @@ def main():
     # 1. load dataset, 
 
     input_file = args.input_file
-    mode = args.mode
-
     num_context_characters = 150
     max_num_entity_candidates = args.blink_num_candidates
-    doc_name2instance = dataset_loader(input_file, mode=mode)
+
 
     for doc_name, instance in tqdm(doc_name2instance.items()):
         sentence = instance['sentence']
@@ -201,16 +190,25 @@ def main():
             end,
             entity_mention,
             entity_name,
+            prompt_results,
         ) in zip(
             entities['starts'],
             entities['ends'],
             entities['entity_mentions'],
             entities['entity_names'],
+            entities['prompt_results']
         ):
             # blink_entity_candidates = []
 
             left_context = sentence[max(0, start - num_context_characters): start]
-            right_context = sentence[end: end + num_context_characters]
+            right_context = sentence[end: end + num_context_characters]    
+            # **YD** directly consider the prompt results
+            if entity_mention in prompt_results:
+                start = prompt_results.index(entity_mention)
+                end = start + len(entity_mention)
+                left_context = prompt_results[max(0, start - num_context_characters): start]
+                right_context = prompt_results[end: end + num_context_characters]   
+
             data_to_link = [ 
                 {
                     "id": 0,
@@ -225,7 +223,7 @@ def main():
             entity_candidates = predictions[0][:max_num_entity_candidates]
             entity_candidates_list.append(entity_candidates)
 
-        doc_name2instance[doc_name]['entities']['blink_entity_candidates_list'] = entity_candidates_list
+        doc_name2instance[doc_name]['entities']['augmented_blink_entity_candidates_list'] = entity_candidates_list
 
 
     output_file = args.output_file

@@ -55,7 +55,7 @@ def parse_args():
         help="",
         # required=True,
         default='gpt-3.5-turbo',
-        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003', 'gpt-4'],
+        choices=['gpt-3.5-turbo', 'text-curie-001', 'text-davinci-003', 'gpt-4', 'gpt-4o'],
         type=str,
     )
 
@@ -72,7 +72,6 @@ def main():
     input_file = args.input_file
     with open(input_file) as reader:
         doc_name2instance = json.load(reader)
-    output_file = '/nfs/yding4/In_Context_EL/RUN_FILES/4_13_2023/rel_blink/mention_prompt/ace2004.json'
     num_context_characters = args.num_context_characters
     output_file = args.output_file
     openai_mode = args.openai_mode
