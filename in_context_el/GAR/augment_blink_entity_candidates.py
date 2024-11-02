@@ -3,7 +3,6 @@ import argparse
 import os
 # os.environ["CUDA_VISIBLE_DEVICES"] = "1"
 import json
-import jsonlines
 from tqdm import tqdm
 from in_context_el.dataset_reader import dataset_loader
 
@@ -29,22 +28,6 @@ def parse_args():
     parser = argparse.ArgumentParser(
         description='1st step to collect blink entity candidates for entity disambiguation.',
         allow_abbrev=False,
-    )
-    parser.add_argument(
-        "--mode",
-        help="the extension file used by load_dataset function to load dataset",
-        # required=True,
-        choices=["jsonl", "tsv", "oke_2015", "oke_2016", "n3", "xml", "unseen_mentions"],
-        default="tsv",
-        type=str,
-    )
-    parser.add_argument(
-        "--key",
-        help="the split key of aida-conll dataset",
-        # required=True,
-        choices=["", "testa", "testb"],
-        default="",
-        type=str,
     )
     parser.add_argument(
         "--input_file",
@@ -104,6 +87,12 @@ def parse_args():
 def main():
     args = parse_args()
     models_path = args.blink_models_path # the path where you stored the BLINK models
+
+    input_file = args.input_file
+    with open(input_file) as reader:
+        doc_name2instance = json.load(reader)
+    num_context_characters = args.num_context_characters
+    output_file = args.output_file
 
     config = {
         "test_entities": None,
@@ -187,11 +176,9 @@ def main():
     # 1. load dataset, 
 
     input_file = args.input_file
-    mode = args.mode
-
     num_context_characters = 150
     max_num_entity_candidates = args.blink_num_candidates
-    doc_name2instance = dataset_loader(input_file, mode=mode)
+
 
     for doc_name, instance in tqdm(doc_name2instance.items()):
         sentence = instance['sentence']
@@ -203,16 +190,18 @@ def main():
             end,
             entity_mention,
             entity_name,
+            prompt_results,
         ) in zip(
             entities['starts'],
             entities['ends'],
             entities['entity_mentions'],
             entities['entity_names'],
+            entities['prompt_results']
         ):
             # blink_entity_candidates = []
 
             left_context = sentence[max(0, start - num_context_characters): start]
-            right_context = sentence[end: end + num_context_characters]
+            right_context = sentence[end: end + num_context_characters] + ' ' + prompt_results    # **YD** may directly consider the prompt results
             data_to_link = [ 
                 {
                     "id": 0,
@@ -227,7 +216,8 @@ def main():
             entity_candidates = predictions[0][:max_num_entity_candidates]
             entity_candidates_list.append(entity_candidates)
 
-        doc_name2instance[doc_name]['entities']['blink_entity_candidates_list'] = entity_candidates_list
+        doc_name2instance[doc_name]['entities']['augmented_blink_entity_candidates_list'] = entity_candidates_list
+
 
     output_file = args.output_file
     with open(output_file, 'w') as writer:
