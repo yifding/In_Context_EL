@@ -10,6 +10,7 @@ from tqdm import tqdm
 from collections import defaultdict
 
 
+
 def load_tsv(file='/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv', key='', mode='char'):
     def process_token_2_char_4_doc_name2instance(token_doc_name2instance):
         char_doc_name2instance = dict()
@@ -919,6 +920,204 @@ def dataset_loader(file, key='', mode='tsv'):
     return doc_name2instance
 
 
+def load_derczynski(file):
+    def process_dbpedia_url(url):
+        prefix = "http://dbpedia.org/resource/"
+        if url == 'NIL' or url == '':
+            return ''
+        if not url.startswith(prefix):
+            print('url:', url)
+        assert url.startswith(prefix)
+        return url[len(prefix):].rstrip('\u200e')
+
+    def generate_instance(
+        doc_name,
+        tokens,
+        ner_tags,
+        entity_names,
+        dbpedia_urls,
+    ):
+        assert len(tokens) == len(ner_tags) == len(entity_names) == len(dbpedia_urls)
+
+        instance_starts = []
+        instance_ends = []
+        instance_entity_mentions = []
+        instance_entity_names = []
+        instance_entity_dbpedia_urls = []
+
+        tmp_start = -1
+        for index, (token, ner_tag, entity_name, dbpedia_url) in enumerate(
+                zip(tokens, ner_tags, entity_names, dbpedia_urls)
+        ):
+
+            # judge whether current token is the last token of an entity, if so, generate an entity.
+            if ner_tag == 'O':
+                continue
+            else:
+                if ner_tag.startswith('B'):
+                    # if the index hits the last one or next ner_tag is not 'I',
+                    if index == len(tokens) - 1 or ner_tags[index + 1].startswith('B') or ner_tags[index + 1] == 'O':
+                        instance_starts.append(index)
+                        instance_ends.append(index)
+                        # the end_index select the last token of a entity to allow simple index
+                        # location for a transformer tokenizer
+                        instance_entity_mentions.append(token)
+                        instance_entity_names.append(entity_name)
+                        instance_entity_dbpedia_urls.append(dbpedia_url)
+                        tmp_start = -1
+                    else:
+                        tmp_start = index
+                else:
+                    assert ner_tag.startswith('I')
+                    if index == len(tokens) - 1 or ner_tags[index + 1].startswith('B') or ner_tags[index + 1] == 'O':
+                        instance_starts.append(tmp_start)
+                        instance_ends.append(index)
+                        # the end_index select the last token of a entity to allow simple index
+                        # location for a transformer tokenizer
+                        instance_entity_mentions.append(' '.join(tokens[tmp_start:index+1]))
+                        instance_entity_names.append(entity_name)
+                        instance_entity_dbpedia_urls.append(dbpedia_url)
+
+                        assert tmp_start != -1
+                        tmp_start = -1
+
+        instance = {
+            'doc_name': doc_name,
+            'tokens': tokens,
+            'entities': {
+                "starts": instance_starts,
+                "ends": instance_ends,
+                "entity_mentions": instance_entity_mentions,
+                "entity_names": instance_entity_names,
+                "entity_dbpedia_urls": instance_entity_dbpedia_urls,
+            }
+        }
+        return instance
+
+    def process_token_2_char_4_doc_name2instance(token_doc_name2instance):
+        char_doc_name2instance = dict()
+        for doc_name, instance in token_doc_name2instance.items():
+            starts = []
+            ends = []
+            entity_mentions = []
+            entity_names = []
+            assert doc_name == instance['doc_name']
+            tokens = instance['tokens']
+            sentence = ' '.join(tokens)
+            token_entities = instance['entities']
+
+            for token_start, token_end, token_entity_mention, token_entity_name in zip(
+                    token_entities['starts'], 
+                    token_entities['ends'], 
+                    token_entities['entity_mentions'],
+                    token_entities['entity_names']
+            ):
+                if not 0 <= token_start <= token_end < len(tokens):
+                    print(instance)
+
+                assert 0 <= token_start <= token_end < len(tokens)
+                # **YD** sentence[char_start: char_end] == mention
+                # **YD** ' '.join(tokens[token_start: token_end+1]) == mention ## ignoring the ',', '.' without space cases
+                if token_start == 0:
+                    start = 0
+                else:
+                    start = len(' '.join(tokens[:token_start])) + 1
+                end = len(' '.join(tokens[:token_end + 1]))
+                entity_mention = sentence[start: end]
+                assert entity_mention == token_entity_mention
+
+                starts.append(start)
+                ends.append(end)
+                entity_mentions.append(entity_mention)
+                entity_names.append(token_entity_name)
+
+            char_doc_name2instance[doc_name] = {
+                'doc_name': doc_name,
+                # 'tokens': tokens,
+                'sentence': sentence,
+                'entities': {
+                    "starts": starts,
+                    "ends": ends,
+                    "entity_mentions": entity_mentions,
+                    "entity_names": entity_names,
+                }
+            }
+        return char_doc_name2instance
+    
+
+    tokens = []
+    entity_names = []
+    dbpedia_urls = []
+    ner_tags = [] 
+
+    doc_name_index = 0
+    doc_name2dataset = {}
+
+    with open(file) as reader:
+        for line_index, line in enumerate(reader):
+            line = line.rstrip('\n')
+            # print(line_index, repr(line), len(line.split('\t')))
+            if line == '\t\t\t':
+                if tokens:
+                    doc_name_index += 1
+                    doc_name = str(doc_name_index)
+                    instance = generate_instance(
+                        doc_name,
+                        tokens,
+                        ner_tags,
+                        entity_names,
+                        dbpedia_urls,
+                    )
+                    doc_name2dataset[doc_name] = instance
+
+                    tokens = []
+                    entity_names = []
+                    dbpedia_urls = []
+                    ner_tags = [] 
+
+            else:
+                parts = line.split('\t')
+                assert len(parts) in [4]
+                token = parts[0]
+                tokens.append(token)
+                '''
+                salsa	NIL	B-person	NNP
+                caliente	NIL	I-person	NNP
+
+                http://fb.me/FZVzm8H9		O	URL
+
+                Benitez	NIL	B-person	NNP
+                '''
+                assert len(parts) == 4
+                dbpedia_url = parts[1]
+                dbpedia_urls.append(dbpedia_url)
+                entity_name = process_dbpedia_url(dbpedia_url)
+                entity_names.append(entity_name)
+                ner_tags.append(parts[2])
+        
+    if tokens:
+        doc_name_index += 1
+        doc_name = str(doc_name_index)
+        instance = generate_instance(
+            doc_name,
+            tokens,
+            ner_tags,
+            entity_names,
+            dbpedia_urls,
+        )
+        doc_name2dataset[doc_name] = instance
+
+        tokens = []
+        entity_names = []
+        dbpedia_urls = []
+        ner_tags = [] 
+    
+
+    return process_token_2_char_4_doc_name2instance(doc_name2dataset)
+
+
+
+
 if __name__ == '__main__':
     # load_tsv()
     # load_ttl_oke_2015()
@@ -943,16 +1142,25 @@ if __name__ == '__main__':
     #         num_mentions += 1
     # print(f'num_mentions: {num_mentions}, num_entities: {num_entities}, plnum_docs: {num_docs}')
 
-    input_dir = '/nfs/yding4/In_Context_EL/data/ed/gendre'
-    datasets = [
-        'ace2004',
-        'aida',
-        'aquaint',
-        'clueweb',
-        'msnbc',
-        'wiki',
-    ]
-    for dataset in datasets:
-        print(f'dataset:{dataset}')
-        input_file = os.path.join(input_dir, dataset + '-test-kilt.jsonl')
-        load_gendre_jsonl(input_file)
+    # input_dir = '/nfs/yding4/In_Context_EL/data/ed/gendre'
+    # datasets = [
+    #     'ace2004',
+    #     'aida',
+    #     'aquaint',
+    #     'clueweb',
+    #     'msnbc',
+    #     'wiki',
+    # ]
+    # for dataset in datasets:
+    #     print(f'dataset:{dataset}')
+    #     input_file = os.path.join(input_dir, dataset + '-test-kilt.jsonl')
+    #     load_gendre_jsonl(input_file)
+
+    input_file = '/nfs/yding4/EL_project/dataset/derczynski/ipm_nel_corpus/correct_ipm_nel.conll'
+    doc_name2instance = load_derczynski(input_file)
+    for index, (doc_name, instance) in enumerate(doc_name2instance.items()):
+        # if index == 10:
+            # break
+        print(instance)
+
+
