@@ -1,3 +1,6 @@
+import os
+import argparse
+import blink.main_dense as main_dense
 
 
 def blink4ed(
