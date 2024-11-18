@@ -14,7 +14,7 @@ def test_blink(sentence, spans):
 
     from in_context_el.baseline.blink.generate import blink4ed
 
-    blink_num_candidates = 100
+    blink_num_candidates = 10
     models_path = "/nfs/yding4/EL_project/BLINK/models/"
 
     config = {
@@ -131,15 +131,72 @@ def test_entqa(sentence, spans):
     annotator = Annotator(entqa_config)
 
     # sentence = "England won the FIFA World Cup in 1966."
-    annotator.get_predicts(sentence)
+    output = annotator.get_predicts(sentence)
+    print(output)
+
+
+def test_REL(sentence, spans):
+
+    from REL.mention_detection import MentionDetection
+    from REL.utils import process_results
+    from REL.entity_disambiguation import EntityDisambiguation
+    from REL.ner import Cmns, load_flair_ner
+
+    wiki_version = "wiki_2014"
+    base_url = "/nfs/yding4/REL/data/"
+
+    input_text = {
+        "my_doc": (sentence, []),
+    }
+
+    mention_detection = MentionDetection(base_url, wiki_version)
+    tagger_ner = load_flair_ner("ner-fast")
+
+    tagger_ngram = Cmns(base_url, wiki_version, n=5)
+    mentions, n_mentions = mention_detection.find_mentions(input_text, tagger_ngram)
+
+    config = {
+        "mode": "eval",
+        "model_path": "ed-wiki-2014",
+    }
+    model = EntityDisambiguation(base_url, wiki_version, config)
+
+    predictions, timing = model.predict(mentions)
+    result = process_results(mentions, predictions, input_text)
+    print(result)
+    # {'my_doc': [(0, 13, 'Hello, world!', 'Hello_world_program', 0.6534378618767961, 182, '#NGRAM#')]}
+
+
+    '''
+    from REL.wikipedia import Wikipedia
+    from REL.wikipedia_yago_freq import WikipediaYagoFreq
+    from REL.mention_detection import MentionDetection
+    base_url = "/nfs/yding4/REL/data/"
+    wiki_version = "wiki_2014"
+    mention_detection = MentionDetection(base_url, wiki_version)
+    wikipedia = Wikipedia(base_url, wiki_version)
+    wikipedia_yago_freq = WikipediaYagoFreq(base_url, wiki_version, wikipedia)
+    wikipedia_yago_freq.extract_entity_description()
+    '''
+
 
 
 if __name__ == '__main__':
-    sentence = "England won the FIFA World Cup in 1966."
+    # sentence = "England won the FIFA World Cup in 1966."
+    # spans = [
+    #     (0, 7),
+    #     (16, 30),
+    # ]
+
+    sentence = "Allen founded the EMP in Seattle , which featured exhibitions about Hendrix and Dylan , but also about various science fiction movies ."
     spans = [
-        (0, 7),
-        (16, 30),
+        [0, 5],
+        [18, 21],
+        [25, 32],
+        [68, 75],
+        [80, 85],
     ]
     # test_blink(sentence, spans)
-    test_refined(sentence, spans)
-
+    # test_refined(sentence, spans)
+    # test_REL(sentence, spans)
+    test_entqa(sentence, spans)

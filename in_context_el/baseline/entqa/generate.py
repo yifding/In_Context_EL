@@ -37,10 +37,10 @@ def entqa4el(sentence, spans, annotator, return_ori=False):
     entity_names = []
     for span in output:
         assert len(span) == 3
-        start, end, entity_name = span
+        start, l, entity_name = span
         starts.append(start)
-        ends.append(end)
-        entity_mentions.append(sentence[start:end])
+        ends.append(start + l)
+        entity_mentions.append(sentence[start: start + l])
         entity_names.append(entity_name)
 
     pred_entities = {
@@ -175,8 +175,8 @@ def predict_el():
 
             doc_name2instance[doc_name]['pred_entities'] = pred_entities
 
-        with open(output_file, 'w') as writer:
-            json.dump(doc_name2instance, writer, indent=4)
+            with open(output_file, 'w') as writer:
+                json.dump(doc_name2instance, writer, indent=4)
 
 
 if __name__ == '__main__':

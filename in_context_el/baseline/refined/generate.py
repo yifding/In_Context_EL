@@ -151,8 +151,8 @@ def predict_ed_el():
 
             doc_name2instance[doc_name]['pred_entities'] = pred_entities
 
-        with open(output_file, 'w') as writer:
-            json.dump(doc_name2instance, writer, indent=4)
+            with open(output_file, 'w') as writer:
+                json.dump(doc_name2instance, writer, indent=4)
     
 
 def test_refined_ed():
