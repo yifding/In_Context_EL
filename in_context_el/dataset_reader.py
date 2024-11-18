@@ -892,34 +892,6 @@ def load_gendre_jsonl(file):
     return doc_name2instance
 
 
-def dataset_loader(file, key='', mode='tsv'): 
-    '''
-    file: input dataset file
-    key: only used for aida, to consider train/valid/test split
-    mode: options to consider different types of input file
-    # mode to be expanded to multiple ED datasets
-    '''
-    if mode == 'tsv':
-        doc_name2instance = load_tsv(file, key=key)
-    elif mode == 'oke_2015':
-        doc_name2instance = load_ttl_oke_2015(file)
-    elif mode == 'oke_2016':
-        doc_name2instance = load_ttl_oke_2016(file)
-    elif mode == 'n3':
-        doc_name2instance = load_ttl_n3(file)
-    elif mode == 'unseen_mentions':
-        doc_name2instance = load_unseen_mentions(file)
-    elif mode == 'xml':
-        parent_dir = os.path.dirname(os.path.dirname(file))
-        dataset = os.path.basename(file).split('.')[0]
-        doc_name2instance = gen_anno_from_xml(prefix=parent_dir, dataset=dataset)
-    elif mode == 'gendre_jsonl':
-        doc_name2instance = load_gendre_jsonl(file)
-    else:
-        raise ValueError('unknown mode!')
-    return doc_name2instance
-
-
 def load_derczynski(file):
     def process_dbpedia_url(url):
         prefix = "http://dbpedia.org/resource/"
@@ -928,7 +900,7 @@ def load_derczynski(file):
         if not url.startswith(prefix):
             print('url:', url)
         assert url.startswith(prefix)
-        return url[len(prefix):].rstrip('\u200e')
+        return urllib.parse.unquote(url[len(prefix):].rstrip('\u200e'))
 
     def generate_instance(
         doc_name,
@@ -1115,6 +1087,36 @@ def load_derczynski(file):
 
     return process_token_2_char_4_doc_name2instance(doc_name2dataset)
 
+
+def dataset_loader(file, key='', mode='tsv'): 
+    '''
+    file: input dataset file
+    key: only used for aida, to consider train/valid/test split
+    mode: options to consider different types of input file
+    # mode to be expanded to multiple ED datasets
+    '''
+    print(f'mode: {mode}')
+    if mode == 'tsv':
+        doc_name2instance = load_tsv(file, key=key)
+    elif mode == 'oke_2015':
+        doc_name2instance = load_ttl_oke_2015(file)
+    elif mode == 'oke_2016':
+        doc_name2instance = load_ttl_oke_2016(file)
+    elif mode == 'n3':
+        doc_name2instance = load_ttl_n3(file)
+    elif mode == 'unseen_mentions':
+        doc_name2instance = load_unseen_mentions(file)
+    elif mode == 'xml':
+        parent_dir = os.path.dirname(os.path.dirname(file))
+        dataset = os.path.basename(file).split('.')[0]
+        doc_name2instance = gen_anno_from_xml(prefix=parent_dir, dataset=dataset)
+    elif mode == 'derczynski':
+        doc_name2instance = load_derczynski(file)
+    elif mode == 'gendre_jsonl':
+        doc_name2instance = load_gendre_jsonl(file)
+    else:
+        raise ValueError('unknown mode!')
+    return doc_name2instance
 
 
 
