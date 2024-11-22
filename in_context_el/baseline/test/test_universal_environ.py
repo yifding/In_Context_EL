@@ -15,7 +15,7 @@ def test_blink(sentence, spans):
     from in_context_el.baseline.blink.generate import blink4ed
 
     blink_num_candidates = 10
-    models_path = "/nfs/yding4/EL_project/BLINK/models/"
+    models_path = "/afs/crc.nd.edu/user/y/yding4/EL_project/BLINK/models/"
 
     config = {
             "test_entities": None,
@@ -89,12 +89,13 @@ def test_refined(sentence, spans):
 
 def test_entqa(sentence, spans):
     from transformers import BertTokenizer
-    import_path = '/nfs/yding4/EntQA'
+    import_path = '/scratch365/yding4/EntQA'
     sys.path.insert(0, import_path)
     from gerbil_experiments.nn_processing import Annotator
 
-    entqa_data_dir = '/nfs/yding4/EntQA/data/'
+    entqa_data_dir = os.path.join(import_path, 'data')
     config = {
+        'device': 'cpu',
         'retriever_path': os.path.join(entqa_data_dir, 'retriever.pt'),
         'cands_embeds_path': os.path.join(entqa_data_dir, 'candidate_embeds.npy'),
         'ents_path': os.path.join(entqa_data_dir, 'kb/entities_kilt.json'),
@@ -133,6 +134,7 @@ def test_entqa(sentence, spans):
     # sentence = "England won the FIFA World Cup in 1966."
     output = annotator.get_predicts(sentence)
     print(output)
+    return annotator
 
 
 def test_REL(sentence, spans):
@@ -180,6 +182,90 @@ def test_REL(sentence, spans):
     '''
 
 
+def entqa_custom(sentence, annotator):
+    from gerbil_experiments.data import get_retriever_loader, get_reader_loader, \
+        load_entities, \
+        get_reader_input, process_raw_data, \
+        get_doc_level_predicts, token_span_to_gerbil_span, \
+        get_raw_results, process_raw_predicts
+
+    from data_retriever import get_embeddings, get_hard_negative
+    from reader import prune_predicts
+
+    samples_retriever, token2char_start, token2char_end = process_raw_data(
+        sentence,
+        annotator.tokenizer,
+        annotator.args.passage_len,
+        annotator.args.stride
+    )
+
+    retriever_loader = get_retriever_loader(
+        samples_retriever,
+        annotator.tokenizer,
+        annotator.args.bsz_retriever,
+        annotator.args.max_len_retriever,
+        annotator.args.add_topic,
+        annotator.args.use_title
+    )
+
+    test_mention_embeds = get_embeddings(
+        retriever_loader,
+        annotator.model_retriever,
+        True,
+        annotator.my_device,
+    )
+
+    top_k_test, scores_k_test = get_hard_negative(
+        test_mention_embeds,
+        annotator.all_cands_embeds,
+        annotator.args.k,
+        0,
+        False
+    )
+
+    samples_reader = get_reader_input(
+        samples_retriever,
+        top_k_test,
+        annotator.entities,
+    )
+
+    reader_loader = get_reader_loader(
+        samples_reader,
+        annotator.tokenizer,
+        annotator.args.max_len_reader,
+        annotator.args.max_num_candidates,
+        annotator.args.bsz_reader,
+        annotator.args.add_topic,
+        annotator.args.use_title,
+    )
+
+    raw_predicts = get_raw_results(
+        annotator.model_reader,
+        annotator.my_device,
+        reader_loader,
+        annotator.args.num_spans,
+        samples_reader,
+        annotator.args.do_rerank,
+        True,
+        annotator.args.no_multi_ents
+    )
+
+    # pruned_predicts = prune_predicts(raw_predicts, annotator.args.thresd)
+    pruned_predicts = prune_predicts(raw_predicts, 1e-5)
+
+    transformed_predicts = process_raw_predicts(pruned_predicts,
+                                                samples_reader)
+
+    doc_predicts_span = get_doc_level_predicts(transformed_predicts,
+                                               annotator.args.stride)
+
+    print(f'token2char_start: {token2char_start}')
+    print(f'token2char_end: {token2char_end}')
+    print(f'doc_predicts_span: {doc_predicts_span}')
+    doc_predicts_gerbil = token_span_to_gerbil_span(doc_predicts_span,
+                                                    token2char_start,
+                                                    token2char_end)
+    return doc_predicts_gerbil
 
 if __name__ == '__main__':
     # sentence = "England won the FIFA World Cup in 1966."
@@ -199,4 +285,7 @@ if __name__ == '__main__':
     # test_blink(sentence, spans)
     # test_refined(sentence, spans)
     # test_REL(sentence, spans)
-    test_entqa(sentence, spans)
+    # annotator = test_entqa(sentence, spans)
+
+    # debugging the entqa stuff
+    output = entqa_custom(sentence, annotator)
