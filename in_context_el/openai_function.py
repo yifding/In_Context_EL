@@ -1,6 +1,9 @@
 import openai
 import time
 from tqdm import tqdm
+from in_context_el.openai_key import OPENAI_API_KEY
+openai.api_key = OPENAI_API_KEY
+
 
 def openai_chatgpt(prompt, model="gpt-3.5-turbo"):
     openai_output = openai.ChatCompletion.create(
@@ -24,9 +27,9 @@ def openai_completion(prompt, model="text-davinci-003"):
 
 
 if __name__ == '__main__':
-    from in_context_el.openai_key import OPENAI_API_KEY
+    # from in_context_el.openai_key import OPENAI_API_KEY
+    # openai.api_key = OPENAI_API_KEY
     prompt = 'it is just a test'
-    openai.api_key = OPENAI_API_KEY
     for _ in tqdm(range(100)):
         time.sleep(1)
         # complete_output = openai_completion(prompt, model='text-curie-001')
