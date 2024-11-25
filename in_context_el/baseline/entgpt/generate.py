@@ -240,8 +240,8 @@ def test_entgpt_i():
     num_entity_candidates = 10
     openai_model='ft:gpt-3.5-turbo-0613:amrit::8VNXmmdS'
 
-    # datasets = ['ace2004', 'aquaint', 'msnbc', 'aida_test', 'clueweb', 'wikipedia']
-    datasets = ['ace2004']
+    datasets = ['ace2004', 'aquaint', 'msnbc', 'aida_test', 'clueweb', 'wikipedia']
+    # datasets = ['ace2004']
     input_dir = '/scratch365/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED_standard_datasets'
     output_dir = '/scratch365/yding4/In_Context_EL/RUN_FILES/11_14_2024/baselines/EntGPT-I/ED_standard_datasets/predictions'
     os.makedirs(output_dir, exist_ok=True)
@@ -320,14 +320,14 @@ def test_entgpt_i():
                 json.dump(doc_name2instance, writer, indent=4)
 
 
-
-# if __name__ == '__main__':
-    # test_entgpt_i()
+if __name__ == '__main__':
+    test_entgpt_i()
+    test_entgpt_p()
 
 '''
 rel_args = prepare_rel_args()
 blink_args = prepare_blink_args()
-'''
+
 
 num_context_characters = 150
 num_entity_description_characters = 150
@@ -411,3 +411,4 @@ for dataset in datasets:
 
         with open(output_file, 'w') as writer:
             json.dump(doc_name2instance, writer, indent=4)
+'''
