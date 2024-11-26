@@ -1,6 +1,8 @@
 import openai
 import time
 from tqdm import tqdm
+from in_context_el.openai_key import OPENAI_API_KEY
+openai.api_key = OPENAI_API_KEY
 
 def openai_chatgpt(prompt, model="gpt-3.5-turbo"):
     openai_output = openai.ChatCompletion.create(
