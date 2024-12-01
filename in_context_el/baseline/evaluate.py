@@ -57,6 +57,43 @@ def process_entity_name(entity_name, wikipedia=None, wikidata_mapper=None):
     return processed_entity_name
 
 
+def entity_candidates_coverage(
+    entity_candidates_list, 
+    entities,
+    gt_set_entities,
+    wikipedia,
+    wikidata_mapper,
+):
+    gt_set_index = set()
+    for gt_set_entity in gt_set_entities:
+        tmp_start, tmp_end, tmp_entity = gt_set_entity
+        gt_set_index.add((tmp_start, tmp_end))
+    tp_1 = 0
+    tp_3 = 0
+    tp_5 = 0
+    tp_10 = 0
+
+    assert len(entities['start']) == len(entity_candidates_list)
+    for start, end, entity_candidates in zip(
+        entities['starts'], entities['end'], entity_candidates_list,
+    ):
+        if (start, end) not in gt_set_index:
+            continue
+        for entity_candidate_index, entity_candidate in enumerate(entity_candidates):
+            processed_entity_name = process_entity_name(entity_candidate, wikipedia, wikidata_mapper)
+            if (start, end, processed_entity_name) in gt_set_entities:
+                if entity_candidate_index == 0:
+                    tp_1 += 1
+                if entity_candidate_index <= 2:
+                    tp_3 += 1
+                if entity_candidate_index <= 4:
+                    tp_5 += 1
+                if entity_candidate_index <= 9:
+                    tp_10 += 1
+                break
+    return tp_1, tp_3, tp_5, tp_10
+
+
 def obtain_set_entities(entities, wikipedia=None, wikidata_mapper=None, keep_none=False):
     assert 'starts' in entities
     assert 'ends' in entities 
@@ -92,17 +129,53 @@ def obtain_set_entities(entities, wikipedia=None, wikidata_mapper=None, keep_non
     return re_set_entities, zero_set_entities
 
 
-def evaluate_doc_name2instance(doc_name2instance, wikipedia=None, wikidata_mapper=None, keep_none=False):
+def evaluate_doc_name2instance(
+        doc_name2instance, 
+        wikipedia=None, 
+        wikidata_mapper=None, 
+        keep_none=False,
+        entity_candidate_coverage=False,
+    ):
 
     total_pred = 0
     total_gt = 0
     tp = 0
+
+    tp_1 = 0
+    tp_3 = 0
+    tp_5 = 0
+    tp_10 = 0
     for doc_name in doc_name2instance:
         instance = doc_name2instance[doc_name]
         entities = instance['entities']
         pred_entities = instance['pred_entities']
+
+        # add logic of entity candidates to measure the recall/coverage 
+        if 'out_dicts' in instance:
+            entity_candidates_list = []
+            for out_dict in instance['out_dicts']:
+                entity_candidates_list.append(out_dict['entity_candidates'])
+        elif 'entity_candidates' in entities:
+            entity_candidates_list = entities['entity_candidates']
+            raise ValueError('unknow pathway !')
+        else:
+            entity_candidates_list = None
         gt_set_entities, gt_zero_set_entities = obtain_set_entities(entities, wikipedia, wikidata_mapper, keep_none=keep_none)
         pred_set_entities, _ = obtain_set_entities(pred_entities, wikipedia, wikidata_mapper)
+
+        # only if entity_candidates_list are not none, consider recall@1, 3, 5, 10
+        if entity_candidate_coverage and entity_candidates_list is not None:
+            tmp_tp_1, tmp_tp_3, tmp_tp_5, tmp_tp_10 = entity_candidates_coverage(
+                entity_candidates_list, 
+                entities,
+                gt_set_entities
+                wikipedia,
+                wikidata_mapper,
+            )
+            tp_1 += tmp_tp_1
+            tp_3 += tmp_tp_3
+            tp_5 += tmp_tp_5
+            tp_10 += tmp_tp_10
 
         total_gt += len(gt_set_entities)
         total_pred += len(pred_set_entities)
@@ -127,6 +200,12 @@ def evaluate_doc_name2instance(doc_name2instance, wikipedia=None, wikidata_mappe
         'recall': recall,
         'f1': f1,
     }
+    if entity_candidate_coverage and entity_candidates_list is not None:
+        out_dict['tp_1'] = tp_1 / (total_gt + 1e-8)
+        out_dict['tp_3'] = tp_3 / (total_gt + 1e-8)
+        out_dict['tp_5'] = tp_5 / (total_gt + 1e-8)
+        out_dict['tp_10'] = tp_10 / (total_gt + 1e-8)
+
     print(out_dict)
     return out_dict
     
@@ -150,14 +229,18 @@ if __name__ == '__main__':
     # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_update_part3_verify_processed'
     # datasets = ['KORE50', 'msnbc', 'oke_2015', 'oke_2016', 'Reuters-128', 'RSS-500', 'aida_test', 'derczynski']
 
-    input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED_standard_datasets/prediction'
-    datasets = ['ace2004', 'aquaint', 'msnbc', 'aida_test', 'clueweb', 'wikipedia']
-
-    use_rel = True
-    use_refined = False
+    # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED_standard_datasets/prediction'
+    # input_dir = '/nfs/yding4/In_Context_EL/in_context_el/end2end_model_agent/models/prompt_engineering/first/'
+    input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED/prediction'
+    datasets = ['aida_testb','msnbc','aquaint','ace2004','clueweb','wikipedia','KORE50','oke_2015','oke_2016','Reuters-128','RSS-500']
+    # input_dir = '/nfs/yding4/In_Context_EL/in_context_el/end2end_model_agent/models/prompt_engineering/more_blink/'
+    # datasets = ['KORE50','aquaint']
+    use_rel = False
+    use_refined = True
     wikipedia = None
     wikidata_mapper = None
     keep_none = False    # whether to keep all the non-empty entities from the datasets
+    entity_candidate_coverage = True # only set true for entity disambiguation
     if use_rel:
         from REL.wikipedia import Wikipedia
         base_url = '/nfs/yding4/REL/data/'
@@ -189,6 +272,6 @@ if __name__ == '__main__':
         output_file = os.path.join(input_dir, dataset + '_metrics.json')
         with open(input_file) as reader:
             doc_name2instance = json.load(reader)
-            out_dict = evaluate_doc_name2instance(doc_name2instance, wikipedia, wikidata_mapper, keep_none=keep_none)
+            out_dict = evaluate_doc_name2instance(doc_name2instance, wikipedia, wikidata_mapper, keep_none=keep_none, entity_candidate_coverage=entity_candidate_coverage)
             with open(output_file, 'w') as writer:
                 json.dump(out_dict, writer, indent=4)
