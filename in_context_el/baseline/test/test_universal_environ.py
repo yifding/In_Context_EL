@@ -126,6 +126,7 @@ def test_entqa(sentence, spans):
         'do_rerank': True,
         'use_title': False,
         'no_multi_ents': False,
+        'device': 'cpu',
     }
 
     entqa_config = argparse.Namespace(**config)
