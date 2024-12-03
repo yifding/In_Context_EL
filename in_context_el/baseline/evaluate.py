@@ -73,9 +73,9 @@ def entity_candidates_coverage(
     tp_5 = 0
     tp_10 = 0
 
-    assert len(entities['start']) == len(entity_candidates_list)
+    assert len(entities['starts']) == len(entity_candidates_list)
     for start, end, entity_candidates in zip(
-        entities['starts'], entities['end'], entity_candidates_list,
+        entities['starts'], entities['ends'], entity_candidates_list,
     ):
         if (start, end) not in gt_set_index:
             continue
@@ -168,7 +168,7 @@ def evaluate_doc_name2instance(
             tmp_tp_1, tmp_tp_3, tmp_tp_5, tmp_tp_10 = entity_candidates_coverage(
                 entity_candidates_list, 
                 entities,
-                gt_set_entities
+                gt_set_entities,
                 wikipedia,
                 wikidata_mapper,
             )
@@ -220,7 +220,8 @@ if __name__ == '__main__':
     # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_verify_processed'
     # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_update_verify_processed'
     
-    
+    input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/LLM4ED/ED_standard_datasets/prediction'
+    datasets = ['msnbc','aquaint','ace2004','clueweb','wikipedia', 'aida_test']
     # datasets = ['msnbc', 'KORE50', 'oke_2015', 'oke_2016']
     # datasets = ['oke_2015']
     
@@ -231,8 +232,8 @@ if __name__ == '__main__':
 
     # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED_standard_datasets/prediction'
     # input_dir = '/nfs/yding4/In_Context_EL/in_context_el/end2end_model_agent/models/prompt_engineering/first/'
-    input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED/prediction'
-    datasets = ['aida_testb','msnbc','aquaint','ace2004','clueweb','wikipedia','KORE50','oke_2015','oke_2016','Reuters-128','RSS-500']
+    # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/llm4ed'
+    # datasets = ['msnbc','aquaint','ace2004','clueweb','wikipedia','KORE50','oke_2015','oke_2016','Reuters-128','RSS-500']
     # input_dir = '/nfs/yding4/In_Context_EL/in_context_el/end2end_model_agent/models/prompt_engineering/more_blink/'
     # datasets = ['KORE50','aquaint']
     use_rel = False

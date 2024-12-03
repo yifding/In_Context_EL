@@ -72,11 +72,12 @@ def compare_set_entities(
 
 # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/prediction'
 # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_verify_processed'
-input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_update_part3_verify_processed'
+# input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_update_part3_verify_processed'
 # datasets = ['aida_test']
-datasets = ['KORE50', 'msnbc', 'oke_2015', 'oke_2016', 'Reuters-128', 'RSS-500', 'aida_test', 'derczynski']
-# input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED_standard_datasets/prediction'
-# datasets = ['ace2004', 'aquaint', 'msnbc', 'aida_test', 'clueweb', 'wikipedia']
+# datasets = ['KORE50', 'msnbc', 'oke_2015', 'oke_2016', 'Reuters-128', 'RSS-500', 'aida_test', 'derczynski']
+input_dir = '/nfs/yding4/In_Context_EL/in_context_el/end2end_model_agent/models/prompt_engineering/first/'
+datasets = ['KORE50', 'aquaint']
+# datasets = ['ace2004', 'aquaint', 'msnbc', 'aida_test', 'clueweb']
 
 
 base_url = '/nfs/yding4/REL/data/'
@@ -179,6 +180,3 @@ for dataset in datasets:
                     count += 1
     print('count:', count)
 '''
-
-        
-

@@ -1,5 +1,6 @@
 import os
 import json
+import torch
 import argparse
 from tqdm import tqdm
 from refined.inference.processor import Refined
@@ -64,21 +65,21 @@ def parse_args():
         "--input_dir",
         help="the processed dataset file",
         # required=True,
-        default="/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED_standard_datasets",
+        default="/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED",
         type=str,
     )
     parser.add_argument(
         "--datasets",
         help="the processed dataset file",
         # required=True,
-        default="['ace2004', 'msnbc', 'aquaint', 'clueweb', 'wikipedia', 'aida_test']",
+        default="['aida_testb','msnbc','aquaint','ace2004','clueweb','wikipedia','KORE50','oke_2015','oke_2016','Reuters-128','RSS-500']",
         type=eval,
     )
     parser.add_argument(
         "--output_dir",
         help="output directory",
         # required=True,
-        default="/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED_standard_datasets/prediction",
+        default="/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/refined/ED/prediction",
         type=str,
     )
     parser.add_argument(
@@ -86,7 +87,7 @@ def parse_args():
         help="model parameter",
         # required=True,
         choices=["aida_model", "wikipedia_model"],
-        default="aida_model",
+        default="wikipedia_model",
         type=str,
     )
     parser.add_argument(
@@ -102,6 +103,12 @@ def parse_args():
         help="true for predicting entity linking, false for entity disambiguation",
         action='store_true',
     )
+    parser.add_argument(
+        "--device",
+        default='cpu',
+        help="device for refined model",
+    )
+
 
 
     args = parser.parse_args()
@@ -116,6 +123,7 @@ def predict_ed_el():
     refined = Refined.from_pretrained(
         model_name=args.model_name,
         entity_set=args.entity_set,
+        device=torch.device(args.device)
     )
 
     for dataset in args.datasets:

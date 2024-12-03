@@ -79,6 +79,13 @@ def parse_args():
         type=str,
     )
     parser.add_argument(
+        "--device",
+        help="device for the model",
+        # required=True,
+        default="cpu",
+        type=str,
+    )
+    parser.add_argument(
         "--entqa_dir",
         help="model parameter",
         default="/nfs/yding4/EntQA",
@@ -132,6 +139,7 @@ def predict_el():
         'do_rerank': True,
         'use_title': False,
         'no_multi_ents': False,
+        'device': args.device,
     }
 
     entqa_config = argparse.Namespace(**config)

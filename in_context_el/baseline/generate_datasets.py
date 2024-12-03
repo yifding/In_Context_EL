@@ -4,7 +4,7 @@ from in_context_el.dataset_reader import dataset_loader
 
 
 def generate_standard_EL():
-    datasets = ['KORE50', 'msnbc', 'oke_2015', 'oke_2016', 'Reuters-128', 'RSS-500', 'aida_test', 'derczynski']
+    datasets = ['KORE50', 'msnbc', 'oke_2015', 'oke_2016', 'Reuters-128', 'RSS-500', 'derczynski', 'aida_train', 'aida_testa','aida_testb',]
     dataset_files = [
         '/nfs/yding4/EL_project/dataset/KORE50/AIDA.tsv',
         '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/msnbc/msnbc.xml',
@@ -12,8 +12,10 @@ def generate_standard_EL():
         '/nfs/yding4/EL_project/dataset/oke-challenge-2016/evaluation-data/task1/evaluation-dataset-task1.ttl',
         '/nfs/yding4/EL_project/dataset/n3-collection/Reuters-128.ttl',
         '/nfs/yding4/EL_project/dataset/n3-collection/RSS-500.ttl',
-        '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_testb.xml',
         '/nfs/yding4/EL_project/dataset/derczynski/ipm_nel_corpus/correct_ipm_nel.conll',
+        '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_train.xml',
+        '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_testa.xml',
+        '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_testb.xml',
     ]
 
     dataset_modes = [
@@ -23,11 +25,13 @@ def generate_standard_EL():
         'oke_2016',
         'n3',
         'n3',
-        'xml',
         'derczynski',
+        'xml',
+        'xml',
+        'xml',
     ]
 
-    output_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/datasets'
+    output_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/EL'
     os.makedirs(output_dir, exist_ok=True)
 
     assert len(datasets) == len(dataset_files) == len(dataset_modes)
@@ -42,8 +46,10 @@ def generate_standard_EL():
 
 
 def generate_standard_ED():
-    datasets = ['aida_test', 'msnbc', 'aquaint', 'ace2004', 'clueweb', 'wikipedia']
+    datasets = ['aida_train','aida_testa', 'aida_testb', 'msnbc', 'aquaint', 'ace2004', 'clueweb', 'wikipedia']
     dataset_files = [
+        '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_train.xml',
+        '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_testa.xml',
         '/nfs/yding4/e2e_EL_evaluate/data/aida/xml/xml_from_end2end_neural_el/aida_testb/aida_testb.xml',
         '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/msnbc/msnbc.xml',
         '/nfs/yding4/e2e_EL_evaluate/data/wned/xml/ori_xml2revise_xml/msnbc/aquaint.xml',
@@ -59,9 +65,11 @@ def generate_standard_ED():
         'xml',
         'xml',
         'xml',
+        'xml',
+        'xml',
     ]
 
-    output_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED_standard_datasets'
+    output_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED'
     os.makedirs(output_dir, exist_ok=True)
 
     assert len(datasets) == len(dataset_files) == len(dataset_modes)
@@ -94,7 +102,7 @@ def generate_additional_ED():
         'n3',
     ]
 
-    output_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED_addtional_datasets'
+    output_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/ED'
     os.makedirs(output_dir, exist_ok=True)
 
     assert len(datasets) == len(dataset_files) == len(dataset_modes)
@@ -109,5 +117,6 @@ def generate_additional_ED():
 
 
 if __name__ == '__main__':
-    # generate_standard_ED()
+    generate_standard_EL()
+    generate_standard_ED()
     generate_additional_ED()
