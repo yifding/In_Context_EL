@@ -220,9 +220,9 @@ if __name__ == '__main__':
     # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_verify_processed'
     # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/10_13_2024/baseline/refined/LLM4ED_update_verify_processed'
     
-    input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/11_14_2024/baseline/LLM4ED/ED_standard_datasets/prediction'
-    datasets = ['msnbc','aquaint','ace2004','clueweb','wikipedia', 'aida_test']
-    # datasets = ['msnbc', 'KORE50', 'oke_2015', 'oke_2016']
+    # input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/prompt_engineering/more_blink_add_verify_instruct_tuning'
+    # datasets = ['aida_train', 'aida_testa','aida_testb']
+    # datasets = ['KORE50', 'ace2004', 'aquaint', 'msnbc', 'oke_2015', 'oke_2016', 'Reuters-128', 'RSS-500', 'wikipedia', 'aida_testb', 'clueweb']
     # datasets = ['oke_2015']
     
     # datasets = ['KORE50', 'RSS-500', 'derczynski']
@@ -236,6 +236,10 @@ if __name__ == '__main__':
     # datasets = ['msnbc','aquaint','ace2004','clueweb','wikipedia','KORE50','oke_2015','oke_2016','Reuters-128','RSS-500']
     # input_dir = '/nfs/yding4/In_Context_EL/in_context_el/end2end_model_agent/models/prompt_engineering/more_blink/'
     # datasets = ['KORE50','aquaint']
+
+    input_dir = '/nfs/yding4/In_Context_EL/RUN_FILES/prompt_engineering/V1/more_blink_add_verify_instruct_tuning_wo_augmentation/'
+    datasets = ["KORE50", "Reuters-128", "RSS-500", "oke_2015", "oke_2016"]
+    
     use_rel = False
     use_refined = True
     wikipedia = None

@@ -8,7 +8,7 @@ from refined.data_types.base_types import Span
 
 # https://github.com/amazon-science/ReFinED/blob/main/replicate_results.py
 
-def refined4ed_el(sentence, spans, refined, el=False, return_ori=False):
+def refined4ed_el(sentence, spans, refined, el=False, return_ori=False, return_entity_type=False):
     refined_spans = []
     for span in spans:
         assert len(span) == 2
@@ -33,6 +33,7 @@ def refined4ed_el(sentence, spans, refined, el=False, return_ori=False):
     ends = []
     entity_mentions = []
     entity_names = []
+    entity_types = []
 
     if pred_spans is not None:
         for pred_span in pred_spans:
@@ -40,12 +41,14 @@ def refined4ed_el(sentence, spans, refined, el=False, return_ori=False):
             mention = str(pred_span.text)
             end = start + len(mention)
             entity = pred_span.predicted_entity.wikipedia_entity_title
+            entity_type = pred_span.coarse_mention_type
             if entity == '' or entity is None:
                 entity = '' 
             starts.append(start)
             ends.append(end)
             entity_mentions.append(mention)
             entity_names.append(entity)
+            entity_types.append(entity_type)
 
     pred_entities = {
         'starts': starts,
@@ -53,6 +56,9 @@ def refined4ed_el(sentence, spans, refined, el=False, return_ori=False):
         'entity_mentions': entity_mentions,
         'entity_names': entity_names,
     }
+
+    if return_entity_type:
+        pred_entities['entity_types'] = entity_types
     return pred_entities
 
 
@@ -171,6 +177,7 @@ def test_refined_ed():
     refined = Refined.from_pretrained(
         model_name=model_name,
         entity_set=entity_set,
+        device='cpu',
         use_precomputed_descriptions=True,
     )
     spans = [
