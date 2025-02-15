@@ -1,8 +1,24 @@
+import os
 import openai
 import time
 from tqdm import tqdm
-from in_context_el.openai_key import OPENAI_API_KEY
+from in_context_el.openai_key import OPENAI_API_KEY, REPLICATE_API_KEY
+import replicate
+
 openai.api_key = OPENAI_API_KEY
+os.environ['REPLICATE_API_TOKEN'] = REPLICATE_API_KEY
+
+
+def replicate_run(prompt, model="meta/meta-llama-3-8b-instruct"):
+    output = replicate.run(
+    model,
+    input={
+        "prompt": prompt, 
+        "max_new_tokens": 512,
+        "prompt_template": "<|begin_of_text|><|start_header_id|>system<|end_header_id|>\n\n{system_prompt}<|eot_id|><|start_header_id|>user<|end_header_id|>\n\n{prompt}<|eot_id|><|start_header_id|>assistant<|end_header_id|>\n\n"
+    },
+    )
+    return "".join(output)
 
 
 def openai_chatgpt(prompt, model="gpt-3.5-turbo"):
