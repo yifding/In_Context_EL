@@ -7,7 +7,7 @@ from in_context_el.baseline.rel.generate import prepare_rel_args,rel_entity_cand
 from in_context_el.baseline.blink.generate import prepare_blink_args, blink_entity_candidates_descriptions
 from in_context_el.openai_function import openai_chatgpt
 
-from in_context_el.in_context_ed.evaluation_raw import process_multi_choice_prompt
+from in_context_el.elastic_matching import elastic_matching
 
 
 def entgpt_p(
@@ -64,7 +64,7 @@ def entgpt_p(
     multi_choice_prompt = prompt_result + '\n\n' + f'Which of the following entities is {mention} in this sentence?' + '\n\n' + multi_choice_prompt
     multi_choice_prompt_result = openai_chatgpt(multi_choice_prompt, model=openai_model)
 
-    predict_entity_name = process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates)
+    predict_entity_name = elastic_matching(multi_choice_prompt_result, entity_candidates)
 
     return {
         'predict_entity_name': predict_entity_name,
@@ -128,7 +128,7 @@ def entgpt_i(
     context = left_context + mention + right_context
     prompt = context + ' ' + f'Which of the following entities is {mention} in this sentence?' + ' ' + multi_choice_prompt
     prompt_result = openai_chatgpt(prompt, model=openai_model)
-    predict_entity_name = process_multi_choice_prompt(prompt_result, entity_candidates)
+    predict_entity_name = elastic_matching(prompt_result, entity_candidates)
 
     return {
         'predict_entity_name': predict_entity_name,

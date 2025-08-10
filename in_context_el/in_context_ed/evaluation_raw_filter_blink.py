@@ -5,6 +5,7 @@ import argparse
 import blink.main_dense as main_dense
 
 import torch
+from in_context_el.elastic_matching import elastic_matching
 torch.cuda.set_device(1)
 
 
@@ -62,10 +63,8 @@ def dev_by_zero(a, b):
         return a / b
         
 def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
-
-    L = len(entity_candidates)
-    if L == 0:
-        return ''
+    """Legacy wrapper for elastic_matching function."""
+    return elastic_matching(multi_choice_prompt_result, entity_candidates)
     elif L == 1:
         return entity_candidates[0]
     elif 'None of the entity match' in multi_choice_prompt_result:
