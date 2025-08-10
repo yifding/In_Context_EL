@@ -3,6 +3,7 @@ import re
 import json
 import argparse
 from REL.wikipedia import Wikipedia
+from in_context_el.elastic_matching import elastic_matching
 
 
 def parse_args():
@@ -59,48 +60,8 @@ def dev_by_zero(a, b):
         return a / b
         
 def process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates):
-
-    L = len(entity_candidates)
-    if L == 0:
-        return ''
-    elif L == 1:
-        return entity_candidates[0]
-    elif 'None of the entity match' in multi_choice_prompt_result:
-        return ''
-    
-    # update the index finding schema with regular expression.
-    
-    index_list = [int(s) - 1 for s in re.findall(r'\b\d+\b', multi_choice_prompt_result) if 0 <= int(s) - 1 < len(entity_candidates)]
-    # index_list = []
-    # for index in range(L):
-    #     if str(index + 1) in multi_choice_prompt_result:
-    #         index_list.append(index)
-    
-    # consider direct index answer of chatgpt
-    if len(index_list) == 1:
-        return entity_candidates[index_list[0]]
-    
-    # if there are two choices and candidate entities length is more than 2, select the first one.
-    if len(index_list) == 2 and len(entity_candidates) > 2:
-        return entity_candidates[index_list[0]]
-
-    # consider complete string match
-    index_list = []
-    for index, entity_candidate in enumerate(entity_candidates):
-        if entity_candidate.lower() in multi_choice_prompt_result.lower():
-            add_flag = True
-            other_candiddates = entity_candidates[:index] + entity_candidates[index+1:]
-            for other_candidate in other_candiddates:
-                if entity_candidate in other_candidate:
-                    add_flag = False
-                    break
-            if add_flag:
-                index_list.append(index)
-
-    if len(index_list) == 1:
-        return entity_candidates[index_list[0]]
-    
-    return ''
+    """Legacy wrapper for elastic_matching function."""
+    return elastic_matching(multi_choice_prompt_result, entity_candidates)
 
 
 def evaluate_ed_chatgpt_multi_choice(doc_name2instance, wikipedia, args):

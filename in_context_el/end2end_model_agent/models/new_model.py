@@ -8,7 +8,7 @@ from in_context_el.openai_function import openai_chatgpt
 from in_context_el.baseline.rel.generate import prepare_rel_args,rel_entity_candidates_descriptions
 from in_context_el.baseline.blink.generate import prepare_blink_args, blink_entity_candidates_descriptions
 from in_context_el.openai_function import openai_chatgpt
-from in_context_el.in_context_ed.evaluation_raw import process_multi_choice_prompt
+from in_context_el.elastic_matching import elastic_matching
 
 
 
@@ -131,7 +131,7 @@ def llm4ed(
             f'in this sentence?' \
 
     multi_choice_prompt_result = openai_chatgpt(multi_choice_prompt, model=multi_choice_openai_model)
-    predict_entity_name = process_multi_choice_prompt(multi_choice_prompt_result, entity_candidates)
+    predict_entity_name = elastic_matching(multi_choice_prompt_result, entity_candidates)
 
     out_dict = {
         'predict_entity_name': predict_entity_name,
